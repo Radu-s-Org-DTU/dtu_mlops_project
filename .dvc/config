@@ -1,0 +1,6 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = gdrive://1u9e75H19Ar2ScXPw6sOX3_ENvy_DgwIz
+    gdrive_use_service_account = true
+    gdrive_service_account_json_file_path = credentials/keen-hangar-447111-c1-70144a3e1ab7.json
