@@ -1,35 +1,62 @@
-# dtu_mlops_project
-Mushroom Safety Classification
+# Mushroom Safety Classification
 10.01.2025
 
-**Team members:**
+## Team Members
 
-Gokul Desu (s242580)
-Satrio Muhammad (s242591)
-William Buch Grønholm (s113117)
-Radu Grecu (s246415)
+- **Gokul Desu** (s242580)  
+- **Satrio Muhammad** (s242591)  
+- **William Buch Grønholm** (s113117)  
+- **Radu Grecu** (s246415)
 
+---
 
-**Overview**
+## Overview
 
-The project consists of creating a pipeline that can classify pictures of mushrooms according to the risk of consuming them - Edible, Conditionally Edible, Deadly and Poisonous.
+This project focuses on creating a pipeline to classify mushrooms into four safety categories: **Edible**, **Conditionally Edible**, **Poisonous**, and **Deadly**. Using computer vision and deep learning, the goal is to develop an accurate and automated system that can handle diverse mushroom images.
 
-**Goals**
+The project combines data preparation, model training, and pipeline development to ensure reliable classification. Applications include food safety, foraging, and environmental research, making this system valuable in both practical and scientific contexts.
 
-The goal of the project is to apply the knowledge acquired throughout the course to:
-perform a data sanctity check on the mentioned dataset and create a new data repo
-train a CNN model which predicts the safety level of the mushrooms
-build a pipeline which streamlines the task aforementioned and is automated to keep running
+---
 
-**Data**
+## Goals
 
-Mushroom picture dataset @ [link](https://www.kaggle.com/datasets/zedsden/mushroom-classification-dataset/data)
-The size is a bit larger at 13.87 GB than the recommended 10 GB so we might omit some pictures of the species that have a very large count.
+1. **Data Quality**:  
+   Clean and organize the dataset by addressing inconsistencies and standardizing formats. Create a curated data repository for efficient use.
 
-**Framework**
+2. **Model Training**:  
+   Develop a Convolutional Neural Network (CNN) to classify mushrooms, with a focus on handling class imbalances effectively.
 
-Albumentations @ [link](https://albumentations.ai/) is a library used for data augmentation that can do basic to advanced tasks, covering nearly all common augmentation needs.
+3. **Pipeline Development**:  
+   Build an automated system that integrates preprocessing, model training, and inference. Ensure adaptability for future data updates.
 
-It will be necessary to augment the species of mushrooms that have a very low picture count. The Deadly classified mushrooms don’t even go past 50 pictures while some other species go as high as 1500.
+---
 
+## Data
+
+The dataset, available on [Kaggle](https://www.kaggle.com/datasets/zedsden/mushroom-classification-dataset/data), is approximately **13.87 GB**. Since this exceeds the recommended 10 GB, strategic selection and resizing will be required. 
+
+### Key Challenges:
+- **Class Imbalance**:  
+  Some categories, like "Deadly," have fewer than 50 images, while others exceed 1,500. Balancing these classes is crucial.
+
+- **Image Standardization**:  
+  Images vary in size and resolution, so resizing to a consistent format is necessary.
+
+- **Selective Usage**:  
+  Overrepresented categories may be trimmed to optimize computational resources.
+
+---
+
+## Framework
+
+We will use [Albumentations](https://albumentations.ai/), a data augmentation library, to improve dataset diversity and model performance. 
+
+### Augmentation Benefits:
+- **Balancing Data**:  
+  Enhance underrepresented categories by applying transformations like rotation, zoom, and color adjustments.
+
+- **Improving Robustness**:  
+  Simulate real-world conditions with lighting, noise, and perspective changes, helping the model generalize better.
+
+This approach ensures a reliable, adaptable system for mushroom safety classification, with potential applications in public health and ecological research.
 
