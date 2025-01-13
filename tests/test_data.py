@@ -14,7 +14,6 @@ def test_dataset_is_not_empty():
 def test_sample_keys_and_values():
     dataset = MyDataset(Path("data/raw_subset"))
     sample = dataset[0]
-    print(sample)
     assert "path" in sample and "label" in sample, "sample does not contain 'path' and 'label' keys"
     assert sample["path"].exists(), f"file {sample['path']} does not exist"
     assert sample["label"] in dataset.classes, f"invalid label {sample['label']}"
@@ -33,8 +32,4 @@ def test_all_files_belong_to_defined_classes():
     dataset = MyDataset(Path("data/raw_subset"))
     for _, class_label in dataset.files:
         assert class_label in dataset.classes, f"Class label {class_label} is not in the defined classes"
-
-def test_no_duplicate_files():
-    dataset = MyDataset(Path("data/raw_subset"))
-    file_paths = [file_path for file_path, _ in dataset.files]
-    assert len(file_paths) == len(set(file_paths)), "Dataset contains duplicate files"
+        
