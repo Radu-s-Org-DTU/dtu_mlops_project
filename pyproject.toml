@@ -19,6 +19,12 @@ readme = "README.md"
 requires-python = ">=3.11"
 dynamic = ["dependencies", "optional-dependencies"]
 
+[tool.setuptools]
+packages = ["mushroomclassification"]
+
+[tool.setuptools.package-dir]
+mushroomclassification = "src/mushroomclassification"
+
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
 
