@@ -5,7 +5,6 @@ from model import MushroomClassifier
 from data import MushroomDatamodule
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-import lightning as L
 
 def visualize(
     checkpoint_path: str = typer.Option(..., "--checkpoint-path", help="Path to the model checkpoint"),
@@ -20,7 +19,7 @@ def visualize(
     plt.title("Training Loss Over Iterations")
     plt.xlabel("Iteration")
     plt.ylabel("Loss")
-    plt.savefig(f"reports/figures/train_losses.png")
+    plt.savefig("reports/figures/train_losses.png")
     plt.show()
     
     model.eval()
@@ -52,7 +51,7 @@ def visualize(
         plt.scatter(embeddings_2d[mask, 0], embeddings_2d[mask, 1], label=class_names[i], alpha=0.5)
     plt.legend()
     plt.title("TSNE Visualization of Embeddings")
-    plt.savefig(f"reports/figures/tsne.png")
+    plt.savefig("reports/figures/tsne.png")
     plt.show()
 
 if __name__ == "__main__":

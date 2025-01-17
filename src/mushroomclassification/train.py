@@ -1,4 +1,3 @@
-import lightning as L
 from lightning.pytorch.cli import LightningCLI
 from lightning.pytorch.callbacks import ModelCheckpoint
 

@@ -1,7 +1,6 @@
 import torch
 from torch import nn, optim
 import lightning as L
-from torch.optim import Optimizer
 
 class MushroomClassifier(L.LightningModule):
     """My awesome model."""
