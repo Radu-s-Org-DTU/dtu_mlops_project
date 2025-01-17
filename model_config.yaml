@@ -1,0 +1,10 @@
+data:
+  data_path: data/raw
+  batch_size: 32
+  num_workers: 16
+
+trainer:
+  max_epochs: 1000
+
+model:
+  checkpoint_path: models/mushroom_model.ckpt

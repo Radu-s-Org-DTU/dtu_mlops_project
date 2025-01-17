@@ -8,6 +8,7 @@ class MushroomClassifier(L.LightningModule):
 
     def __init__(self) -> None:
         super().__init__()
+        self.train_losses = []
         self.backbone = nn.Sequential(
             nn.Conv2d(3, 32, 3, 1),
             nn.LeakyReLU(),
@@ -41,7 +42,28 @@ class MushroomClassifier(L.LightningModule):
         data, target = batch
         preds = self(data)
         loss = self.criterion(preds, target)
+        self.log("train_loss", loss, on_epoch=True, prog_bar=True)
+        self.train_losses.append(loss.item())
         return loss
+
+    def test_step(self, batch, batch_idx):
+        x, y = batch
+        logits = self(x)
+        loss = self.criterion(logits, y)
+        self.log('test_loss', loss, prog_bar=True)
+        return loss
+    
+    def on_save_checkpoint(self, checkpoint: dict) -> dict:
+        """Save train_losses in the checkpoint."""
+        checkpoint["train_losses"] = self.train_losses
+        return checkpoint
+    
+    def on_load_checkpoint(self, checkpoint: dict) -> None:
+        """Load train_losses from checkpoint."""
+        if "train_losses" in checkpoint:
+            self.train_losses = checkpoint["train_losses"]
+        else:
+            self.train_losses = []
 
     # def validation_step(self, val_batch):
     #     x = val_batch['input_ids']
