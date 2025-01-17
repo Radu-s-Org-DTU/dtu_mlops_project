@@ -1,10 +1,15 @@
 import os
-
+import yaml
 from invoke import Context, task
 
 WINDOWS = os.name == "nt"
 PROJECT_NAME = "mushroomclassification"
 PYTHON_VERSION = "3.11"
+
+def load_config(config_path="model_config.yaml"):
+    """Utility to load and return the YAML config."""
+    with open(config_path, "r") as f:
+        return yaml.safe_load(f)
 
 # Setup commands
 @task
@@ -31,15 +36,39 @@ def dev_requirements(ctx: Context) -> None:
 
 # Project commands
 @task
-def preprocess_data(ctx: Context) -> None:
-    """Preprocess data."""
-    ctx.run(f"python src/{PROJECT_NAME}/data.py data/raw data/processed", echo=True, pty=not WINDOWS)
+def train(ctx, config_path="model_config.yaml"):
+    """Train model."""
+    config = load_config(config_path)
+    data_conf = config["data"]
+    trainer_conf = config["trainer"]
+
+    ctx.run(
+        f"python src/{PROJECT_NAME}/train.py fit "
+        f"--data.data_path={data_conf['data_path']} "
+        f"--data.batch_size={data_conf['batch_size']} "
+        f"--data.num_workers={data_conf['num_workers']} "
+        f"--trainer.max_epochs={trainer_conf['max_epochs']}",
+        echo=True,
+        pty=not WINDOWS,
+    )
 
 @task
-def train(ctx: Context) -> None:
-    """Train model."""
-    ctx.run(f"python src/{PROJECT_NAME}/train.py", echo=True, pty=not WINDOWS)
+def visualize(ctx, config_path="model_config.yaml"):
+    """Visualize model predictions."""
+    config = load_config(config_path)
+    data_conf = config["data"]
+    model_conf = config["model"]
 
+    ctx.run(
+        f"python src/{PROJECT_NAME}/visualize.py "
+        f"--checkpoint-path={model_conf['checkpoint_path']} "
+        f"--data-path={data_conf['data_path']} "
+        f"--batch-size={data_conf['batch_size']} "
+        f"--num-workers={data_conf['num_workers']}",
+        echo=True,
+        pty=not WINDOWS,
+    )
+    
 @task
 def test(ctx: Context) -> None:
     """Run tests."""

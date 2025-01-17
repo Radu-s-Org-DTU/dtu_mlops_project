@@ -1,22 +1,11 @@
 from pathlib import Path
-import typer
 from torch.utils.data import DataLoader, random_split
 import lightning as L
 import torch
 from torchvision import transforms
 from typing import List, Tuple, Optional
-
-
-import os
-from torch.utils.data import Dataset, DataLoader
-from PIL import Image
-from torchvision import transforms
-
-import os
-from pathlib import Path
-from PIL import Image
 from torch.utils.data import Dataset
-from typing import List, Tuple
+from PIL import Image
 
 
 class MushroomDataset(Dataset):
@@ -82,10 +71,11 @@ class MushroomDataset(Dataset):
 class MushroomDatamodule(L.LightningDataModule):
     """Mushroom data module"""
 
-    def __init__(self, data_path: str, batch_size: int) -> None:
+    def __init__(self, data_path: str, batch_size: int, num_workers: int) -> None:
         super().__init__()
         self.data_path = data_path
         self.batch_size = batch_size
+        self.num_workers = num_workers
 
         # Transformations for each dataset
         self.train_transform = transforms.Compose([
@@ -146,7 +136,7 @@ class MushroomDatamodule(L.LightningDataModule):
             self.data_train,
             batch_size=self.batch_size,
             shuffle=True,
-            num_workers=16,
+            num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
         )
 
@@ -154,7 +144,7 @@ class MushroomDatamodule(L.LightningDataModule):
         return DataLoader(
             self.data_val,
             batch_size=self.batch_size,
-            num_workers=16,
+            num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
         )
 
@@ -162,7 +152,7 @@ class MushroomDatamodule(L.LightningDataModule):
         return DataLoader(
             self.data_test,
             batch_size=self.batch_size,
-            num_workers=16,
+            num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
         )
 
@@ -170,14 +160,10 @@ class MushroomDatamodule(L.LightningDataModule):
         return DataLoader(
             self.data_train,
             batch_size=self.batch_size,
-            num_workers=16,
+            num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
         )
 
     def teardown(self, stage: str):
         # Used to clean-up when the run is finished
         return
-
-if __name__ == "__main__":
-    print("Loading data...")
-    dataset = MushroomDataset("data/raw")
