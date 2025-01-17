@@ -106,6 +106,8 @@ class MushroomDatamodule(L.LightningDataModule):
         # Create full dataset (no transforms here; transforms applied during splitting)
         data_full = MushroomDataset(self.data_path)
 
+        print(f"Full dataset size: {len(data_full)}")
+
         # Split the data into train, validation, test, and predict sets
         train_size = int(0.8 * len(data_full))  # 80% for training
         val_size = int(0.1 * len(data_full))    # 10% for validation

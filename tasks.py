@@ -37,12 +37,14 @@ def train(ctx, config_path="model_config.yaml"):
     """Train model."""
     config = load_config(config_path)
 
-    ctx.run(
-        f"python src/{PROJECT_NAME}/train.py fit "
-        f"--data.data_path={config['data']['data_path']} "
-        f"--data.batch_size={config['data']['batch_size']} "
-        f"--data.num_workers={config['data']['num_workers']} "
-        f"--trainer.max_epochs={config['trainer']['max_epochs']}",
+    ctx.run(f"""python src/{PROJECT_NAME}/train.py fit \
+                --data.data_path={config['data']['data_path']} \
+                --data.batch_size={config['data']['batch_size']} \
+                --data.num_workers={config['data']['num_workers']} \
+                --trainer.max_epochs={config['trainer']['max_epochs']} \
+                --trainer.precision "bf16-true" \
+                --trainer.accelerator "gpu" \
+                --trainer.devices 1"""
         echo=True,
         pty=not WINDOWS,
     )
@@ -52,11 +54,10 @@ def visualize(ctx, config_path="model_config.yaml"):
     """Visualize model predictions."""
     config = load_config(config_path)
 
-    ctx.run(
-        f"python src/{PROJECT_NAME}/visualize.py "
-        f"--data-path={config['data']['data_path']} "
-        f"--batch-size={config['data']['batch_size']} "
-        f"--num-workers={config['data']['num_workers']}",
+    ctx.run(f"""python src/{PROJECT_NAME}/visualize.py \
+                --data-path={config['data']['data_path']} \
+                --batch-size={config['data']['batch_size']} \
+                --num-workers={config['data']['num_workers']}"""
         echo=True,
         pty=not WINDOWS,
     )
