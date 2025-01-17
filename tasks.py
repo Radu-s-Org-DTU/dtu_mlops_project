@@ -36,9 +36,18 @@ def preprocess_data(ctx: Context) -> None:
     ctx.run(f"python src/{PROJECT_NAME}/data.py data/raw data/processed", echo=True, pty=not WINDOWS)
 
 @task
-def train(ctx: Context) -> None:
+def train(ctx: Context, data_folder: str, batch_size: int) -> None:
     """Train model."""
-    ctx.run(f"python src/{PROJECT_NAME}/train.py", echo=True, pty=not WINDOWS)
+    # Run the training command
+    command = f"""python src/{PROJECT_NAME}/train.py fit \
+                --data.data_path 'data/{data_folder}' \
+                --data.batch_size {batch_size} \
+                --trainer.precision "bf16-true" \
+                --trainer.accelerator "gpu" \
+                --trainer.devices 1"""
+
+    # Execute the command with the specified options
+    ctx.run(command, echo=True, pty=not WINDOWS)  # `pty=True` enables terminal emulation for the command output
 
 @task
 def test(ctx: Context) -> None:

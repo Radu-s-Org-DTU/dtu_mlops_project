@@ -5,9 +5,12 @@ from lightning.pytorch.cli import LightningCLI
 from data import MushroomDatamodule
 from model import MushroomClassifier
 
-
 def cli_main():
-    cli = LightningCLI(MushroomClassifier, MushroomDatamodule)
+
+    LightningCLI(
+        MushroomClassifier,
+        MushroomDatamodule
+        )
 
 
 if __name__ == "__main__":

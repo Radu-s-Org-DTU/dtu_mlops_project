@@ -1,23 +1,11 @@
 from pathlib import Path
-import typer
-from torch.utils.data import DataLoader, random_split
-import lightning as L
 import torch
-from torchvision import transforms
+from PIL import Image
 from typing import List, Tuple, Optional
 
-
-import os
-from torch.utils.data import Dataset, DataLoader
-from PIL import Image
+import lightning as L
+from torch.utils.data import Dataset, DataLoader, random_split
 from torchvision import transforms
-
-import os
-from pathlib import Path
-from PIL import Image
-from torch.utils.data import Dataset
-from typing import List, Tuple
-
 
 class MushroomDataset(Dataset):
     def __init__(self,
@@ -115,6 +103,8 @@ class MushroomDatamodule(L.LightningDataModule):
         """Setup the datasets for different stages: train, validation, test, predict."""
         # Create full dataset (no transforms here; transforms applied during splitting)
         data_full = MushroomDataset(self.data_path)
+
+        print(f"Full dataset size: {len(data_full)}")
 
         # Split the data into train, validation, test, and predict sets
         train_size = int(0.8 * len(data_full))  # 80% for training
