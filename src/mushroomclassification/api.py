@@ -1,10 +1,12 @@
-from fastapi import FastAPI, File, UploadFile, HTTPException
-from PIL import Image
 import torch
+from fastapi import FastAPI, File, HTTPException, UploadFile
+from PIL import Image
 from torchvision import transforms
+
+from src.mushroomclassification.data import MushroomDataset
+
 from .model import MushroomClassifier
 from .utils.config_loader import load_config
-from src.mushroomclassification.data import MushroomDataset
 
 app = FastAPI()
 
@@ -33,7 +35,7 @@ async def predict(file: UploadFile = File(...)):
         with torch.no_grad():
             output = model(input_tensor)
             probabilities = torch.softmax(output, dim=1).squeeze().tolist()
-        return {class_name: prob for class_name, prob in zip(classes, probabilities)}
+        return dict(zip(classes, probabilities))
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

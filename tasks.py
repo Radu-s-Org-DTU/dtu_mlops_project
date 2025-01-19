@@ -1,5 +1,7 @@
 import os
+
 from invoke import Context, task
+
 from src.mushroomclassification.utils.config_loader import load_config
 
 WINDOWS = os.name == "nt"

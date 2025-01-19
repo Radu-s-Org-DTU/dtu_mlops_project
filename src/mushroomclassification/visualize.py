@@ -1,12 +1,14 @@
 import matplotlib.pyplot as plt
+import seaborn as sns
 import torch
 import typer
 from model import MushroomClassifier
-from data import MushroomDatamodule
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from utils.config_loader import load_config
-import seaborn as sns
+
+from data import MushroomDatamodule
+
 
 def plot_training_loss(model):
     plt.figure(figsize=(10, 6))
@@ -78,7 +80,13 @@ def plot_tsne(embeddings, targets, class_names):
     tsne_colors = sns.color_palette("hsv", len(class_names))
     for i in range(len(class_names)):
         mask = targets == i
-        plt.scatter(embeddings_2d[mask, 0], embeddings_2d[mask, 1], label=class_names[i], alpha=0.7, color=tsne_colors[i])
+        plt.scatter(
+            embeddings_2d[mask, 0],
+            embeddings_2d[mask, 1],
+            label=class_names[i],
+            alpha=0.7,
+            color=tsne_colors[i],
+        )
     plt.legend()
     plt.title("TSNE Visualization of Embeddings", fontsize=14)
     plt.grid(alpha=0.3)

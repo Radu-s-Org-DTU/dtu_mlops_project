@@ -33,6 +33,7 @@ dev = {file = ['requirements_dev.txt']}
 
 [tool.ruff]
 line-length = 120
+select = ["E", "F", "I", "C"]
 
 [tool.coverage.run]
 omit = ["tests/*", "/tmp/*", "/private/var/*"]

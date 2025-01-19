@@ -1,10 +1,10 @@
+import lightning as L
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader, Dataset
 from datasets import load_dataset
-from transformers import BertTokenizer, BertModel
-import lightning as L
+from torch.utils.data import DataLoader, Dataset
 from torchmetrics import Accuracy
+from transformers import BertModel, BertTokenizer
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -19,8 +19,18 @@ class SentimentDataset(Dataset):
     def __getitem__(self, idx):
         text = self.texts[idx]
         label = float(self.labels[idx])
-        encoding = self.tokenizer(text, return_tensors='pt', max_length=self.max_length, padding='max_length', truncation=True)
-        return {'input_ids': encoding['input_ids'].flatten(), 'attention_mask': encoding['attention_mask'].flatten(), 'label': torch.tensor(label)}
+        encoding = self.tokenizer(
+            text, 
+            return_tensors='pt', 
+            max_length=self.max_length, 
+            padding='max_length', 
+            truncation=True
+        )
+        return {
+            'input_ids': encoding['input_ids'].flatten(), 
+            'attention_mask': encoding['attention_mask'].flatten(), 
+            'label': torch.tensor(label)
+        }
 
 
 class SentimentDataModule(L.LightningDataModule):
