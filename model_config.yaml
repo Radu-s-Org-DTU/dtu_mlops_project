@@ -7,4 +7,4 @@ trainer:
   max_epochs: 1000
 
 model:
-  checkpoint_path: models/mushroom_model.ckpt
+  file_name: mushroom_model
