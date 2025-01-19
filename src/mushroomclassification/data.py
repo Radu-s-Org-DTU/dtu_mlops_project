@@ -1,11 +1,11 @@
 from pathlib import Path
-from torch.utils.data import DataLoader, random_split
+from typing import List, Optional, Tuple
+
 import lightning as L
 import torch
-from torchvision import transforms
-from typing import List, Tuple, Optional
-from torch.utils.data import Dataset
 from PIL import Image
+from torch.utils.data import DataLoader, Dataset, random_split
+from torchvision import transforms
 
 
 class MushroomDataset(Dataset):

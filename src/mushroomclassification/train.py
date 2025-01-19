@@ -1,10 +1,11 @@
-from lightning.pytorch.cli import LightningCLI
 from lightning.pytorch.callbacks import ModelCheckpoint
+from lightning.pytorch.cli import LightningCLI
+from model import MushroomClassifier
 from utils.config_loader import load_config
 
 # from data import
 from data import MushroomDatamodule
-from model import MushroomClassifier
+
 
 def train():
     checkpoint_callback = ModelCheckpoint(

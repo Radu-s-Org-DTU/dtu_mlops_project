@@ -174,3 +174,5 @@ cython_debug/
 
 # PyTorch Lightning logs
 lightning_logs/
+
+models/

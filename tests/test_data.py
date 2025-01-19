@@ -1,7 +1,10 @@
-from torch.utils.data import Dataset
 from pathlib import Path
-from mushroomclassification.data import MushroomDataset
+
 from PIL import Image
+from torch.utils.data import Dataset
+
+from mushroomclassification.data import MushroomDataset
+
 
 def test_dataset_is_instance_of_torch_dataset():
     dataset = MushroomDataset(Path("data/raw_subset"))
@@ -21,7 +24,6 @@ def test_sample_keys_and_values():
     image, label = sample
     assert isinstance(image, Image.Image), f"Image is not a PIL.Image.Image: {type(image)}"
     assert label in range(len(dataset.classes)), f"Invalid label {label}"
-
     
 def test_all_files_have_valid_extensions():
     dataset = MushroomDataset(Path("data/raw_subset"))
@@ -36,5 +38,8 @@ def test_dataset_length_matches_files():
 def test_all_files_belong_to_defined_classes():
     dataset = MushroomDataset(Path("data/raw_subset"))
     for file in dataset.image_files:
-        assert 0 <= file[1] < len(dataset.classes), f"Class label index {file[1]} is out of range for the defined classes"
+        assert 0 <= file[1] < len(dataset.classes), (
+            f"Class label index {file[1]} is out of range for the defined classes"
+        )
+
         
