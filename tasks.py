@@ -1,5 +1,4 @@
 import os
-import yaml
 from invoke import Context, task
 from src.mushroomclassification.utils.config_loader import load_config
 
