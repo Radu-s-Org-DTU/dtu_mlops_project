@@ -8,3 +8,4 @@ pytest==8.3.4
 lightning==2.5.0
 lightning[extra]==2.5.0
 torchvision==0.20.1
+seaborn==0.13.2

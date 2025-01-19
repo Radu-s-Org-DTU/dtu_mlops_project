@@ -1,15 +1,11 @@
 import os
 import yaml
 from invoke import Context, task
+from src.mushroomclassification.utils.config_loader import load_config
 
 WINDOWS = os.name == "nt"
 PROJECT_NAME = "mushroomclassification"
 PYTHON_VERSION = "3.11"
-
-def load_config(config_path="model_config.yaml"):
-    """Utility to load and return the YAML config."""
-    with open(config_path, "r") as f:
-        return yaml.safe_load(f)
 
 # Setup commands
 @task
@@ -39,15 +35,13 @@ def dev_requirements(ctx: Context) -> None:
 def train(ctx, config_path="model_config.yaml"):
     """Train model."""
     config = load_config(config_path)
-    data_conf = config["data"]
-    trainer_conf = config["trainer"]
 
     ctx.run(
         f"python src/{PROJECT_NAME}/train.py fit "
-        f"--data.data_path={data_conf['data_path']} "
-        f"--data.batch_size={data_conf['batch_size']} "
-        f"--data.num_workers={data_conf['num_workers']} "
-        f"--trainer.max_epochs={trainer_conf['max_epochs']}",
+        f"--data.data_path={config['data']['data_path']} "
+        f"--data.batch_size={config['data']['batch_size']} "
+        f"--data.num_workers={config['data']['num_workers']} "
+        f"--trainer.max_epochs={config['trainer']['max_epochs']}",
         echo=True,
         pty=not WINDOWS,
     )
@@ -56,15 +50,26 @@ def train(ctx, config_path="model_config.yaml"):
 def visualize(ctx, config_path="model_config.yaml"):
     """Visualize model predictions."""
     config = load_config(config_path)
-    data_conf = config["data"]
-    model_conf = config["model"]
 
     ctx.run(
         f"python src/{PROJECT_NAME}/visualize.py "
-        f"--checkpoint-path={model_conf['checkpoint_path']} "
-        f"--data-path={data_conf['data_path']} "
-        f"--batch-size={data_conf['batch_size']} "
-        f"--num-workers={data_conf['num_workers']}",
+        f"--data-path={config['data']['data_path']} "
+        f"--batch-size={config['data']['batch_size']} "
+        f"--num-workers={config['data']['num_workers']}",
+        echo=True,
+        pty=not WINDOWS,
+    )
+    
+@task
+def create_subset(ctx, source_dir, target_dir, classes, num_samples=10):
+    """
+    Creates a subset of the dataset using the Typer CLI.
+    """
+    ctx.run(
+        f"python src/mushroomclassification/utils/create_raw_data_subset.py "
+        f'"{source_dir}" "{target_dir}" '
+        f"--classes \"{classes}\" "
+        f"--num-samples {num_samples}",
         echo=True,
         pty=not WINDOWS,
     )

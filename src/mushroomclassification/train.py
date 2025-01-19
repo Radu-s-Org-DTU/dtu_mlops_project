@@ -1,5 +1,6 @@
 from lightning.pytorch.cli import LightningCLI
 from lightning.pytorch.callbacks import ModelCheckpoint
+from utils.config_loader import load_config
 
 # from data import
 from data import MushroomDatamodule
@@ -8,8 +9,7 @@ from model import MushroomClassifier
 def train():
     checkpoint_callback = ModelCheckpoint(
         dirpath="models/",
-        #filename="mushroom_model-{epoch:02d}-{train_loss:.2f}",
-        filename="mushroom_model",
+        filename=load_config()['model']['file_name'],
         save_top_k=1,
         monitor="train_loss",
         mode="min",
