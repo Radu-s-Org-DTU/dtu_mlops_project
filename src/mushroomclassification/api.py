@@ -11,8 +11,7 @@ app = FastAPI()
 @app.on_event("startup")
 async def load_model():
     global model, classes
-    model_path = f"models/{load_config()['model']['file_name']}.ckpt"
-    model = MushroomClassifier.load_from_checkpoint(model_path)
+    model = MushroomClassifier.load_from_checkpoint(f"models/{load_config()['model']['file_name']}.ckpt")
     model.eval()
     dataset = MushroomDataset(data_path='')
     classes = dataset.classes
