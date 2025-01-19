@@ -14,7 +14,6 @@ async def load_model():
     model_path = f"models/{load_config()['model']['file_name']}.ckpt"
     model = MushroomClassifier.load_from_checkpoint(model_path)
     model.eval()
-    
     dataset = MushroomDataset(data_path='')
     classes = dataset.classes
 
@@ -35,7 +34,6 @@ async def predict(file: UploadFile = File(...)):
         with torch.no_grad():
             output = model(input_tensor)
             probabilities = torch.softmax(output, dim=1).squeeze().tolist()
-        
         return {class_name: prob for class_name, prob in zip(classes, probabilities)}
     
     except Exception as e:
