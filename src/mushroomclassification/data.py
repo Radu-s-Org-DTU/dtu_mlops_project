@@ -71,11 +71,17 @@ class MushroomDataset(Dataset):
 class MushroomDatamodule(L.LightningDataModule):
     """Mushroom data module"""
 
-    def __init__(self, data_path: str, batch_size: int, num_workers: int) -> None:
+    def __init__(self, data_path: str, batch_size: int, num_workers: int, percent_of_data: float,
+                 train_pct: float, val_pct: float, test_pct: float, seed_split: int) -> None:
         super().__init__()
         self.data_path = data_path
         self.batch_size = batch_size
         self.num_workers = num_workers
+        self.percent_of_data = percent_of_data
+        self.train_pct = train_pct
+        self.val_pct = val_pct
+        self.test_pct = test_pct
+        self.seed_split = seed_split
 
         # Transformations for each dataset
         self.train_transform = transforms.Compose([
@@ -106,17 +112,25 @@ class MushroomDatamodule(L.LightningDataModule):
         # Create full dataset (no transforms here; transforms applied during splitting)
         data_full = MushroomDataset(self.data_path)
 
-        print(f"Full dataset size: {len(data_full)}")
+        # Determine the subset size based on the specified percentage
+        full_size = len(data_full)
+        subset_size = int(self.percent_of_data * full_size)
+        subset_data = data_full.image_files[:subset_size]  # Slice the subset based on percentage
 
-        # Split the data into train, validation, test, and predict sets
-        train_size = int(0.8 * len(data_full))  # 80% for training
-        val_size = int(0.1 * len(data_full))    # 10% for validation
-        test_size = len(data_full) - train_size - val_size  # Remainder for test
+        print(f"Training dataset size: {subset_size}")
+
+        # Create a new MushroomDataset with the subset
+        data_full_subset = MushroomDataset(self.data_path, subset=subset_data)
+
+        # Split the data into train, validation, and test sets
+        train_size = int(self.train_pct * len(data_full_subset))  # Size for training
+        val_size = int(self.val_pct * len(data_full_subset))      # Size for validation
+        test_size = len(data_full_subset) - train_size - val_size  # Remainder for test
 
         # Use a fixed seed for reproducible splits
         train_data, val_data, test_data = random_split(
-            data_full, [train_size, val_size, test_size],
-            generator=torch.Generator().manual_seed(42)
+            data_full_subset, [train_size, val_size, test_size],
+            generator=torch.Generator().manual_seed(self.seed_split)
         )
 
         # Apply transforms to each split

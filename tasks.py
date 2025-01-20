@@ -40,6 +40,10 @@ def train(ctx, config_path="model_config.yaml"):
     ctx.run(f"""python src/{PROJECT_NAME}/train.py fit \
                 --data.data_path={config['data']['data_path']} \
                 --data.batch_size={config['data']['batch_size']} \
+                --data.percent_of_data {config['data']['percent_of_data']} \
+                --data.train_pct {config['data']['train_pct']}  \
+                --data.val_pct {config['data']['val_pct']}  \
+                --data.test_pct {config['data']['test_pct']}  \
                 --data.num_workers={config['data']['num_workers']} \
                 --trainer.max_epochs={config['trainer']['max_epochs']} \
                 --trainer.precision "bf16-true" \
@@ -76,6 +80,15 @@ def create_subset(ctx, source_dir, target_dir, classes, num_samples=10):
         pty=not WINDOWS,
     )
     
+@task
+def train(ctx: Context) -> None:
+    """Train model."""
+    # Run the training command
+    command = f"python src/{PROJECT_NAME}/train.py fit --help"
+
+    # Execute the command with the specified options
+    ctx.run(command, echo=True, pty=not WINDOWS)  # `pty=True` enables terminal emulation for the command output
+
 @task
 def test(ctx: Context) -> None:
     """Run tests."""
