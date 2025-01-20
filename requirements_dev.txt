@@ -22,4 +22,4 @@ dvc[gdrive]==3.58.0
 
 # cli tools
 typer==0.15.1
-jsonargparse[signatures]==4.35.0
+jsonargparse[signatures]==4.36.0
