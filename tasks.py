@@ -36,15 +36,31 @@ def preprocess_data(ctx: Context) -> None:
     ctx.run(f"python src/{PROJECT_NAME}/data.py data/raw data/processed", echo=True, pty=not WINDOWS)
 
 @task
-def train(ctx: Context, data_folder: str, batch_size: int) -> None:
+def train(ctx: Context, data_folder: str, batch_size: int, percent_of_data: float, epochs: int,
+          train_pct: float = 0.8, val_pct: float = 0.1, test_pct: float = 0.1) -> None:
     """Train model."""
     # Run the training command
     command = f"""python src/{PROJECT_NAME}/train.py fit \
                 --data.data_path 'data/{data_folder}' \
                 --data.batch_size {batch_size} \
+                --data.percent_of_data {percent_of_data} \
+                --data.train_pct {train_pct}  \
+                --data.val_pct {val_pct}  \
+                --data.test_pct {test_pct}  \
+                --trainer.min_epochs {epochs} \
+                --trainer.max_epochs {epochs} \
                 --trainer.precision "bf16-true" \
                 --trainer.accelerator "gpu" \
                 --trainer.devices 1"""
+
+    # Execute the command with the specified options
+    ctx.run(command, echo=True, pty=not WINDOWS)  # `pty=True` enables terminal emulation for the command output
+
+@task
+def train(ctx: Context) -> None:
+    """Train model."""
+    # Run the training command
+    command = f"python src/{PROJECT_NAME}/train.py fit --help"
 
     # Execute the command with the specified options
     ctx.run(command, echo=True, pty=not WINDOWS)  # `pty=True` enables terminal emulation for the command output
