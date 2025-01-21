@@ -5,7 +5,7 @@ uvicorn==0.34.0
 numpy==2.2.1
 coverage==7.6.9
 pytest==8.3.4
-lightning==2.5.0
+lightning==2.5.0.post0
 lightning[extra]==2.5.0
 torchvision==0.20.1
 seaborn==0.13.2
