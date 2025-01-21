@@ -18,4 +18,4 @@ RUN pip install . --no-deps --no-cache-dir --verbose
 
 EXPOSE $PORT
 
-ENTRYPOINT ["uvicorn", "src.mushroomclassification.api:app", "--host", "0.0.0.0", "--port", "$PORT"]
+ENTRYPOINT ["reflex", "run", "--port", "$PORT"]

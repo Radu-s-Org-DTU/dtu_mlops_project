@@ -1,22 +1,39 @@
+from contextlib import asynccontextmanager
+
 import torch
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from google.cloud import storage
 from PIL import Image
 from torchvision import transforms
 
 from src.mushroomclassification.data import MushroomDataset
 
 from .model import MushroomClassifier
-from .utils.config_loader import load_config
 
-app = FastAPI()
 
-@app.on_event("startup")
-async def load_model():
+def download_model(bucket_name, source_blob_name, destination_file_name):
+    client = storage.Client()
+    bucket = client.bucket(bucket_name)
+    blob = bucket.blob(source_blob_name)
+    blob.download_to_filename(destination_file_name)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     global model, classes
-    model = MushroomClassifier.load_from_checkpoint(f"models/{load_config()['model']['file_name']}.ckpt")
+    
+    download_model(
+        "02476-api-model",
+        "models/api-model/mushroom_model.ckpt",
+        "models/api-model/mushroom_model.ckpt"
+    )
+    
+    model = MushroomClassifier.load_from_checkpoint("models/api-model/mushroom_model.ckpt")
     model.eval()
     dataset = MushroomDataset(data_path='')
     classes = dataset.classes
+    yield
+    
+app = FastAPI(lifespan=lifespan)
 
 def preprocess_image(image: Image.Image):
     transform = transforms.Compose([
