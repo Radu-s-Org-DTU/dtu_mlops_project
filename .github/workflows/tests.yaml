@@ -81,24 +81,49 @@ jobs:
           path: artifacts/
 
       - name: Comment test results on PR
+        if: always()
         uses: actions/github-script@v6
         with:
           script: |
             const fs = require('fs');
-            const testResults = fs.readFileSync('artifacts/test-results.xml', 'utf-8');
-            const coverageReport = fs.readFileSync('artifacts/coverage.xml', 'utf-8');
+            const path = require('path');
+
+            const testResultsPath = path.resolve('artifacts/test-results.xml');
+            const coverageReportPath = path.resolve('artifacts/coverage.xml');
+
+            let testResults = 'No test results found.';
+            let coverageReport = 'No coverage report found.';
+
+            if (fs.existsSync(testResultsPath)) {
+              testResults = fs.readFileSync(testResultsPath, 'utf-8');
+            }
+
+            if (fs.existsSync(coverageReportPath)) {
+              coverageReport = fs.readFileSync(coverageReportPath, 'utf-8');
+            }
 
             const commentBody = `
             ### Test Results and Coverage
+
             **Test Results**:
+            <details>
+            <summary>View Test Results</summary>
+
             \`\`\`xml
             ${testResults}
             \`\`\`
 
+            </details>
+
             **Coverage Report**:
+            <details>
+            <summary>View Coverage Report</summary>
+
             \`\`\`xml
             ${coverageReport}
             \`\`\`
+
+            </details>
             `;
 
             github.rest.issues.createComment({
