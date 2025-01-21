@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+permissions:
+  issues: write
+  pull-requests: write
+
 jobs:
   test:
     runs-on: ${{ matrix.operating-system }}
@@ -43,11 +47,66 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_KEY_JSON }}
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          version: "latest"
+          project_id: "sage-dragon-448009-f7"
+
+      - name: Run Ruff
+        run: |
+          ruff check .
+
       - name: Run tests & coverage
         run: |
           coverage run -m pytest tests/
           coverage report -m
 
-      - name: Run Ruff
+      - name: Save Test Results and Coverage
         run: |
-          ruff check .
+          mkdir -p artifacts
+          coverage xml -o artifacts/coverage.xml
+          pytest --junitxml=artifacts/test-results.xml
+        continue-on-error: true
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results-and-coverage
+          path: artifacts/
+
+      - name: Comment test summary on PR
+        if: matrix.operating-system == 'ubuntu-latest' && matrix.python-version == '3.11'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+
+            const testResultsXml = fs.readFileSync('artifacts/test-results.xml', 'utf-8');
+            const passedMatch = testResultsXml.match(/tests="(\d+)"/);
+            const failedMatch = testResultsXml.match(/failures="(\d+)"/);
+            const passed = passedMatch ? parseInt(passedMatch[1], 10) : 0;
+            const failed = failedMatch ? parseInt(failedMatch[1], 10) : 0;
+
+            const coverageXml = fs.readFileSync('artifacts/coverage.xml', 'utf-8');
+            const coverageMatch = coverageXml.match(/line-rate="([\d.]+)"/);
+            const coverage = coverageMatch ? (parseFloat(coverageMatch[1]) * 100).toFixed(2) : '0.00';
+
+            const commentBody = `
+            ### Test Summary
+            - **Passed Tests**: ${passed}
+            - **Failed Tests**: ${failed}
+            - **Coverage**: ${coverage}%
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody,
+            });

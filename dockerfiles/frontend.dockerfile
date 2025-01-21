@@ -17,4 +17,4 @@ RUN pip install . --no-deps --no-cache-dir --verbose
 
 EXPOSE 8080
 
-ENTRYPOINT ["uvicorn", "src.mushroomclassification.api:app", "--host", "0.0.0.0", "--port", "8080"]
+ENTRYPOINT ["streamlit", "run", "src/mushroomclassification/frontend.py", "--server.port", "8080"]

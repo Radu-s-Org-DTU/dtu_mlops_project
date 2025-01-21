@@ -1,0 +1,6 @@
+# Ignore all files in the models directory
+*
+
+# Allow DVC metadata files
+!.gitignore
+!*.dvc
