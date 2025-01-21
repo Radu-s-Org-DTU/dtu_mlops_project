@@ -60,7 +60,7 @@ def visualize(ctx, config_path="model_config.yaml"):
         echo=True,
         pty=not WINDOWS,
     )
-    
+
 @task
 def create_subset(ctx, source_dir, target_dir, classes, num_samples=10):
     """
@@ -74,7 +74,7 @@ def create_subset(ctx, source_dir, target_dir, classes, num_samples=10):
         echo=True,
         pty=not WINDOWS,
     )
-    
+
 @task
 def test(ctx: Context) -> None:
     """Run tests."""

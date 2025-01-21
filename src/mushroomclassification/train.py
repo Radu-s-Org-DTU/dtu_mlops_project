@@ -15,7 +15,7 @@ def train():
         monitor="train_loss",
         mode="min",
     )
-    
+
     LightningCLI(
         MushroomClassifier,
         MushroomDatamodule,

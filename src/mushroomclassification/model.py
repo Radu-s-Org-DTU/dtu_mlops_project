@@ -52,12 +52,12 @@ class MushroomClassifier(L.LightningModule):
         loss = self.criterion(logits, y)
         self.log('test_loss', loss, prog_bar=True)
         return loss
-    
+
     def on_save_checkpoint(self, checkpoint: dict) -> dict:
         """Save train_losses in the checkpoint."""
         checkpoint["train_losses"] = self.train_losses
         return checkpoint
-    
+
     def on_load_checkpoint(self, checkpoint: dict) -> None:
         """Load train_losses from checkpoint."""
         if "train_losses" in checkpoint:
