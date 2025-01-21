@@ -1,3 +1,14 @@
+import os
+
 import reflex as rx
 
-config = rx.Config(app_name="frontend", frontend_port=8080)
+BACKEND_URL = os.getenv("API_URL", "http://127.0.0.1:8000/") 
+FRONTEND_URL = os.getenv("API_URL", "http://127.0.0.1:8000/") 
+
+config = rx.Config(
+    app_name="frontend", 
+    backend_port=8000, 
+    frontend_port=8080, 
+    api_url = BACKEND_URL,
+    deploy_url = FRONTEND_URL,
+)

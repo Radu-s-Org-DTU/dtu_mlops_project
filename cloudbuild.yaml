@@ -54,5 +54,25 @@ steps:
         "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-train-build"
       ]
 
+  - name: "gcr.io/cloud-builders/docker"
+    id: "Build WebSocket container image"
+    args:
+      [
+        "build",
+        ".",
+        "-t",
+        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-websocket-build",
+        "-f",
+        "dockerfiles/websocket.dockerfile"
+      ]
+
+  - name: "gcr.io/cloud-builders/docker"
+    id: "Push WebSocket container image"
+    args:
+      [
+        "push",
+        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-websocket-build"
+      ]
+
 options:
   logging: CLOUD_LOGGING_ONLY
