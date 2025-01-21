@@ -8,7 +8,14 @@ client = TestClient(app)
 
 def test_predict_with_real_image():
     with TestClient(app) as client:
-        file_path = os.path.join("data", "raw_subset", "Classes", "edible", "Agaricus_bisporus", "Agaricus_bisporus29.png")
+        file_path = os.path.join(
+            "data", 
+            "raw_subset", 
+            "Classes", 
+            "edible", 
+            "Agaricus_bisporus", 
+            "Agaricus_bisporus29.png"
+        )
         with open(file_path, "rb") as img_file:
             response = client.post("/predict/", files={"file": ("image.jpg", img_file, "image/jpeg")})
         assert response.status_code == 200
