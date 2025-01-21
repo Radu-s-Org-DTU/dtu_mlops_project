@@ -81,6 +81,7 @@ jobs:
           path: artifacts/
 
       - name: Comment test summary on PR
+        if: matrix.operating-system == 'ubuntu-latest' && matrix.python-version == '3.11'
         uses: actions/github-script@v6
         with:
           script: |
@@ -109,4 +110,3 @@ jobs:
               repo: context.repo.repo,
               body: commentBody,
             });
-          if: ${{ matrix.operating-system == 'ubuntu-latest' && matrix.python-version == '3.11' }}
