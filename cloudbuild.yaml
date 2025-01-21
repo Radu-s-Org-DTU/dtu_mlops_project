@@ -6,14 +6,17 @@ steps:
         "build",
         ".",
         "-t",
-        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476build",
+        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-api-build",
         "-f",
         "Dockerfile"
       ]
   - name: "gcr.io/cloud-builders/docker"
     id: "Push container image"
     args:
-      ["push", "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476build"]
+      [
+        "push",
+        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-api-build"
+      ]
 
 options:
   logging: CLOUD_LOGGING_ONLY
