@@ -43,6 +43,11 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
+      - name: Set up Google Application Credentials
+        run: |
+          echo "${{ secrets.GCP_KEY_JSON }}" > key.json
+          export GOOGLE_APPLICATION_CREDENTIALS=$PWD/key.json
+
       - name: Run tests & coverage
         run: |
           coverage run -m pytest tests/
