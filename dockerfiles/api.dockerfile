@@ -16,6 +16,6 @@ RUN pip install -r requirements.txt --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
 
 
-EXPOSE $PORT
+EXPOSE 8080
 
-ENTRYPOINT ["uvicorn", "src.mushroomclassification.api:app", "--host", "0.0.0.0", "--port", "$PORT"]
+ENTRYPOINT ["uvicorn", "src.mushroomclassification.api:app", "--host", "0.0.0.0", "--port", "8080"]
