@@ -48,6 +48,12 @@ jobs:
           echo "${{ secrets.GCP_KEY_JSON }}" > key.json
           export GOOGLE_APPLICATION_CREDENTIALS=$PWD/key.json
 
+      - name: Authenticate and Verify
+        run: |
+          gcloud auth activate-service-account --key-file=key.json
+          gcloud auth list
+          gcloud storage buckets list
+
       - name: Run tests & coverage
         run: |
           coverage run -m pytest tests/
