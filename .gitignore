@@ -1,3 +1,6 @@
+*.db
+.web
+assets/external/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -171,8 +174,8 @@ cython_debug/
 .pypirc
 
 /credentials
+key.json
 
 # PyTorch Lightning logs
 lightning_logs/
 
-models/

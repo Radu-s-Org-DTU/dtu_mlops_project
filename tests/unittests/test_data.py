@@ -39,7 +39,7 @@ def test_all_files_belong_to_defined_classes():
     dataset = MushroomDataset(Path("data/raw_subset"))
     for file in dataset.image_files:
         assert 0 <= file[1] < len(dataset.classes), (
-            f"Class label index {file[1]} is out of range for the defined classes"
-        )
+                f"Class label index {file[1]} is out of range for the defined classes"
+            )
 
         
