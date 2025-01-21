@@ -35,6 +35,24 @@ steps:
         "push",
         "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-frontend-build"
       ]
+  - name: "gcr.io/cloud-builders/docker"
+    id: "Build Train container image"
+    args:
+      [
+        "build",
+        ".",
+        "-t",
+        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-train-build",
+        "-f",
+        "dockerfiles/train.dockerfile"
+      ]
+  - name: "gcr.io/cloud-builders/docker"
+    id: "Push Train container image"
+    args:
+      [
+        "push",
+        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-train-build"
+      ]
 
 options:
   logging: CLOUD_LOGGING_ONLY
