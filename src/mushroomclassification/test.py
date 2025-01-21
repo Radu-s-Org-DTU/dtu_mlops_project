@@ -20,15 +20,15 @@ class SentimentDataset(Dataset):
         text = self.texts[idx]
         label = float(self.labels[idx])
         encoding = self.tokenizer(
-            text, 
-            return_tensors='pt', 
-            max_length=self.max_length, 
-            padding='max_length', 
+            text,
+            return_tensors='pt',
+            max_length=self.max_length,
+            padding='max_length',
             truncation=True
         )
         return {
-            'input_ids': encoding['input_ids'].flatten(), 
-            'attention_mask': encoding['attention_mask'].flatten(), 
+            'input_ids': encoding['input_ids'].flatten(),
+            'attention_mask': encoding['attention_mask'].flatten(),
             'label': torch.tensor(label)
         }
 
