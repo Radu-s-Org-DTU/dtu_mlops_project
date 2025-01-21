@@ -20,4 +20,4 @@ RUN pip install . --no-deps --no-cache-dir --verbose
 
 EXPOSE 8080
 
-ENTRYPOINT ["reflex", "run", "--env", "prod", "--frontend-only"]
+ENTRYPOINT ["streamlit", "run", "src/mushroomclassification/frontend.py", "--server.port", "8080"]
