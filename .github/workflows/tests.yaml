@@ -43,15 +43,16 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
-      - name: Install Google Cloud SDK
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_KEY_JSON }}
+
+      - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
         with:
           version: "latest"
           project_id: "sage-dragon-448009-f7"
-          service_account_key: ${{ secrets.GCP_KEY_JSON }}
-
-      - name: Authenticate with Google Cloud
-        run: gcloud auth activate-service-account --key-file=<(echo "${{ secrets.GCP_KEY_JSON }}")
 
       - name: Run tests & coverage
         run: |
