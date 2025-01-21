@@ -54,11 +54,24 @@ jobs:
           version: "latest"
           project_id: "sage-dragon-448009-f7"
 
+      - name: Run Ruff
+        run: |
+          ruff check .
+
       - name: Run tests & coverage
         run: |
           coverage run -m pytest tests/
           coverage report -m
 
-      - name: Run Ruff
+      - name: Save Test Results and Coverage
         run: |
-          ruff check .
+          mkdir -p artifacts
+          coverage xml -o artifacts/coverage.xml
+          pytest --junitxml=artifacts/test-results.xml
+        continue-on-error: true
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results-and-coverage
+          path: artifacts/
