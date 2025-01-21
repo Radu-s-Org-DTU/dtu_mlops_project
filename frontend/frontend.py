@@ -1,10 +1,10 @@
 import base64
 import io
+import os
 
 import reflex as rx
 import requests
 from PIL import Image
-import os
 
 API_URL = os.getenv("API_URL", "http://127.0.0.1:8000/predict/") 
 
