@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 
 import torch
@@ -12,6 +13,7 @@ from .model import MushroomClassifier
 
 
 def download_model(bucket_name, source_blob_name, destination_file_name):
+    os.makedirs(os.path.dirname(destination_file_name), exist_ok=True)
     client = storage.Client()
     bucket = client.bucket(bucket_name)
     blob = bucket.blob(source_blob_name)
