@@ -20,4 +20,4 @@ RUN pip install . --no-deps --no-cache-dir --verbose
 
 EXPOSE 8080
 
-ENTRYPOINT ["reflex", "run", "--port", "8080"]
+ENTRYPOINT ["reflex", "run"]
