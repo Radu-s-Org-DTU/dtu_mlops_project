@@ -1,23 +1,5 @@
 steps:
   - name: "gcr.io/cloud-builders/docker"
-    id: "Build API container image"
-    args:
-      [
-        "build",
-        ".",
-        "-t",
-        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-api-build",
-        "-f",
-        "dockerfiles/api.dockerfile"
-      ]
-  - name: "gcr.io/cloud-builders/docker"
-    id: "Push API container image"
-    args:
-      [
-        "push",
-        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-api-build"
-      ]
-  - name: "gcr.io/cloud-builders/docker"
     id: "Build Frontend container image"
     args:
       [
@@ -34,24 +16,6 @@ steps:
       [
         "push",
         "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-frontend-build"
-      ]
-  - name: "gcr.io/cloud-builders/docker"
-    id: "Build Train container image"
-    args:
-      [
-        "build",
-        ".",
-        "-t",
-        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-train-build",
-        "-f",
-        "dockerfiles/train.dockerfile"
-      ]
-  - name: "gcr.io/cloud-builders/docker"
-    id: "Push Train container image"
-    args:
-      [
-        "push",
-        "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-train-build"
       ]
 
   - name: "gcr.io/cloud-builders/docker"
