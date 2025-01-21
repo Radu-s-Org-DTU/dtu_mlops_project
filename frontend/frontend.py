@@ -4,7 +4,9 @@ import io
 import reflex as rx
 import requests
 from PIL import Image
+import os
 
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000/predict/") 
 
 class State(rx.State):
     image_url = ""
@@ -33,7 +35,7 @@ class State(rx.State):
             api_buffer.seek(0)
 
             response = requests.post(
-                "http://127.0.0.1:8000/predict/",
+                API_URL,
                 files={"file": ("image.jpg", api_buffer, "image/jpeg")},
             )
 

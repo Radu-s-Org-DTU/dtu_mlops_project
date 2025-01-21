@@ -18,6 +18,6 @@ RUN pip install -r requirements.txt --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
 
 
-EXPOSE $PORT
+EXPOSE 8080
 
-ENTRYPOINT ["reflex", "run", "--port", "$PORT"]
+ENTRYPOINT ["reflex", "run", "--port", "8080"]
