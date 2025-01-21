@@ -10,9 +10,6 @@ COPY requirements.txt requirements.txt
 COPY requirements_dev.txt requirements_dev.txt
 COPY README.md README.md
 COPY pyproject.toml pyproject.toml
-COPY rxconfig.py rxconfig.py
-COPY assets assets/
-COPY frontend frontend/
 
 RUN pip install -r requirements.txt --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
