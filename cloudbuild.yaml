@@ -8,7 +8,7 @@ steps:
         "-t",
         "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-api-build",
         "-f",
-        "Dockerfile"
+        "dockerfiles/api.dockerfile"
       ]
   - name: "gcr.io/cloud-builders/docker"
     id: "Push container image"
