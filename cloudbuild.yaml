@@ -1,3 +1,4 @@
+steps:
   - name: "gcr.io/cloud-builders/docker"
     id: "Build Frontend container image"
     args:
@@ -16,6 +17,7 @@
         "push",
         "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-frontend-build"
       ]
+
   - name: "gcr.io/cloud-builders/docker"
     id: "Build WebSocket container image"
     args:
