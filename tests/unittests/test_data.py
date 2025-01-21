@@ -1,8 +1,9 @@
 from pathlib import Path
 
-from mushroomclassification.data import MushroomDataset
 from PIL import Image
 from torch.utils.data import Dataset
+
+from mushroomclassification.data import MushroomDataset
 
 
 def test_dataset_is_instance_of_torch_dataset():
