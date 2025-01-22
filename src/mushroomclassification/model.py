@@ -7,8 +7,9 @@ from torchmetrics import Accuracy
 class MushroomClassifier(L.LightningModule):
     """My awesome model."""
 
-    def __init__(self) -> None:
+    def __init__(self, learning_rate) -> None:
         super().__init__()
+        self.learning_rate = learning_rate
         self.train_losses = []
         self.backbone = nn.Sequential(
             nn.Conv2d(3, 32, 3, 1),
@@ -37,7 +38,7 @@ class MushroomClassifier(L.LightningModule):
 
     def configure_optimizers(self) -> torch.optim.Optimizer:
         """Configure optimizers."""
-        return optim.Adam(self.parameters(), lr=1e-2)
+        return optim.AdamW(self.parameters(), lr=self.learning_rate)
 
     def training_step(self, batch, batch_idx):
         data, target = batch
