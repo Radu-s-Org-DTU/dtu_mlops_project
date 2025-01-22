@@ -80,13 +80,13 @@ class MushroomDatamodule(L.LightningDataModule):
         # Transformations for each dataset
         self.train_transform = transforms.Compose([
             transforms.Resize((224, 224)),  # Resize to 224x224
+            transforms.RandomRotation(30),  # Rotate images by up to 30 degrees
             transforms.ToTensor(),          # Convert to a PyTorch tensor
             transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))  # Normalize to [-1, 1] range
         ])
 
         self.val_transform = transforms.Compose([
             transforms.Resize((224, 224)),  # Resize to 224x224
-            transforms.RandomRotation(30),  # Rotate images by up to 30 degrees
             transforms.ToTensor(),
             transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
         ])
