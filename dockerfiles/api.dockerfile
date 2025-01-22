@@ -5,13 +5,17 @@ RUN apt update && \
     apt install --no-install-recommends -y build-essential gcc unzip curl && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
-COPY src src/
+
 COPY requirements.txt requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt --verbose
+
 COPY requirements_dev.txt requirements_dev.txt
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements_dev.txt --verbose
+
+COPY src src/
 COPY README.md README.md
 COPY pyproject.toml pyproject.toml
 
-RUN pip install -r requirements.txt --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
 
 
