@@ -2,9 +2,19 @@ data:
   data_path: data/raw
   batch_size: 32
   num_workers: 16
+  # Percentage of the full dataset to use, which is then further
+  # split into train, test, and validation sets
+  percent_of_data: 1
+  # The following 3 values must sum to 1
+  train_pct: 0.8
+  test_pct: 0
+  val_pct: 0.2
 
 trainer:
-  max_epochs: 1000
+  max_epochs: 20
 
 model:
   file_name: mushroom_model
+  # Random seed that applies to all RNGs
+  # Note! Additional setup may be needed in the code to ensure reproducibility
+  seed: 42

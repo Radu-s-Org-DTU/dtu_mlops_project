@@ -1,6 +1,7 @@
 import lightning as L
 import torch
 from torch import nn, optim
+from torchmetrics import Accuracy
 
 
 class MushroomClassifier(L.LightningModule):
@@ -27,6 +28,7 @@ class MushroomClassifier(L.LightningModule):
         )
 
         self.criterion = nn.CrossEntropyLoss()
+        self.accuracy = Accuracy(task="multiclass", num_classes=4)  # For logging accuracy
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Forward pass."""
@@ -37,42 +39,46 @@ class MushroomClassifier(L.LightningModule):
         """Configure optimizers."""
         return optim.Adam(self.parameters(), lr=1e-2)
 
-    def training_step(self, batch, batch_idx) -> torch.Tensor:
-        """Training step."""
+    def training_step(self, batch, batch_idx):
         data, target = batch
         preds = self(data)
         loss = self.criterion(preds, target)
-        self.log("train_loss", loss, on_epoch=True, prog_bar=True)
-        self.train_losses.append(loss.item())
+        acc = (target == preds.argmax(dim=-1)).float().mean()
+        # Log training loss
+        self.log("train_loss", loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
+        self.log("train_acc", acc, on_step=True, on_epoch=True, prog_bar=True, logger=True)
+
         return loss
+
+    def validation_step(self, batch, batch_idx):
+        """Validation step."""
+
+        data, target = batch
+        preds = self(data)
+        loss = self.criterion(preds, target)
+        print(f"Step {batch_idx}, Loss: {loss.item()}")
+        acc = (target == preds.argmax(dim=-1)).float().mean()
+        self.log('val_loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
+        self.log('val_acc', acc, on_step=True, on_epoch=True, prog_bar=True, logger=True)
 
     def test_step(self, batch, batch_idx):
         x, y = batch
         logits = self(x)
         loss = self.criterion(logits, y)
-        self.log('test_loss', loss, prog_bar=True)
+        self.log("test_loss", loss, prog_bar=True)
         return loss
-    
+
     def on_save_checkpoint(self, checkpoint: dict) -> dict:
         """Save train_losses in the checkpoint."""
         checkpoint["train_losses"] = self.train_losses
         return checkpoint
-    
+
     def on_load_checkpoint(self, checkpoint: dict) -> None:
         """Load train_losses from checkpoint."""
         if "train_losses" in checkpoint:
             self.train_losses = checkpoint["train_losses"]
         else:
             self.train_losses = []
-
-    # def validation_step(self, val_batch):
-    #     x = val_batch['input_ids']
-    #     y = val_batch['label']
-    #     outputs = self(x)
-    #     accuracy = Accuracy(task='binary').to(torch.device('cuda'))
-    #     acc = accuracy(outputs, y)
-    #     self.log('accuracy', acc, prog_bar=True, on_step=False, on_epoch=True)
-    #     return
 
 
 if __name__ == "__main__":

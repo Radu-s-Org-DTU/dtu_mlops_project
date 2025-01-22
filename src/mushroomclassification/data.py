@@ -28,6 +28,8 @@ class MushroomDataset(Dataset):
         if subset is not None:
             self.image_files = [self.image_files[i] for i in subset]
 
+        # print(self.image_files)
+
     def __len__(self):
         return len(self.image_files)
 
@@ -42,13 +44,19 @@ class MushroomDataset(Dataset):
             Tuple: A transformed image and its corresponding label as an integer.
         """
         img_path, label = self.image_files[idx]
-        image = Image.open(img_path).convert("RGB")
+        try:
+            image = Image.open(img_path).convert("RGB")
+        except (OSError, IOError) as e:
+            print(f"Warning: Skipping corrupted image file: {img_path}")
+            # Return a placeholder image (black image) of the same size for consistency
+            image = Image.new("RGB", (224, 224))  # You can choose the size based on your transforms
 
         # Apply transformation if specified
         if self.transform:
             image = self.transform(image)
 
         return image, label
+
 
     def _prepare_image_list(self) -> List[Tuple[Path, int]]:
         """
@@ -61,18 +69,17 @@ class MushroomDataset(Dataset):
         for cls_idx, cls_name in enumerate(self.classes):
             class_path = self.data_path / "Classes" / cls_name
             if class_path.exists() and class_path.is_dir():
-                image_files.extend(
-                    (file_path, cls_idx)
-                    for file_path in class_path.glob("**/*")
-                    if file_path.suffix.lower() in {".png", ".jpg", ".jpeg"}
-                )
+                for file_path in class_path.glob("**/*"):
+                    if file_path.suffix.lower() in {".png", ".jpg", ".jpeg"}:
+                        image_files.append((file_path, cls_idx))  # Use append instead of extend
         return image_files
+
 
 class MushroomDatamodule(L.LightningDataModule):
     """Mushroom data module"""
 
     def __init__(self, data_path: str, batch_size: int, num_workers: int, percent_of_data: float,
-                 train_pct: float, val_pct: float, test_pct: float, seed_split: int) -> None:
+                 train_pct: float, val_pct: float, test_pct: float) -> None:
         super().__init__()
         self.data_path = data_path
         self.batch_size = batch_size
@@ -81,18 +88,17 @@ class MushroomDatamodule(L.LightningDataModule):
         self.train_pct = train_pct
         self.val_pct = val_pct
         self.test_pct = test_pct
-        self.seed_split = seed_split
 
         # Transformations for each dataset
         self.train_transform = transforms.Compose([
             transforms.Resize((224, 224)),  # Resize to 224x224
+            transforms.RandomRotation(30),  # Rotate images by up to 30 degrees
             transforms.ToTensor(),          # Convert to a PyTorch tensor
             transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))  # Normalize to [-1, 1] range
         ])
 
         self.val_transform = transforms.Compose([
             transforms.Resize((224, 224)),  # Resize to 224x224
-            transforms.RandomRotation(30),  # Rotate images by up to 30 degrees
             transforms.ToTensor(),
             transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
         ])
@@ -115,12 +121,12 @@ class MushroomDatamodule(L.LightningDataModule):
         # Determine the subset size based on the specified percentage
         full_size = len(data_full)
         subset_size = int(self.percent_of_data * full_size)
-        subset_data = data_full.image_files[:subset_size]  # Slice the subset based on percentage
+        subset_indices = list(range(subset_size))  # Generate a list of indices
 
         print(f"Training dataset size: {subset_size}")
 
         # Create a new MushroomDataset with the subset
-        data_full_subset = MushroomDataset(self.data_path, subset=subset_data)
+        data_full_subset = MushroomDataset(self.data_path, subset=subset_indices)
 
         # Split the data into train, validation, and test sets
         train_size = int(self.train_pct * len(data_full_subset))  # Size for training
@@ -130,16 +136,18 @@ class MushroomDatamodule(L.LightningDataModule):
         # Use a fixed seed for reproducible splits
         train_data, val_data, test_data = random_split(
             data_full_subset, [train_size, val_size, test_size],
-            generator=torch.Generator().manual_seed(self.seed_split)
+            generator=torch.Generator()
         )
 
         # Apply transforms to each split
         self.data_train = MushroomDataset(
             self.data_path, transform=self.train_transform, subset=train_data.indices
         )
+
         self.data_val = MushroomDataset(
             self.data_path, transform=self.val_transform, subset=val_data.indices
         )
+
         self.data_test = MushroomDataset(
             self.data_path, transform=self.test_transform, subset=test_data.indices
         )
@@ -154,6 +162,7 @@ class MushroomDatamodule(L.LightningDataModule):
             shuffle=True,
             num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
+            persistent_workers=True,
         )
 
     def val_dataloader(self) -> DataLoader:
@@ -162,6 +171,7 @@ class MushroomDatamodule(L.LightningDataModule):
             batch_size=self.batch_size,
             num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
+            persistent_workers=True,
         )
 
     def test_dataloader(self) -> DataLoader:
@@ -170,6 +180,7 @@ class MushroomDatamodule(L.LightningDataModule):
             batch_size=self.batch_size,
             num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
+            persistent_workers=True,
         )
 
     def predict_dataloader(self) -> DataLoader:
@@ -178,6 +189,7 @@ class MushroomDatamodule(L.LightningDataModule):
             batch_size=self.batch_size,
             num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
+            persistent_workers=True,
         )
 
     def teardown(self, stage: str):
