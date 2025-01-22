@@ -17,3 +17,6 @@ streamlit==1.41.1
 requests==2.32.3
 pillow==11.1.0
 httpx==0.24.1
+loguru==0.7.3
+python-dotenv==1.0.1
+wandb==5.0.2
