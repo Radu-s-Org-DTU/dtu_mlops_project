@@ -39,10 +39,12 @@ def train(ctx, config_path="configs/model_config.yaml"):
 
     ctx.run(
         f"python src/{PROJECT_NAME}/train.py fit "
+        f"--seed_everything={config['seed']} "
         f"--data.data_path={config['data']['data_path']} "
         f"--data.batch_size={config['data']['batch_size']} "
         f"--data.num_workers={config['data']['num_workers']} "
-        f"--trainer.max_epochs={config['trainer']['max_epochs']}",
+        f"--trainer.max_epochs={config['trainer']['max_epochs']} "
+        f"--model.learning_rate={config['trainer']['learning_rate']} ",
         echo=True,
         pty=not WINDOWS,
     )
@@ -60,7 +62,7 @@ def visualize(ctx, config_path="configs/model_config.yaml"):
         echo=True,
         pty=not WINDOWS,
     )
-    
+
 @task
 def create_subset(ctx, source_dir, target_dir, classes, num_samples=10):
     """
@@ -74,7 +76,7 @@ def create_subset(ctx, source_dir, target_dir, classes, num_samples=10):
         echo=True,
         pty=not WINDOWS,
     )
-    
+
 @task
 def test(ctx: Context) -> None:
     """Run tests."""
