@@ -33,7 +33,7 @@ def dev_requirements(ctx: Context) -> None:
 
 # Project commands
 @task
-def train(ctx, config_path="model_config.yaml"):
+def train(ctx, config_path="configs/model_config.yaml"):
     """Train model."""
     config = load_config(config_path)
 
@@ -48,7 +48,7 @@ def train(ctx, config_path="model_config.yaml"):
     )
 
 @task
-def visualize(ctx, config_path="model_config.yaml"):
+def visualize(ctx, config_path="configs/model_config.yaml"):
     """Visualize model predictions."""
     config = load_config(config_path)
 

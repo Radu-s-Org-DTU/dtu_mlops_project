@@ -23,7 +23,8 @@ COPY tasks.py tasks.py
 COPY src src/
 COPY README.md README.md
 COPY pyproject.toml pyproject.toml
-COPY model_config.yaml model_config.yaml
+COPY configs/model_config.yaml configs/model_config.yaml
+COPY tasks.py tasks.py
 
 # Ensure invoke is installed
 RUN pip install invoke --no-cache-dir --verbose
