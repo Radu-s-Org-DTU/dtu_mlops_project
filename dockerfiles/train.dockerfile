@@ -27,7 +27,7 @@ COPY data data/
 COPY src src/
 COPY README.md README.md
 COPY pyproject.toml pyproject.toml
-COPY configs/model_config.yaml configs/model_config.yaml
+COPY model_config.yaml model_config.yaml
 COPY tasks.py tasks.py
 
 # Ensure invoke is installed
