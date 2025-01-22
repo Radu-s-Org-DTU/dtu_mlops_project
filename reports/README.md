@@ -135,7 +135,7 @@ MLOPS4 i.e., group number 4
 >
 > Answer:
 
- _s242580, s242591, s113117, s246415
+ s242580, s242591, s113117, s246415
 
 ### Question 3
 
