@@ -4,6 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    ignore:
+      - dependency-name: "lightning"
+        versions:
+          - "2.5.0"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
