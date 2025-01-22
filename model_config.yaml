@@ -11,7 +11,7 @@ data:
   val_pct: 0.2
 
 trainer:
-  max_epochs: 20
+  max_epochs: 5
 
 model:
   file_name: mushroom_model
