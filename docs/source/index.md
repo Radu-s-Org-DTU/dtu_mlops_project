@@ -2,8 +2,8 @@
 
 Documentation for mushroomclassification
 
-Aim
-This project aims to classify mushrooms into 4 safety categories: Edible, Conditionally Edible, Poisonous and Deadly. We aim to build a pipeline for data preprocessing, model training, deployment and evaluation. 
+Aim:
+* This project aims to classify mushrooms into 4 safety categories: Edible, Conditionally Edible, Poisonous and Deadly. We aim to build a pipeline for data preprocessing, model training, deployment and evaluation. 
  
 Key features:
 -Data preprocessing using Albumentations
