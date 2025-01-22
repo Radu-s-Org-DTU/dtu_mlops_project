@@ -82,7 +82,7 @@ jobs:
 
       - name: Comment test summary on PR
         if: ${{ github.event_name == 'pull_request' && matrix.operating-system == 'ubuntu-latest' && matrix.python-version == '3.11' }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
