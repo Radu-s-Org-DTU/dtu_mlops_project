@@ -1,36 +1,31 @@
 FROM python:3.11-slim
 
-# Install system dependencies (including Google Cloud SDK)
 RUN apt update && \
-    apt install --no-install-recommends -y \
-        build-essential \
-        gcc \
-        curl \
-        gnupg \
-        google-cloud-sdk && \
+    apt install --no-install-recommends -y build-essential gcc && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first for caching
+RUN curl -sSL https://sdk.cloud.google.com | bash && \
+    /root/google-cloud-sdk/install.sh && \
+    echo 'export PATH=$PATH:/root/google-cloud-sdk/bin' >> /etc/profile.d/google-cloud-sdk.sh
+
+RUN pip install google-cloud-storage
+
 COPY requirements.txt requirements.txt
-RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt --verbose
+RUN pip install -r requirements.txt --no-cache-dir --verbose
 
-COPY requirements_dev.txt requirements_dev.txt
-RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements_dev.txt --verbose
-
-# Copy application files
 COPY data data/
 COPY tasks.py tasks.py
+COPY model_config.yaml model_config.yaml
 COPY src src/
 COPY README.md README.md
 COPY pyproject.toml pyproject.toml
 COPY model_config.yaml model_config.yaml
+COPY tasks.py tasks.py
 
-# Ensure invoke is installed
-RUN pip install invoke --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
 
-# Ensure gsutil and invoke work
-RUN which gsutil && which invoke
+RUN mkdir -p /app
+COPY pull_data.sh /app/pull_data.sh
+RUN chmod +x /app/pull_data.sh
 
-# Use bash as entrypoint to allow debugging
-ENTRYPOINT ["/bin/bash", "-c", "invoke train"]
+ENTRYPOINT ["/bin/bash", "-c", "/app/pull_data.sh && invoke train"]
