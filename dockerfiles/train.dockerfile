@@ -15,7 +15,7 @@ COPY model_config.yaml model_config.yaml
 COPY src src/
 COPY README.md README.md
 COPY pyproject.toml pyproject.toml
-COPY model_config.yml model_config.yml
+COPY model_config.yaml model_config.yaml
 COPY tasks.py tasks.py
 
 RUN pip install . --no-deps --no-cache-dir --verbose
