@@ -38,13 +38,20 @@ def train(ctx, config_path="configs/model_config.yaml"):
     config = load_config(config_path)
 
     ctx.run(
-        f"python src/{PROJECT_NAME}/train.py fit "
-        f"--seed_everything={config['seed']} "
-        f"--data.data_path={config['data']['data_path']} "
-        f"--data.batch_size={config['data']['batch_size']} "
-        f"--data.num_workers={config['data']['num_workers']} "
-        f"--trainer.max_epochs={config['trainer']['max_epochs']} "
-        f"--model.learning_rate={config['trainer']['learning_rate']} ",
+        f"""python src/{PROJECT_NAME}/train.py fit \
+            --seed_everything={config['seed']} " \
+            --data.data_path={config['data']['data_path']} \
+            --data.batch_size={config['data']['batch_size']} \
+            --data.percent_of_data={config['data']['percent_of_data']} \
+            --data.train_pct={config['data']['train_pct']} \
+            --data.test_pct={config['data']['test_pct']} \
+            --data.val_pct={config['data']['val_pct']} \
+            --data.num_workers={config['data']['num_workers']} \
+            --model.learning_rate={config['trainer']['learning_rate']} \
+            --trainer.max_epochs={config['trainer']['max_epochs']} \
+            --trainer.deterministic=True \
+            --trainer.accelerator=gpu \
+            --trainer.devices=1""",
         echo=True,
         pty=not WINDOWS,
     )
@@ -54,15 +61,16 @@ def visualize(ctx, config_path="configs/model_config.yaml"):
     """Visualize model predictions."""
     config = load_config(config_path)
 
-    command = (
-        f"python src/{PROJECT_NAME}/visualize.py "
-        f"--data-path={config['data']['data_path']} "
-        f"--batch-size={config['data']['batch_size']} "
-        f"--num-workers={config['data']['num_workers']} "
-        f"--learning_rate {config['trainer']['learning_rate']}"
+    ctx.run(
+        f"""python src/{PROJECT_NAME}/visualize.py \
+            --data-path={config['data']['data_path']} \
+            --batch-size={config['data']['batch_size']} \
+            --num-workers={config['data']['num_workers']}, \
+            --learning_rate {config['trainer']['learning_rate']}"""
+        echo=True, \
+        pty=not WINDOWS, \
     )
 
-    ctx.run(command, echo=True, pty=not WINDOWS)
 
 @task
 def create_subset(ctx, source_dir, target_dir, classes, num_samples=10):
