@@ -21,4 +21,3 @@ plugins:
 
 nav:
   - Home: index.md
-  - About: source/about.md
