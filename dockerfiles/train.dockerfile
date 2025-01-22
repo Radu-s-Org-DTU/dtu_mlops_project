@@ -16,11 +16,11 @@ WORKDIR /app
 
 # Copy dependency files first for caching
 COPY requirements.txt requirements.txt
-COPY requirements_dev.txt requirements_dev.txt
+
 
 # Install dependencies **without using --mount**
 RUN pip install -r requirements.txt --verbose
-RUN pip install -r requirements_dev.txt --verbose
+
 
 # Copy the rest of the application files
 COPY data data/
