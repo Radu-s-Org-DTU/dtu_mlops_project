@@ -10,8 +10,10 @@ COPY requirements.txt requirements.txt
 COPY requirements_dev.txt requirements_dev.txt
 COPY README.md README.md
 COPY pyproject.toml pyproject.toml
+COPY model_config.yml model_config.yml
+COPY tasks.py tasks.py
 
 RUN pip install -r requirements.txt --no-cache-dir --verbose
 RUN pip install . --no-deps --no-cache-dir --verbose
 
-ENTRYPOINT ["python", "-u", "src/mushroomclassification/train.py"]
+ENTRYPOINT ["invoke", "train"]
