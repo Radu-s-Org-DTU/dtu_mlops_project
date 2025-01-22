@@ -123,7 +123,7 @@ will check the repositories and the code to verify your answers.
 >
 > Answer:
 
---- question 1 fill here ---
+MLOPS4 i.e., group number 4
 
 ### Question 2
 
@@ -135,7 +135,7 @@ will check the repositories and the code to verify your answers.
 >
 > Answer:
 
---- question 2 fill here ---
+ _s242580, s242591, s113117, s246415
 
 ### Question 3
 
@@ -148,7 +148,7 @@ will check the repositories and the code to verify your answers.
 >
 > Answer:
 
---- question 3 fill here ---
+Albumentations
 
 ## Coding environment
 
