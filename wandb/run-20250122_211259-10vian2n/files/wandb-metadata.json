@@ -1,0 +1,32 @@
+{
+  "os": "Linux-6.8.0-51-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2025-01-22T20:12:59.695478Z",
+  "args": [
+    "fit",
+    "--seed_everything=42",
+    "--data.data_path=data/raw",
+    "--data.batch_size=32",
+    "--data.percent_of_data=0.1",
+    "--data.train_pct=0.8",
+    "--data.test_pct=0.1",
+    "--data.val_pct=0.1",
+    "--data.num_workers=16",
+    "--model.learning_rate=0.001",
+    "--trainer.max_epochs=5",
+    "--trainer.deterministic=True",
+    "--trainer.accelerator=gpu",
+    "--trainer.devices=1"
+  ],
+  "program": "/home/radugrecu97/dtu/semesters/1/mlops/dtu_mlops_project/src/mushroomclassification/train.py",
+  "codePath": "src/mushroomclassification/train.py",
+  "git": {
+    "remote": "https://github.com/radugrecu97/dtu_mlops_project.git",
+    "commit": "2ff757550db4ffc644712208ac063197ba028a73"
+  },
+  "email": "radugrecu97@gmail.com",
+  "root": "/home/radugrecu97/dtu/semesters/1/mlops/dtu_mlops_project",
+  "host": "radugrecu97-PC",
+  "executable": "/home/radugrecu97/dtu/semesters/1/mlops/dtu_mlops_project/.venv/bin/python",
+  "codePathLocal": "src/mushroomclassification/train.py"
+}
