@@ -1,0 +1,17 @@
+program: train.py fit
+name: Hyperparameter Sweep
+project: dtu_mlops_project
+entity: radugrecu97
+metric:
+    goal: minimize
+    name: validation_loss
+parameters:
+    data.batch_size:
+        values: [16, 32, 64, 128]
+    trainer.epochs:
+        values: [10, 15, 20]
+    model.learning_rate:
+        min: 0.0001
+        max: 0.1
+        distribution: log_uniform
+run_cap: 10
