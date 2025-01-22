@@ -4,7 +4,7 @@ data:
   num_workers: 16
 
 trainer:
-  max_epochs: 1000
+  max_epochs: 5
 
 model:
   file_name: mushroom_model
