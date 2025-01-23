@@ -1,5 +1,7 @@
-from google.cloud import storage
 import os
+
+from google.cloud import storage
+
 
 def download_from_gcs(bucket_name, source_path, destination_path):
     os.makedirs(destination_path, exist_ok=True)

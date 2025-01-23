@@ -4,3 +4,6 @@ workerPoolSpecs:
     replicaCount: 1
     containerSpec:
       imageUri: "europe-west1-docker.pkg.dev/sage-dragon-448009-f7/course02476/02476-train-build:latest"
+      env:
+        - name: GCS_BUCKET_NAME
+          value: "02476-data"
