@@ -5,13 +5,9 @@ steps:
     args:
       - "-c"
       - |
-        echo "Step: Replace values in the training config"
-        apk add --no-cache gettext || { echo "Failed to install gettext"; exit 1; }
-        echo "Installed gettext"
-        envsubst < config.yaml > config.yaml.tmp || { echo "envsubst failed"; exit 1; }
-        echo "Substitution done"
-        mv config.yaml.tmp config.yaml || { echo "Failed to move temp config"; exit 1; }
-        echo "Config file updated"
+        apk add --no-cache gettext
+        envsubst < config.yaml > config.yaml.tmp
+        mv config.yaml.tmp config.yaml
     secretEnv: ["WANDB_API_KEY"]
 
   - name: "alpine"
