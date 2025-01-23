@@ -4,19 +4,19 @@ data:
   num_workers: 8
   # Percentage of the full dataset to use, which is then further
   # split into train, test, and validation sets
-  percent_of_data: 0.3
+  percent_of_data: 0.1
   # The following 3 values must sum to 1
-  train_pct: 0.8
-  test_pct: 0.1
+  train_pct: 0.001
+  test_pct: 0.899
   val_pct: 0.1
 
 trainer:
   max_epochs: 2
-  learning_rate: 1.0
+  learning_rate: 0.001
 
 model:
   file_name: mushroom_model_v2
 
 # This seed will be used for all RNGs in the code
 # In theory! Additional setup may be needed
-seed: 42
+seed: 1235
