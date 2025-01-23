@@ -3,8 +3,6 @@ import torch
 from torch import nn, optim
 from torchmetrics import Accuracy
 
-import wandb
-
 
 class MushroomClassifier(L.LightningModule):
     """My awesome model."""
@@ -50,8 +48,6 @@ class MushroomClassifier(L.LightningModule):
         # Log training loss
         self.log("train_loss", loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         self.log("train_acc", acc, on_step=True, on_epoch=True, prog_bar=True, logger=True)
-        wandb.log({"train_loss": loss.item()})
-        wandb.log({"train_acc": acc.item()})
         return loss
 
     def validation_step(self, batch, batch_idx):
@@ -60,12 +56,9 @@ class MushroomClassifier(L.LightningModule):
         data, target = batch
         preds = self(data)
         loss = self.criterion(preds, target)
-        print(f"Step {batch_idx}, Loss: {loss.item()}")
         acc = (target == preds.argmax(dim=-1)).float().mean()
         self.log('val_loss', loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         self.log('val_acc', acc, on_step=True, on_epoch=True, prog_bar=True, logger=True)
-        wandb.log({"val_loss": loss.item()})
-        wandb.log({"val_acc": acc.item()})
 
     def test_step(self, batch, batch_idx):
         x, y = batch
