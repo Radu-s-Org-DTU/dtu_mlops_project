@@ -1,14 +1,13 @@
 import operator
 import os
 
+import wandb
 from dotenv import load_dotenv
 from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
 from lightning.pytorch.cli import LightningCLI
 from loguru import logger
 from model import MushroomClassifier
 from utils.config_loader import load_config
-
-import wandb
 
 # from data import
 from data import MushroomDatamodule
@@ -101,7 +100,7 @@ def train():
         mode="min",
         enable_version_counter="false",
     )
-    
+
     early_stopping_callback = EarlyStopping(
         monitor="val_loss", patience=10, verbose=True, mode="min"
     )
