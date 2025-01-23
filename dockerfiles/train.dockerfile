@@ -11,11 +11,10 @@ RUN pip install -r requirements.txt --no-cache-dir --verbose
 
 COPY data data/
 COPY tasks.py tasks.py
-COPY model_config.yaml model_config.yaml
+COPY configs/model_config.yaml configs/model_config.yaml
 COPY src src/
 COPY README.md README.md
 COPY pyproject.toml pyproject.toml
-COPY model_config.yaml model_config.yaml
 COPY tasks.py tasks.py
 
 RUN pip install . --no-deps --no-cache-dir --verbose
