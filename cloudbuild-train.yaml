@@ -21,6 +21,7 @@ steps:
 
   - name: "gcr.io/cloud-builders/docker"
     id: "Build Train container image"
+    waitFor: ["Show config"]
     args:
       [
         "build",
@@ -33,6 +34,7 @@ steps:
 
   - name: "gcr.io/cloud-builders/docker"
     id: "Push Train container image"
+    waitFor: ["Build Train container image"]
     args:
       [
         "push",
@@ -41,6 +43,7 @@ steps:
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Trigger Vertex AI Custom Job"
+    waitFor: ["Push Train container image"]
     args:
       [
         "gcloud",
@@ -54,7 +57,7 @@ steps:
 
   - name: "gcr.io/cloud-builders/gcloud"
     id: "Train on vertex AI"
-    waitFor: ["Replace values in the training config"]
+    waitFor: ["Trigger Vertex AI Custom Job"]
     args:
       [
         "ai",
