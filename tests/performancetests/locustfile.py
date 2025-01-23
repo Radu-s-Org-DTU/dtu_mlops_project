@@ -1,5 +1,7 @@
 import os
+
 from locust import HttpUser, task
+
 
 class SimpleUser(HttpUser):
 
@@ -7,16 +9,16 @@ class SimpleUser(HttpUser):
     def test_predict(self):
         """Test the `/predict/` endpoint with an existing image."""
         file_path = os.path.join(
-            "data", 
-            "raw_subset", 
-            "Classes", 
-            "edible", 
-            "Agaricus_bisporus", 
+            "data",
+            "raw_subset",
+            "Classes",
+            "edible",
+            "Agaricus_bisporus",
             "Agaricus_bisporus29.png"
         )
         try:
             with open(file_path, "rb") as img_file:
-                response = self.client.post(
+                self.client.post(
                     "/predict/",
                     files={"file": ("image.jpg", img_file, "image/jpeg")},
                 )
