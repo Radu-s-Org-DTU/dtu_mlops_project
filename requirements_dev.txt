@@ -18,7 +18,6 @@ mkdocstrings-python==1.13.0
 
 # versioning
 dvc==3.59.0
-dvc[gdrive]==3.58.0
 
 # cli tools
 typer==0.15.1

@@ -98,8 +98,12 @@ def visualize(
     data_path: str = typer.Option(..., "--data-path", help="Path to the data"),
     batch_size: int = typer.Option(..., "--batch-size", help="Batch size for data loading"),
     num_workers: int = typer.Option(..., "--num-workers", help="Number of data-loading workers"),
+    learning_rate: float = typer.Option(..., "--learning_rate", help="Learning rate for the model"),
 ) -> None:
-    model = MushroomClassifier.load_from_checkpoint('models/' + load_config()['model']['file_name'] + '.ckpt')
+    model = MushroomClassifier.load_from_checkpoint(
+        "models/" + load_config()['model']['file_name'] + ".ckpt",
+        learning_rate=learning_rate
+    )
 
     plot_training_loss(model)
 
