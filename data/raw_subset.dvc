@@ -1,6 +1,2804 @@
 outs:
-- md5: 8f523fc9e82673f7a9ca9c720e872a23.dir
-  size: 38803084
-  nfiles: 400
-  hash: md5
+- hash: md5
   path: raw_subset
+  files:
+  - relpath: Classes/conditionally_edible/Amanita_muscaria/Amanita_muscaria61.png
+    md5: 6abd93454f25872c39a31492d48ef9e9
+    size: 8198
+    cloud:
+      remote_storage:
+        etag: 08f0b28c8ca7898b031001
+        version_id: '1737548103883120'
+  - relpath: Classes/conditionally_edible/Artomyces pyxidatus/5343medium.jpg
+    md5: 7541e13a4bbcdafcea850edba27058c0
+    size: 153994
+    cloud:
+      remote_storage:
+        etag: 08bec4e58ba7898b031001
+        version_id: '1737548103246398'
+  - relpath: Classes/conditionally_edible/Artomyces pyxidatus/5692medium.jpeg
+    md5: 026cf8d600e773e2095cdb11488a9686
+    size: 38901
+    cloud:
+      remote_storage:
+        etag: 088aaeb48ba7898b031001
+        version_id: '1737548102440714'
+  - relpath: Classes/conditionally_edible/Artomyces pyxidatus/6073medium.jpeg
+    md5: 09bb866e3ab55d9d7a70152df9adf39c
+    size: 20620
+    cloud:
+      remote_storage:
+        etag: 08aab2b48ba7898b031001
+        version_id: '1737548102441258'
+  - relpath: Classes/conditionally_edible/Boletus edulis/7451medium.jpeg
+    md5: 1011034f7d7adec9f0ad1c20b399adc8
+    size: 167887
+    cloud:
+      remote_storage:
+        etag: 08e7b08d90a7898b031001
+        version_id: '1737548112287847'
+  - relpath: Classes/conditionally_edible/Boletus/0045_gWlzB0NaDyU.jpg
+    md5: 5450ba34ddf098ff59060409ca0d69aa
+    size: 152476
+    cloud:
+      remote_storage:
+        etag: 08d18e9f90a7898b031001
+        version_id: '1737548112578385'
+  - relpath: Classes/conditionally_edible/Boletus/0258_Tz9sBoMBfsk.jpg
+    md5: 7bb9c32313f2be98a83846cbde6716cb
+    size: 166507
+    cloud:
+      remote_storage:
+        etag: 0894dbe78da7898b031001
+        version_id: '1737548107476372'
+  - relpath: Classes/conditionally_edible/Boletus/0934_o4X4zOZoBtQ.jpg
+    md5: 8b1a4bccf302422c152f9fbe3801d1de
+    size: 139948
+    cloud:
+      remote_storage:
+        etag: 08ffb8ef8ba7898b031001
+        version_id: '1737548103408767'
+  - relpath: Classes/conditionally_edible/Calocera viscosa/2413medium.jpg
+    md5: f9694b901e3b4c1d65f65cd051c7a2a9
+    size: 66433
+    cloud:
+      remote_storage:
+        etag: 08f18cff8da7898b031001
+        version_id: '1737548107859569'
+  - relpath: Classes/conditionally_edible/Chlorociboria aeruginascens/4682medium.jpeg
+    md5: 8de77101f0753a65d42d896fc7393962
+    size: 58919
+    cloud:
+      remote_storage:
+        etag: 08b6aa808da7898b031001
+        version_id: '1737548105782582'
+  - relpath: Classes/conditionally_edible/Cladonia rangiferina/5686medium.jpeg
+    md5: eb49b864f2f92dd86e7c3cda7c6cfd0b
+    size: 210385
+    cloud:
+      remote_storage:
+        etag: 08ac96e08da7898b031001
+        version_id: '1737548107352876'
+  - relpath: Classes/conditionally_edible/Cladonia stellaris/6045medium.jpg
+    md5: ea750fd1de11bd392eab65bf2bce79b0
+    size: 126697
+    cloud:
+      remote_storage:
+        etag: 08df87ff8da7898b031001
+        version_id: '1737548107858911'
+  - relpath: Classes/conditionally_edible/Coprinellus disseminatus/7110medium.jpeg
+    md5: ad68aea677a545b0e76c7256042266b7
+    size: 119992
+    cloud:
+      remote_storage:
+        etag: 08d192e28da7898b031001
+        version_id: '1737548107385169'
+  - relpath: Classes/conditionally_edible/Cortinarius/566_O6GamTUvOPw.jpg
+    md5: 4cedf62de94c81269b7b6d2555afbf29
+    size: 208419
+    cloud:
+      remote_storage:
+        etag: 08fb96808da7898b031001
+        version_id: '1737548105780091'
+  - relpath: Classes/conditionally_edible/Cortinarius/800_DyXP5vXb0mQ.jpg
+    md5: e415580a417df5a971185a41f1251fad
+    size: 186935
+    cloud:
+      remote_storage:
+        etag: 08eacc888da7898b031001
+        version_id: '1737548105918058'
+  - relpath: Classes/conditionally_edible/Evernia mesomorpha/9367medium.jpeg
+    md5: b8d5e8d20b425c291e7ad24a7221d4b4
+    size: 53107
+    cloud:
+      remote_storage:
+        etag: 08fa91bf8fa7898b031001
+        version_id: '1737548111005946'
+  - relpath: Classes/conditionally_edible/Evernia mesomorpha/9670medium.jpeg
+    md5: 1b3198af8fe14be8c10973475789c74a
+    size: 150634
+    cloud:
+      remote_storage:
+        etag: 088cb6f68da7898b031001
+        version_id: '1737548107717388'
+  - relpath: Classes/conditionally_edible/Evernia prunastri/10588medium.jpeg
+    md5: d742d0c32c83f5e0acbd3d83ebde3690
+    size: 84839
+    cloud:
+      remote_storage:
+        etag: 0880aaa38ea7898b031001
+        version_id: '1737548108453120'
+  - relpath: Classes/conditionally_edible/Evernia prunastri/11566medium.jpeg
+    md5: 603ce896e631bb12fd8a415ae3485a3f
+    size: 186569
+    cloud:
+      remote_storage:
+        etag: 08abb8d38ca7898b031001
+        version_id: '1737548105047083'
+  - relpath: Classes/conditionally_edible/Evernia prunastri/11882medium.jpg
+    md5: 829c4c63c55a4b22e94cd8cc832c8162
+    size: 99267
+    cloud:
+      remote_storage:
+        etag: 08e7e4e98da7898b031001
+        version_id: '1737548107510375'
+  - relpath: Classes/conditionally_edible/Fomes fomentarius/12107medium.jpeg
+    md5: e14e855eeaf5b7d1cd6052250102a991
+    size: 159520
+    cloud:
+      remote_storage:
+        etag: 088192c98ea7898b031001
+        version_id: '1737548109072641'
+  - relpath: Classes/conditionally_edible/Fomes fomentarius/12692medium.jpeg
+    md5: ba5e0a60ac3cc85e713b40d71e23543a
+    size: 54173
+    cloud:
+      remote_storage:
+        etag: 08b5998d8ba7898b031001
+        version_id: '1737548101799093'
+  - relpath: Classes/conditionally_edible/Fomes fomentarius/14359medium.jpeg
+    md5: b76ca0ff188da0a144dce69e4e4d4767
+    size: 119045
+    cloud:
+      remote_storage:
+        etag: 08a7a4aa8ca7898b031001
+        version_id: '1737548104372775'
+  - relpath: Classes/conditionally_edible/Fomes fomentarius/14694medium.jpg
+    md5: 9742a4a4d3b33f7a7e5f6a029f94f438
+    size: 162487
+    cloud:
+      remote_storage:
+        etag: 08ecd8c18ca7898b031001
+        version_id: '1737548104756332'
+  - relpath: Classes/conditionally_edible/Fomes fomentarius/14799medium.jpeg
+    md5: b8c69ffb74d41cafc7c18a3e054bf654
+    size: 134609
+    cloud:
+      remote_storage:
+        etag: 089bb6ca8ba7898b031001
+        version_id: '1737548102802203'
+  - relpath: Classes/conditionally_edible/Fomes fomentarius/15203medium.jpg
+    md5: 15140d0cade133d441f2e650c378d95c
+    size: 127926
+    cloud:
+      remote_storage:
+        etag: 089bf6d58ca7898b031001
+        version_id: '1737548105087771'
+  - relpath: Classes/conditionally_edible/Fomes fomentarius/16994medium.jpg
+    md5: 77a6f6c5e8789eeb9b445667096e96c6
+    size: 57911
+    cloud:
+      remote_storage:
+        etag: 08e89e8b8ca7898b031001
+        version_id: '1737548103864168'
+  - relpath: Classes/conditionally_edible/Fomes fomentarius/17137medium.jpg
+    md5: 01dc47d75ba9a38b64c068fde780d739
+    size: 194332
+    cloud:
+      remote_storage:
+        etag: 08e3c6f28ea7898b031001
+        version_id: '1737548109751139'
+  - relpath: Classes/conditionally_edible/Fomitopsis betulina/17243medium.jpeg
+    md5: cbc266920d75f8a3b8f45401a6f67470
+    size: 78970
+    cloud:
+      remote_storage:
+        etag: 08a7a8838da7898b031001
+        version_id: '1737548105831463'
+  - relpath: Classes/conditionally_edible/Fomitopsis betulina/17393medium.jpg
+    md5: 92e4b90dfbf524a14f3c49f533396b0d
+    size: 40411
+    cloud:
+      remote_storage:
+        etag: 08e8dff68ca7898b031001
+        version_id: '1737548105625576'
+  - relpath: Classes/conditionally_edible/Fomitopsis betulina/17460medium.jpg
+    md5: 356d283875a21b5f5e155691afdc1885
+    size: 65949
+    cloud:
+      remote_storage:
+        etag: 08e19a808da7898b031001
+        version_id: '1737548105780577'
+  - relpath: Classes/conditionally_edible/Fomitopsis betulina/17856medium.jpeg
+    md5: 5299e9996287f3c8e3c8c7441eeca9e9
+    size: 197274
+    cloud:
+      remote_storage:
+        etag: 08d1e7df8da7898b031001
+        version_id: '1737548107346897'
+  - relpath: Classes/conditionally_edible/Fomitopsis betulina/18482medium.jpeg
+    md5: 2efdfadd4be0bd82260436ed3afbd97e
+    size: 152949
+    cloud:
+      remote_storage:
+        etag: 08bad8d28da7898b031001
+        version_id: '1737548107131962'
+  - relpath: Classes/conditionally_edible/Fomitopsis betulina/18762medium.jpeg
+    md5: 8b4d6f75518d216e17c9f0b465693cab
+    size: 89788
+    cloud:
+      remote_storage:
+        etag: 08fcb0f68ca7898b031001
+        version_id: '1737548105619580'
+  - relpath: Classes/conditionally_edible/Fomitopsis pinicola/19289medium.jpeg
+    md5: e04440c703d1319f12e99bb1111ad7c4
+    size: 183182
+    cloud:
+      remote_storage:
+        etag: 088ffb998ea7898b031001
+        version_id: '1737548108299663'
+  - relpath: Classes/conditionally_edible/Fomitopsis pinicola/20124medium.jpeg
+    md5: 1c4d5dd527b154918d53b6d721373c6a
+    size: 159389
+    cloud:
+      remote_storage:
+        etag: 08e9b0bc8ea7898b031001
+        version_id: '1737548108863593'
+  - relpath: Classes/conditionally_edible/Fomitopsis pinicola/20302medium.jpeg
+    md5: 9a1121267a317aba303dc10ed3c16ea3
+    size: 148035
+    cloud:
+      remote_storage:
+        etag: 08dbbe9d8ea7898b031001
+        version_id: '1737548108357467'
+  - relpath: Classes/conditionally_edible/Fomitopsis pinicola/20838medium.jpeg
+    md5: 78258cdc0b8ff4c9c7ffc57d443b7da3
+    size: 145216
+    cloud:
+      remote_storage:
+        etag: 08d781da8ea7898b031001
+        version_id: '1737548109349079'
+  - relpath: Classes/conditionally_edible/Fomitopsis pinicola/20860medium.jpg
+    md5: 032f1ec4212cbb15e8d9772bc4b5a134
+    size: 94956
+    cloud:
+      remote_storage:
+        etag: 08869e968ea7898b031001
+        version_id: '1737548108238598'
+  - relpath: Classes/conditionally_edible/Fomitopsis pinicola/21463medium.jpg
+    md5: c98e175e30dc8c915bd8a99fa46ffa37
+    size: 176277
+    cloud:
+      remote_storage:
+        etag: 0892a2808ea7898b031001
+        version_id: '1737548107878674'
+  - relpath: Classes/conditionally_edible/Fomitopsis pinicola/23027medium.jpeg
+    md5: db971eb37ec15682b4c106df8948c110
+    size: 177796
+    cloud:
+      remote_storage:
+        etag: 08e4e8ae8fa7898b031001
+        version_id: '1737548110738532'
+  - relpath: Classes/conditionally_edible/Fomitopsis pinicola/23837medium.jpg
+    md5: 6ba4aebc7930bcffab847852992df84d
+    size: 98848
+    cloud:
+      remote_storage:
+        etag: 08eed9c88ea7898b031001
+        version_id: '1737548109065454'
+  - relpath: Classes/conditionally_edible/Hygrophoropsis aurantiaca/12275medium.jpeg
+    md5: c7de6daea5237f193c65968b95084504
+    size: 171313
+    cloud:
+      remote_storage:
+        etag: 0885c9dd8ca7898b031001
+        version_id: '1737548105213061'
+  - relpath: Classes/conditionally_edible/Hygrophoropsis aurantiaca/12377medium.jpeg
+    md5: 7d3eb4fd3c8ba898d25bf1ec01a9ad8c
+    size: 145027
+    cloud:
+      remote_storage:
+        etag: 08e0f58a8ea7898b031001
+        version_id: '1737548108053216'
+  - relpath: Classes/conditionally_edible/Hypogymnia physodes/26900medium.jpg
+    md5: 994e5582a018b0b58d5f9d4bc0379e5a
+    size: 134446
+    cloud:
+      remote_storage:
+        etag: 08ced0fe8aa7898b031001
+        version_id: '1737548101560398'
+  - relpath: Classes/conditionally_edible/Hypogymnia physodes/26961medium.jpg
+    md5: 250c07c0eb8c12d624b15dd71f7ce320
+    size: 58440
+    cloud:
+      remote_storage:
+        etag: 088c95918ca7898b031001
+        version_id: '1737548103961228'
+  - relpath: Classes/conditionally_edible/Hypogymnia physodes/26977medium.jpg
+    md5: 899c66ef369efd08ca9052cb6cb45e79
+    size: 102383
+    cloud:
+      remote_storage:
+        etag: 0894b1eb8ba7898b031001
+        version_id: '1737548103342228'
+  - relpath: Classes/conditionally_edible/Hypogymnia physodes/27068medium.jpeg
+    md5: 0d6a490beaca6ec53011ea65747d7a9c
+    size: 134314
+    cloud:
+      remote_storage:
+        etag: 088bb4ef8ba7898b031001
+        version_id: '1737548103408139'
+  - relpath: Classes/conditionally_edible/Hypogymnia physodes/27648medium.jpg
+    md5: 1962d66bea7b300ad428266e90dcad4d
+    size: 118868
+    cloud:
+      remote_storage:
+        etag: 0880ae998ca7898b031001
+        version_id: '1737548104095488'
+  - relpath: Classes/conditionally_edible/Imleria badia/13130medium.jpeg
+    md5: c6d6922d7fd5f0260af442132d76cffa
+    size: 148843
+    cloud:
+      remote_storage:
+        etag: 08cad2848ca7898b031001
+        version_id: '1737548103756106'
+  - relpath: Classes/conditionally_edible/Inonotus obliquus/28482medium.jpg
+    md5: a8658e9ae8dc6a0168488f3acb37fae9
+    size: 106115
+    cloud:
+      remote_storage:
+        etag: 08c390a28ea7898b031001
+        version_id: '1737548108433475'
+  - relpath: Classes/conditionally_edible/Inonotus obliquus/29043medium.jpeg
+    md5: e2bbcea3d70b524ab4457264892e71fd
+    size: 145985
+    cloud:
+      remote_storage:
+        etag: 08b6c99e8ea7898b031001
+        version_id: '1737548108375222'
+  - relpath: Classes/conditionally_edible/Lactarius/0156_xCwDrPY72us.jpg
+    md5: 55b3ceab13ba4ac2d8ca3e7eddff6c96
+    size: 412524
+    cloud:
+      remote_storage:
+        etag: 0880e8e993a7898b031001
+        version_id: '1737548120093696'
+  - relpath: Classes/conditionally_edible/Lactarius/0322_2UpHsEF5Mzs.jpg
+    md5: d0bd7a99a90c46fd0f7a33fac7a44d87
+    size: 83692
+    cloud:
+      remote_storage:
+        etag: 088dc0cd8ea7898b031001
+        version_id: '1737548109144077'
+  - relpath: Classes/conditionally_edible/Laetiporus sulphureus/29582medium.jpeg
+    md5: 5b6db5ab87db14e4f59a789262bde75d
+    size: 231456
+    cloud:
+      remote_storage:
+        etag: 08f0cdf68da7898b031001
+        version_id: '1737548107720432'
+  - relpath: Classes/conditionally_edible/Laetiporus sulphureus/30527medium.jpg
+    md5: f3a1eaf8c8866b277e8e4c7b3c88e98f
+    size: 135908
+    cloud:
+      remote_storage:
+        etag: 08b9a8cd8ea7898b031001
+        version_id: '1737548109141049'
+  - relpath: Classes/conditionally_edible/Leccinum aurantiacum/15541medium.jpg
+    md5: eb157fa72c55f1db35cbc7ca7c6d2930
+    size: 53894
+    cloud:
+      remote_storage:
+        etag: 08addbbe8ea7898b031001
+        version_id: '1737548108901805'
+  - relpath: Classes/conditionally_edible/Leccinum aurantiacum/15630medium.jpg
+    md5: 0bf5587808955e0657b23a84f89a212e
+    size: 93323
+    cloud:
+      remote_storage:
+        etag: 0896a3f08da7898b031001
+        version_id: '1737548107616662'
+  - relpath: Classes/conditionally_edible/Leccinum scabrum/31856medium.jpeg
+    md5: 660848511d085356a94fb8de43fbcb56
+    size: 168836
+    cloud:
+      remote_storage:
+        etag: 08dcfa918ea7898b031001
+        version_id: '1737548108168540'
+  - relpath: Classes/conditionally_edible/Leccinum versipelle/15992medium.jpg
+    md5: 2941ca85187608041a9cc5fe9f103097
+    size: 94304
+    cloud:
+      remote_storage:
+        etag: 08a7bee18ca7898b031001
+        version_id: '1737548105277223'
+  - relpath: Classes/conditionally_edible/Leccinum versipelle/15997medium.jpeg
+    md5: 6b582b5d60918a0fc6c8fbc085bb9863
+    size: 183313
+    cloud:
+      remote_storage:
+        etag: 08838bec8ca7898b031001
+        version_id: '1737548105450883'
+  - relpath: Classes/conditionally_edible/Lepista_saeva/Lepista_saeva16.png
+    md5: a2032fe2ee9154ed18b4415e50ae0ffc
+    size: 6581
+    cloud:
+      remote_storage:
+        etag: 08af83918ca7898b031001
+        version_id: '1737548103958959'
+  - relpath: Classes/conditionally_edible/Lobaria pulmonaria/17226medium.jpeg
+    md5: bd77ce909d41c95b10ac2d7e661ef39c
+    size: 162758
+    cloud:
+      remote_storage:
+        etag: 08b194e78ba7898b031001
+        version_id: '1737548103273009'
+  - relpath: Classes/conditionally_edible/Lycoperdon perlatum/33524medium.jpg
+    md5: 40789a5bab08f846b18e006bada2884e
+    size: 76654
+    cloud:
+      remote_storage:
+        etag: 08f2a3a88fa7898b031001
+        version_id: '1737548110631410'
+  - relpath: Classes/conditionally_edible/Lycoperdon perlatum/33808medium.jpg
+    md5: 360fe922374e75b521750a4897452df8
+    size: 120909
+    cloud:
+      remote_storage:
+        etag: 08feebe18ca7898b031001
+        version_id: '1737548105283070'
+  - relpath: Classes/conditionally_edible/Mushrooms/Agaricus/171_wN-s2yo8YTs.jpg
+    md5: d15a798e3c7871a515ebb2b7245298ef
+    size: 139399
+    cloud:
+      remote_storage:
+        etag: 089eb7fae3a7898b031001
+        version_id: '1737548288138142'
+  - relpath: Classes/conditionally_edible/Mushrooms/Boletus/0263_nUgkvTMYYa4.jpg
+    md5: ceb99d45cc73af4b0ee46440fbc12194
+    size: 170492
+    cloud:
+      remote_storage:
+        etag: 08c7ceece3a7898b031001
+        version_id: '1737548287911751'
+  - relpath: Classes/conditionally_edible/Mushrooms/Boletus/0758__zksp8vMecE.jpg
+    md5: 025d090995aff74c7c4ad484006a96fb
+    size: 201304
+    cloud:
+      remote_storage:
+        etag: 0893fce5e3a7898b031001
+        version_id: '1737548287802899'
+  - relpath: Classes/conditionally_edible/Mushrooms/Boletus/0765_ika0869QFxg.jpg
+    md5: 102540da8dd04ce6a7ff017d9f578be8
+    size: 179299
+    cloud:
+      remote_storage:
+        etag: 08b2e8dee3a7898b031001
+        version_id: '1737548287685682'
+  - relpath: Classes/conditionally_edible/Mushrooms/Cortinarius/702_DoIZteBrkfE.jpg
+    md5: c2037766a6005d73c6ae34535cc61dd6
+    size: 228371
+    cloud:
+      remote_storage:
+        etag: 08f4edd8e3a7898b031001
+        version_id: '1737548287588084'
+  - relpath: Classes/conditionally_edible/Mushrooms/Entoloma/140_rHXmbP0xshA.jpg
+    md5: 438654de31d6a13560bb063bf04ac855
+    size: 123683
+    cloud:
+      remote_storage:
+        etag: 0884f3f9e3a7898b031001
+        version_id: '1737548288129412'
+  - relpath: Classes/conditionally_edible/Mushrooms/Hygrocybe/315_cf-rqyHrqT8.jpg
+    md5: 69a266f50a46b7a04d06e95e1bf44df8
+    size: 110709
+    cloud:
+      remote_storage:
+        etag: 08fbaaf9e3a7898b031001
+        version_id: '1737548288120187'
+  - relpath: Classes/conditionally_edible/Mushrooms/Lactarius/1057_xd6IBOXVUHo.jpg
+    md5: 473c2ceccde2497bec3a2968081614e8
+    size: 164018
+    cloud:
+      remote_storage:
+        etag: 08f7f3cbe3a7898b031001
+        version_id: '1737548287375863'
+  - relpath: Classes/conditionally_edible/Mushrooms/Lactarius/1085_LqLRQ8smtrI.jpg
+    md5: f981af21a8e28d17afc1fe328615ed42
+    size: 169885
+    cloud:
+      remote_storage:
+        etag: 08a8afc5e3a7898b031001
+        version_id: '1737548287268776'
+  - relpath: Classes/conditionally_edible/Mushrooms/Lactarius/151_xTgS5hKz4pY.jpg
+    md5: 641891729b16eb3068cf05debc552628
+    size: 146439
+    cloud:
+      remote_storage:
+        etag: 088b84f5e3a7898b031001
+        version_id: '1737548288049675'
+  - relpath: Classes/conditionally_edible/Mushrooms/Russula/384_yF9Oxz3fGeg.jpg
+    md5: dc82b6d030fe248d8f8dbf9da09e0b35
+    size: 82095
+    cloud:
+      remote_storage:
+        etag: 089beeece3a7898b031001
+        version_id: '1737548287915803'
+  - relpath: Classes/conditionally_edible/Mushrooms/Russula/526_YCIOVkM6zP4.jpg
+    md5: 75ecf9403db776d283edb0be0f560dc6
+    size: 156678
+    cloud:
+      remote_storage:
+        etag: 08b8ded1e3a7898b031001
+        version_id: '1737548287471416'
+  - relpath: Classes/conditionally_edible/Parmelia sulcata/35839medium.jpeg
+    md5: 91e0c16647e3063f728a078e5830e86d
+    size: 122972
+    cloud:
+      remote_storage:
+        etag: 08e0bd8b8ea7898b031001
+        version_id: '1737548108062432'
+  - relpath: Classes/conditionally_edible/Parmelia sulcata/36258medium.jpeg
+    md5: 139eb8cd93889e08f933075866b2bbbb
+    size: 207497
+    cloud:
+      remote_storage:
+        etag: 08d9b5b28ea7898b031001
+        version_id: '1737548108700377'
+  - relpath: Classes/conditionally_edible/Parmelia sulcata/36592medium.jpeg
+    md5: afa90061e0e28b0e6d83d9f2c7b33a29
+    size: 209710
+    cloud:
+      remote_storage:
+        etag: 08c6bcea8da7898b031001
+        version_id: '1737548107521606'
+  - relpath: Classes/conditionally_edible/Parmelia sulcata/36637medium.jpg
+    md5: 184d8c4ed29cb8ce634918c46b55e9c6
+    size: 107125
+    cloud:
+      remote_storage:
+        etag: 08e3a0a58da7898b031001
+        version_id: '1737548106387555'
+  - relpath: Classes/conditionally_edible/Paxillus involutus/20222medium.jpg
+    md5: 683e53f2bb1f2978784a397ad32be43c
+    size: 97160
+    cloud:
+      remote_storage:
+        etag: 08eae1a58ba7898b031001
+        version_id: '1737548102201578'
+  - relpath: Classes/conditionally_edible/Phlebia radiata/22175medium.jpg
+    md5: cf20c99aad8dcfea7ae4934a38c57984
+    size: 121499
+    cloud:
+      remote_storage:
+        etag: 08d2f5848da7898b031001
+        version_id: '1737548105857746'
+  - relpath: Classes/conditionally_edible/Pholiota aurivella/22450medium.jpg
+    md5: 13eda0a2c54b1af4db479155b9140160
+    size: 146611
+    cloud:
+      remote_storage:
+        etag: 08a5bad98ca7898b031001
+        version_id: '1737548105145637'
+  - relpath: Classes/conditionally_edible/Rhytisma acerinum/25227medium.jpeg
+    md5: c60f183ece39dd697ca0da412c7cc139
+    size: 91144
+    cloud:
+      remote_storage:
+        etag: 08f58f918ca7898b031001
+        version_id: '1737548103960565'
+  - relpath: Classes/conditionally_edible/Rhytisma acerinum/25370medium.jpeg
+    md5: 2c9e7419a12cfc0cb2361263971f3a55
+    size: 189055
+    cloud:
+      remote_storage:
+        etag: 08d5f3d58ca7898b031001
+        version_id: '1737548105087445'
+  - relpath: Classes/conditionally_edible/Rhytisma acerinum/25709medium.jpg
+    md5: 0776310199bf2c2dab1937b0b8c5f334
+    size: 165879
+    cloud:
+      remote_storage:
+        etag: 08f1fedf8ca7898b031001
+        version_id: '1737548105252721'
+  - relpath: Classes/conditionally_edible/Rhytisma acerinum/26016medium.jpeg
+    md5: a81586b6d8f7162d38e4d98b7f9bf469
+    size: 147874
+    cloud:
+      remote_storage:
+        etag: 08f9a5ec8ca7898b031001
+        version_id: '1737548105454329'
+  - relpath: Classes/conditionally_edible/Sarcomyxa serotina/26060medium.jpeg
+    md5: 15227e9878cc3c8f13af87d741834ec1
+    size: 155779
+    cloud:
+      remote_storage:
+        etag: 08b1af838ca7898b031001
+        version_id: '1737548103735217'
+  - relpath: Classes/conditionally_edible/Sarcoscypha austriaca/26311medium.jpg
+    md5: af638881ef6123e97af70fff314d3a5c
+    size: 124662
+    cloud:
+      remote_storage:
+        etag: 08a4cfaa8ca7898b031001
+        version_id: '1737548104378276'
+  - relpath: Classes/conditionally_edible/Sarcoscypha austriaca/26561medium.jpeg
+    md5: 031c6d9b96e3ff23518bd9ae55125082
+    size: 153747
+    cloud:
+      remote_storage:
+        etag: 08d1ca908ca7898b031001
+        version_id: '1737548103951697'
+  - relpath: Classes/conditionally_edible/Suillus luteus/28456medium.jpeg
+    md5: 96649c561858cef088a19fa63f857acb
+    size: 197126
+    cloud:
+      remote_storage:
+        etag: 08d1bd9e8ea7898b031001
+        version_id: '1737548108373713'
+  - relpath: Classes/conditionally_edible/Trametes ochracea/29031medium.jpeg
+    md5: c3675234676ef3bcfa28ca97c500f226
+    size: 108927
+    cloud:
+      remote_storage:
+        etag: 08f99eba8ea7898b031001
+        version_id: '1737548108828537'
+  - relpath: Classes/conditionally_edible/Tremella mesenterica/30114medium.jpeg
+    md5: 1c9c96959d208b36ca86ec147bd98a1a
+    size: 168497
+    cloud:
+      remote_storage:
+        etag: 08fe8bb58ea7898b031001
+        version_id: '1737548108744190'
+  - relpath: Classes/conditionally_edible/Tremella mesenterica/30321medium.jpeg
+    md5: ea21253b877e93ea65c83198e6ba8d28
+    size: 116093
+    cloud:
+      remote_storage:
+        etag: 08f49d908ea7898b031001
+        version_id: '1737548108140276'
+  - relpath: Classes/conditionally_edible/Trichaptum biforme/31075medium.jpeg
+    md5: 9595255ad5ea50cf5203b29dd988f37a
+    size: 54966
+    cloud:
+      remote_storage:
+        etag: 08f5d9d28ba7898b031001
+        version_id: '1737548102937845'
+  - relpath: Classes/conditionally_edible/Urnula craterium/31623medium.jpeg
+    md5: 748becee398f8e30ed6a361428485f5b
+    size: 131108
+    cloud:
+      remote_storage:
+        etag: 08e6f0e98ca7898b031001
+        version_id: '1737548105414758'
+  - relpath: Classes/conditionally_edible/Verpa bohemica/32106medium.jpg
+    md5: 7834863ba41966d3e6192e249f73c603
+    size: 146417
+    cloud:
+      remote_storage:
+        etag: 08c8f7e88ea7898b031001
+        version_id: '1737548109593544'
+  - relpath: Classes/conditionally_edible/Verpa bohemica/32158medium.jpeg
+    md5: 5ea05f504134471c98e8806b5b8a4142
+    size: 60107
+    cloud:
+      remote_storage:
+        etag: 08c0d3838da7898b031001
+        version_id: '1737548105836992'
+  - relpath: Classes/conditionally_edible/white_domecap/4.png
+    md5: 348df05f8282a8e1068c7912996d6b7c
+    size: 465679
+    cloud:
+      remote_storage:
+        etag: 08dfe5dc8ca7898b031001
+        version_id: '1737548105200351'
+  - relpath: Classes/deadly/Amanita_arocheae/Amanita_arocheae16.png
+    md5: c1b1db74d20240bb5701947e566adbcf
+    size: 10120
+    cloud:
+      remote_storage:
+        etag: 08c49c9f90a7898b031001
+        version_id: '1737548112580164'
+  - relpath: Classes/deadly/Amanita_arocheae/Amanita_arocheae43.png
+    md5: d110572c7d282ca78abc6527a29300af
+    size: 12061
+    cloud:
+      remote_storage:
+        etag: 08d7979f90a7898b031001
+        version_id: '1737548112579543'
+  - relpath: Classes/deadly/Amanita_bisporigera/Amanita_bisporigera13.png
+    md5: 7a26ae19119b35b16877f2ac82952bd1
+    size: 9781
+    cloud:
+      remote_storage:
+        etag: 08858e8d90a7898b031001
+        version_id: '1737548112283397'
+  - relpath: Classes/deadly/Amanita_bisporigera/Amanita_bisporigera3.png
+    md5: 40cc8979122f56de8719cf17f532ff5e
+    size: 9898
+    cloud:
+      remote_storage:
+        etag: 0897a88d90a7898b031001
+        version_id: '1737548112286743'
+  - relpath: Classes/deadly/Amanita_bisporigera/Amanita_bisporigera37.png
+    md5: 3987c3eb9ced386902fe54ad662b2e7e
+    size: 15535
+    cloud:
+      remote_storage:
+        etag: 08c0b48c90a7898b031001
+        version_id: '1737548112271936'
+  - relpath: Classes/deadly/Amanita_bisporigera/Amanita_bisporigera46.png
+    md5: a4292fde67ae5c92c451efb320e39302
+    size: 4533
+    cloud:
+      remote_storage:
+        etag: 08e5e88c90a7898b031001
+        version_id: '1737548112278629'
+  - relpath: Classes/deadly/Amanita_exitialis/Amanita_exitialis27.png
+    md5: 3eae5df4ac1472502e6663925ff90722
+    size: 10052
+    cloud:
+      remote_storage:
+        etag: 08bff8fb8fa7898b031001
+        version_id: '1737548112002111'
+  - relpath: Classes/deadly/Amanita_exitialis/Amanita_exitialis29.png
+    md5: 5c3816f9e91057a355ab9039808c6b7c
+    size: 8568
+    cloud:
+      remote_storage:
+        etag: 08f7f49b90a7898b031001
+        version_id: '1737548112525943'
+  - relpath: Classes/deadly/Amanita_exitialis/Amanita_exitialis41.png
+    md5: 72e871a12622c0069b42abd578ff58ce
+    size: 14591
+    cloud:
+      remote_storage:
+        etag: 08cbc2fc8fa7898b031001
+        version_id: '1737548112011595'
+  - relpath: Classes/deadly/Amanita_fuliginea/Amanita_fuliginea16.png
+    md5: 8272ee98d6a2c9df37f6b7e1f1e07e2c
+    size: 7099
+    cloud:
+      remote_storage:
+        etag: 0883ce9f90a7898b031001
+        version_id: '1737548112586499'
+  - relpath: Classes/deadly/Amanita_magnivelaris/Amanita_magnivelaris23.png
+    md5: f6f14461b78551bfdd417e253120400f
+    size: 9371
+    cloud:
+      remote_storage:
+        etag: 08a2c6f98fa7898b031001
+        version_id: '1737548111962914'
+  - relpath: Classes/deadly/Amanita_magnivelaris/Amanita_magnivelaris26.png
+    md5: 7e18cbb5ccafafe3e77ddca1259d4641
+    size: 9946
+    cloud:
+      remote_storage:
+        etag: 08afc7f98fa7898b031001
+        version_id: '1737548111963055'
+  - relpath: Classes/deadly/Amanita_magnivelaris/Amanita_magnivelaris5.png
+    md5: 4abb7de490ddbfabd71fd60d0d6a4461
+    size: 3025
+    cloud:
+      remote_storage:
+        etag: 088b96fc8fa7898b031001
+        version_id: '1737548112005899'
+  - relpath: Classes/deadly/Amanita_phalloides/Amanita_phalloides48.png
+    md5: e6505cd1154ec1806b47b346b26952ab
+    size: 15662
+    cloud:
+      remote_storage:
+        etag: 08c7a19e90a7898b031001
+        version_id: '1737548112564423'
+  - relpath: Classes/deadly/Amanita_phalloides/Amanita_phalloides49.png
+    md5: 4e6c76cdca9e9f181b8bfa25fd8f7d72
+    size: 11540
+    cloud:
+      remote_storage:
+        etag: 08a08ea390a7898b031001
+        version_id: '1737548112643872'
+  - relpath: Classes/deadly/Amanita_smithiana/Amanita_smithiana0.png
+    md5: 572590d3cbef107c55c37dd2f314ca0c
+    size: 3459
+    cloud:
+      remote_storage:
+        etag: 08e1c2e68fa7898b031001
+        version_id: '1737548111651169'
+  - relpath: Classes/deadly/Amanita_smithiana/Amanita_smithiana23.png
+    md5: 4031659dd90a3b8586a94bd8fcf4afab
+    size: 9813
+    cloud:
+      remote_storage:
+        etag: 08c9e9e68fa7898b031001
+        version_id: '1737548111656137'
+  - relpath: Classes/deadly/Amanita_smithiana/Amanita_smithiana27.png
+    md5: 058e8d19bc88e7db386f2675dd4425b6
+    size: 6900
+    cloud:
+      remote_storage:
+        etag: 08acd7ee8fa7898b031001
+        version_id: '1737548111784876'
+  - relpath: Classes/deadly/Amanita_smithiana/Amanita_smithiana6.png
+    md5: 64204d74197f8b672b5411695e5e1aa0
+    size: 3308
+    cloud:
+      remote_storage:
+        etag: 08d5e6ee8fa7898b031001
+        version_id: '1737548111786837'
+  - relpath: Classes/deadly/Amanita_sphaerobulbosa/Amanita_sphaerobulbosa15.png
+    md5: e09dcac1a2c880aa7c7504a88b26539e
+    size: 13472
+    cloud:
+      remote_storage:
+        etag: 08a6909d90a7898b031001
+        version_id: '1737548112545830'
+  - relpath: Classes/deadly/Amanita_subpallidorosea/Amanita_subpallidorosea24.png
+    md5: df732b504ff8bacaeb84fd7b15d23c33
+    size: 10376
+    cloud:
+      remote_storage:
+        etag: 08f7fe9c90a7898b031001
+        version_id: '1737548112543607'
+  - relpath: Classes/deadly/Amanita_verna/Amanita_verna17.png
+    md5: ddf166174f6b1f923ccf2f5051f483e2
+    size: 5995
+    cloud:
+      remote_storage:
+        etag: 0888e9fb8fa7898b031001
+        version_id: '1737548112000136'
+  - relpath: Classes/deadly/Amanita_verna/Amanita_verna19.png
+    md5: 52cf7f6101ad7f71d38e3c8ef365eb16
+    size: 11084
+    cloud:
+      remote_storage:
+        etag: 08b5e78990a7898b031001
+        version_id: '1737548112229301'
+  - relpath: Classes/deadly/Amanita_verna/Amanita_verna23.png
+    md5: df4f455591c4d44ac4c281dd04bfaf68
+    size: 7541
+    cloud:
+      remote_storage:
+        etag: 0882eaf98fa7898b031001
+        version_id: '1737548111967490'
+  - relpath: Classes/deadly/Amanita_virosa/Amanita_virosa15.png
+    md5: 89947764ee51a8b18cd8053f01b54c6b
+    size: 5497
+    cloud:
+      remote_storage:
+        etag: 08f4c09d90a7898b031001
+        version_id: '1737548112552052'
+  - relpath: Classes/deadly/Amanita_virosa/Amanita_virosa17.png
+    md5: 15d966ad5acd9f6a35fef87a32636cab
+    size: 13913
+    cloud:
+      remote_storage:
+        etag: 08eaee9f90a7898b031001
+        version_id: '1737548112590698'
+  - relpath: Classes/deadly/Boletus_pulcherrimus/Boletus_pulcherrimus18.png
+    md5: 381827c31197dbdef9d179378247c0ef
+    size: 8408
+    cloud:
+      remote_storage:
+        etag: 08feee8790a7898b031001
+        version_id: '1737548112197502'
+  - relpath: Classes/deadly/Boletus_pulcherrimus/Boletus_pulcherrimus4.png
+    md5: e13e0137286f1f10b8ed002eb46901cd
+    size: 3344
+    cloud:
+      remote_storage:
+        etag: 08e3848d90a7898b031001
+        version_id: '1737548112282211'
+  - relpath: Classes/deadly/Clitocybe_rivulosa/Clitocybe_rivulosa12.png
+    md5: 184157798a03a195b6bc206b7271d000
+    size: 3519
+    cloud:
+      remote_storage:
+        etag: 0897d69d90a7898b031001
+        version_id: '1737548112554775'
+  - relpath: Classes/deadly/Clitocybe_rivulosa/Clitocybe_rivulosa22.png
+    md5: 8faffb3793f9c3094639cd947e7fb1ab
+    size: 7807
+    cloud:
+      remote_storage:
+        etag: 08f5e09d90a7898b031001
+        version_id: '1737548112556149'
+  - relpath: Classes/deadly/Clitocybe_rivulosa/Clitocybe_rivulosa26.png
+    md5: 51a482eae8e83e96cd4bd590aefaa89e
+    size: 13529
+    cloud:
+      remote_storage:
+        etag: 08b8919d90a7898b031001
+        version_id: '1737548112545976'
+  - relpath: Classes/deadly/Cortinarius_eartoxicus/Cortinarius_eartoxicus27.png
+    md5: 5b9492a3914085372e6620dba8a8bbd4
+    size: 14313
+    cloud:
+      remote_storage:
+        etag: 08a2a9f18fa7898b031001
+        version_id: '1737548111828130'
+  - relpath: Classes/deadly/Cortinarius_eartoxicus/Cortinarius_eartoxicus6.png
+    md5: b4e117d38094bd826d611c5111eecfcc
+    size: 3005
+    cloud:
+      remote_storage:
+        etag: 0880eef08fa7898b031001
+        version_id: '1737548111820544'
+  - relpath: Classes/deadly/Cortinarius_eartoxicus/Cortinarius_eartoxicus9.png
+    md5: aba5011dda1c44c380780cf2ff021fbb
+    size: 3755
+    cloud:
+      remote_storage:
+        etag: 08a295f18fa7898b031001
+        version_id: '1737548111825570'
+  - relpath: Classes/deadly/Cortinarius_orellanus/Cortinarius_orellanus12.png
+    md5: e804af365819045372e54449fd54f2b1
+    size: 8266
+    cloud:
+      remote_storage:
+        etag: 08fdf98c90a7898b031001
+        version_id: '1737548112280829'
+  - relpath: Classes/deadly/Cortinarius_rubellus/Cortinarius_rubellus7.png
+    md5: 4317a4b3e28d63159d35222856ca4094
+    size: 3737
+    cloud:
+      remote_storage:
+        etag: 08c4d09d90a7898b031001
+        version_id: '1737548112554052'
+  - relpath: Classes/deadly/Cortinarius_splendens/Cortinarius_splendens17.png
+    md5: 34ce05dcd91d9f1f3bca3c302bb0c455
+    size: 11026
+    cloud:
+      remote_storage:
+        etag: 0892e38990a7898b031001
+        version_id: '1737548112228754'
+  - relpath: Classes/deadly/Cortinarius_splendens/Cortinarius_splendens7.png
+    md5: e466d62a0e28ad24b0a0739d65d6fa2a
+    size: 3120
+    cloud:
+      remote_storage:
+        etag: 08c8e88990a7898b031001
+        version_id: '1737548112229448'
+  - relpath: Classes/deadly/Entoloma_sinuatum/Entoloma_sinuatum3.png
+    md5: 9911009c3c0b0b9f26ff657e3f5baac4
+    size: 1907
+    cloud:
+      remote_storage:
+        etag: 08cff09c90a7898b031001
+        version_id: '1737548112541775'
+  - relpath: Classes/deadly/Entoloma_sinuatum/Entoloma_sinuatum4.png
+    md5: ecd26205fda9134ace03316478b25e15
+    size: 3909
+    cloud:
+      remote_storage:
+        etag: 08e1dba090a7898b031001
+        version_id: '1737548112604641'
+  - relpath: Classes/deadly/Entoloma_sinuatum/Entoloma_sinuatum5.png
+    md5: 02135f2763e64c76b38d86502b3e22d9
+    size: 3605
+    cloud:
+      remote_storage:
+        etag: 08b2c19d90a7898b031001
+        version_id: '1737548112552114'
+  - relpath: Classes/deadly/Galerina_marginata/Galerina_marginata41.png
+    md5: e16b482acb5e356c344716704bfb24ea
+    size: 5303
+    cloud:
+      remote_storage:
+        etag: 0893838c90a7898b031001
+        version_id: '1737548112265619'
+  - relpath: Classes/deadly/Galerina_marginata/Galerina_marginata43.png
+    md5: e2788dd96900ed7209d507cacb9b55b4
+    size: 14814
+    cloud:
+      remote_storage:
+        etag: 08f3978c90a7898b031001
+        version_id: '1737548112268275'
+  - relpath: Classes/deadly/Galerina_marginata/Galerina_marginata8.png
+    md5: 278d2df840bf8a260725e3df09d37f20
+    size: 2788
+    cloud:
+      remote_storage:
+        etag: 08a4f98990a7898b031001
+        version_id: '1737548112231588'
+  - relpath: Classes/deadly/Galerina_sulciceps/Galerina_sulciceps18.png
+    md5: 3a1c1a486f3148424af22dec128ef98b
+    size: 15853
+    cloud:
+      remote_storage:
+        etag: 08c0b8e68fa7898b031001
+        version_id: '1737548111649856'
+  - relpath: Classes/deadly/Hypholoma_fasciculare/Hypholoma_fasciculare10.png
+    md5: 8bd298672ef77adc4472669b818b517b
+    size: 3120
+    cloud:
+      remote_storage:
+        etag: 08d19ba390a7898b031001
+        version_id: '1737548112645585'
+  - relpath: Classes/deadly/Hypholoma_fasciculare/Hypholoma_fasciculare12.png
+    md5: aaf1ed5141a6ca8c9cc37f6d9f83b133
+    size: 3261
+    cloud:
+      remote_storage:
+        etag: 0898d89f90a7898b031001
+        version_id: '1737548112587800'
+  - relpath: Classes/deadly/Hypholoma_fasciculare/Hypholoma_fasciculare19.png
+    md5: 22fe67231c8bf6a637c1f1f464aa576b
+    size: 13023
+    cloud:
+      remote_storage:
+        etag: 08fca6a390a7898b031001
+        version_id: '1737548112647036'
+  - relpath: Classes/deadly/Hypholoma_fasciculare/Hypholoma_fasciculare24.png
+    md5: 81361e0fb7295d5ec53a94d80b21de9d
+    size: 10005
+    cloud:
+      remote_storage:
+        etag: 08cbc6a390a7898b031001
+        version_id: '1737548112651083'
+  - relpath: Classes/deadly/Hypholoma_fasciculare/Hypholoma_fasciculare31.png
+    md5: 3cbe1394054c1076c30e45227cdcd74a
+    size: 11390
+    cloud:
+      remote_storage:
+        etag: 08b8bea390a7898b031001
+        version_id: '1737548112650040'
+  - relpath: Classes/deadly/Inosperma_erubescens/Inosperma_erubescens0.png
+    md5: d9054a6e53e6234590898f3e48ace691
+    size: 2986
+    cloud:
+      remote_storage:
+        etag: 08cf998890a7898b031001
+        version_id: '1737548112202959'
+  - relpath: Classes/deadly/Inosperma_erubescens/Inosperma_erubescens3.png
+    md5: a749ce71ce5ca77d8d830c11a65a6198
+    size: 2700
+    cloud:
+      remote_storage:
+        etag: 0886dc8790a7898b031001
+        version_id: '1737548112195078'
+  - relpath: Classes/deadly/Inosperma_erubescens/Inosperma_erubescens6.png
+    md5: 8bb611a1c7c4af1aaa4e6eb863ec270a
+    size: 3583
+    cloud:
+      remote_storage:
+        etag: 08dad4f98fa7898b031001
+        version_id: '1737548111964762'
+  - relpath: Classes/deadly/Lactarius_torminosus/Lactarius_torminosus13.png
+    md5: 85103919315678723796fa0ab0dfba75
+    size: 9060
+    cloud:
+      remote_storage:
+        etag: 08e0fa9c90a7898b031001
+        version_id: '1737548112543072'
+  - relpath: Classes/deadly/Lactarius_torminosus/Lactarius_torminosus25.png
+    md5: f892b5b2f12a3b0a0be118f1296f3fe5
+    size: 9982
+    cloud:
+      remote_storage:
+        etag: 08b2db8890a7898b031001
+        version_id: '1737548112211378'
+  - relpath: Classes/deadly/Lactarius_torminosus/Lactarius_torminosus7.png
+    md5: eb85a7eb3ddbf2a4039f52bf4d0d2752
+    size: 3729
+    cloud:
+      remote_storage:
+        etag: 08f4f08790a7898b031001
+        version_id: '1737548112197748'
+  - relpath: Classes/deadly/Lepiota_brunneoincarnata/Lepiota_brunneoincarnata14.png
+    md5: 07fe341183452b6d142dd33b698244fe
+    size: 14525
+    cloud:
+      remote_storage:
+        etag: 08c0d39c90a7898b031001
+        version_id: '1737548112538048'
+  - relpath: Classes/deadly/Lepiota_brunneoincarnata/Lepiota_brunneoincarnata6.png
+    md5: babbaa5376dbbb538e1bdef1f9a68d29
+    size: 4188
+    cloud:
+      remote_storage:
+        etag: 08bc848d90a7898b031001
+        version_id: '1737548112282172'
+  - relpath: Classes/deadly/Lepiota_brunneolilacea/Lepiota_brunneolilacea0.png
+    md5: ddab50851ce4d59ee48b16f4a6819856
+    size: 3362
+    cloud:
+      remote_storage:
+        etag: 08f9819e90a7898b031001
+        version_id: '1737548112560377'
+  - relpath: Classes/deadly/Lepiota_brunneolilacea/Lepiota_brunneolilacea15.png
+    md5: 2b0f50687716a28371528ac4d9e1012c
+    size: 6387
+    cloud:
+      remote_storage:
+        etag: 08c6d29c90a7898b031001
+        version_id: '1737548112537926'
+  - relpath: Classes/deadly/Lepiota_brunneolilacea/Lepiota_brunneolilacea17.png
+    md5: 0be33770fefacfcddbcbadc5755a5be5
+    size: 13482
+    cloud:
+      remote_storage:
+        etag: 08999d9e90a7898b031001
+        version_id: '1737548112563865'
+  - relpath: Classes/deadly/Lepiota_brunneolilacea/Lepiota_brunneolilacea28.png
+    md5: 72ca6a9b9fdd77ed5ad772844e54f80f
+    size: 9685
+    cloud:
+      remote_storage:
+        etag: 08c5e59d90a7898b031001
+        version_id: '1737548112556741'
+  - relpath: Classes/deadly/Lepiota_castanea/Lepiota_castanea0.png
+    md5: 0499d04ae72719ce479fcc033311d951
+    size: 3444
+    cloud:
+      remote_storage:
+        etag: 08aafff38fa7898b031001
+        version_id: '1737548111871914'
+  - relpath: Classes/deadly/Lepiota_castanea/Lepiota_castanea17.png
+    md5: 5f825d7ed6b2972a798c51232efb6843
+    size: 7450
+    cloud:
+      remote_storage:
+        etag: 08e7979a90a7898b031001
+        version_id: '1737548112497639'
+  - relpath: Classes/deadly/Lepiota_castanea/Lepiota_castanea27.png
+    md5: 75dde4cb2b0208eeab2eb6e47259c3eb
+    size: 10955
+    cloud:
+      remote_storage:
+        etag: 08a5ebf08fa7898b031001
+        version_id: '1737548111820197'
+  - relpath: Classes/deadly/Lepiota_castanea/Lepiota_castanea3.png
+    md5: 9d9b1af48e06652c4f9782be21ab9a19
+    size: 3688
+    cloud:
+      remote_storage:
+        etag: 088389f48fa7898b031001
+        version_id: '1737548111873155'
+  - relpath: Classes/deadly/Lepiota_helveola/Lepiota_helveola10.png
+    md5: a64ae0bf70b5e62eafd427f5eeee8625
+    size: 3605
+    cloud:
+      remote_storage:
+        etag: 0885a58a90a7898b031001
+        version_id: '1737548112237189'
+  - relpath: Classes/deadly/Lepiota_helveola/Lepiota_helveola22.png
+    md5: 26bcf452badfe1faf6f43e9faa641cab
+    size: 7757
+    cloud:
+      remote_storage:
+        etag: 0880848b90a7898b031001
+        version_id: '1737548112249344'
+  - relpath: Classes/deadly/Lepiota_subincarnata/Lepiota_subincarnata12.png
+    md5: c858ba01023edf78fcd035047e062a4d
+    size: 3271
+    cloud:
+      remote_storage:
+        etag: 08ff898e90a7898b031001
+        version_id: '1737548112299263'
+  - relpath: Classes/deadly/Lepiota_subincarnata/Lepiota_subincarnata3.png
+    md5: 4e7ecf3eca92d515efa64527813b82cf
+    size: 4928
+    cloud:
+      remote_storage:
+        etag: 08eeb68c90a7898b031001
+        version_id: '1737548112272238'
+  - relpath: Classes/deadly/Lepiota_subincarnata/Lepiota_subincarnata30.png
+    md5: a541bafe6ce3c4ea162781e059805555
+    size: 10715
+    cloud:
+      remote_storage:
+        etag: 08f0ff8c90a7898b031001
+        version_id: '1737548112281584'
+  - relpath: Classes/deadly/Omphalotus_illudens/Omphalotus_illudens15.png
+    md5: 7e27c26345256f7f99eeb6aa2be79f6d
+    size: 13215
+    cloud:
+      remote_storage:
+        etag: 08869b9f90a7898b031001
+        version_id: '1737548112579974'
+  - relpath: Classes/deadly/Omphalotus_japonicus/Omphalotus_japonicus16.png
+    md5: 610f3d2c7ea3c609bca0c0af33c81480
+    size: 18334
+    cloud:
+      remote_storage:
+        etag: 08ecc79e90a7898b031001
+        version_id: '1737548112569324'
+  - relpath: Classes/deadly/Omphalotus_japonicus/Omphalotus_japonicus27.png
+    md5: 9cf1aa43da7ccb1c37ac7d6aa5c44455
+    size: 12406
+    cloud:
+      remote_storage:
+        etag: 08fafca090a7898b031001
+        version_id: '1737548112608890'
+  - relpath: Classes/deadly/Omphalotus_japonicus/Omphalotus_japonicus7.png
+    md5: 2696c459f2fe1021443ca252b2c72f28
+    size: 2286
+    cloud:
+      remote_storage:
+        etag: 08bcf99f90a7898b031001
+        version_id: '1737548112592060'
+  - relpath: Classes/deadly/Paxillus_involutus/Paxillus_involutus10.png
+    md5: ecf7a9d11e5742656b705d68d9ffc350
+    size: 2967
+    cloud:
+      remote_storage:
+        etag: 08b9d1f48fa7898b031001
+        version_id: '1737548111882425'
+  - relpath: Classes/deadly/Paxillus_involutus/Paxillus_involutus16.png
+    md5: a383cf7af6dd05624576ae150346fce1
+    size: 3014
+    cloud:
+      remote_storage:
+        etag: 08b4e58590a7898b031001
+        version_id: '1737548112163508'
+  - relpath: Classes/deadly/Paxillus_involutus/Paxillus_involutus18.png
+    md5: 8b2c8b93b1294062824319d01f0cfb5b
+    size: 12547
+    cloud:
+      remote_storage:
+        etag: 08b6cf8590a7898b031001
+        version_id: '1737548112160694'
+  - relpath: Classes/deadly/Paxillus_involutus/Paxillus_involutus22.png
+    md5: 75d2787917188c3d1367ec1fdf76ad63
+    size: 13181
+    cloud:
+      remote_storage:
+        etag: 089ba8f08fa7898b031001
+        version_id: '1737548111811611'
+  - relpath: Classes/deadly/Paxillus_involutus/Paxillus_involutus30.png
+    md5: f7942c1d4afc0e43c336017dfea4fedf
+    size: 13765
+    cloud:
+      remote_storage:
+        etag: 08d2a18590a7898b031001
+        version_id: '1737548112154834'
+  - relpath: Classes/deadly/Pholiotina_rugosa/Pholiotina_rugosa15.png
+    md5: 13b339c781f41249255e9fe446cf79a2
+    size: 9161
+    cloud:
+      remote_storage:
+        etag: 08eec38590a7898b031001
+        version_id: '1737548112159214'
+  - relpath: Classes/deadly/Pholiotina_rugosa/Pholiotina_rugosa3.png
+    md5: 81bcb32d70cdb933afadd0fd89e12dc6
+    size: 3717
+    cloud:
+      remote_storage:
+        etag: 08fbdb9990a7898b031001
+        version_id: '1737548112489979'
+  - relpath: Classes/deadly/Pleurocybella_porrigens/Pleurocybella_porrigens25.png
+    md5: 873fdfe8b03a8e8de99b3156632e42a3
+    size: 9988
+    cloud:
+      remote_storage:
+        etag: 08b2e18790a7898b031001
+        version_id: '1737548112195762'
+  - relpath: Classes/deadly/Pleurocybella_porrigens/Pleurocybella_porrigens7.png
+    md5: fb205336faf27bb87df86c2dca69aa70
+    size: 9275
+    cloud:
+      remote_storage:
+        etag: 08a5e19c90a7898b031001
+        version_id: '1737548112539813'
+  - relpath: Classes/deadly/Pleurocybella_porrigens/Pleurocybella_porrigens9.png
+    md5: b272f536bc8010fb0267416fc89dc813
+    size: 8131
+    cloud:
+      remote_storage:
+        etag: 08d39f8590a7898b031001
+        version_id: '1737548112154579'
+  - relpath: Classes/deadly/Podostroma_cornu-damae/Podostroma_cornu-damae18.png
+    md5: 57e19c9c4168e8f6b202cf79cd5b25aa
+    size: 13479
+    cloud:
+      remote_storage:
+        etag: 08879d8a90a7898b031001
+        version_id: '1737548112236167'
+  - relpath: Classes/deadly/Podostroma_cornu-damae/Podostroma_cornu-damae32.png
+    md5: a93a8948a58aba9ef930f32addb76d40
+    size: 8629
+    cloud:
+      remote_storage:
+        etag: 08dcb08590a7898b031001
+        version_id: '1737548112156764'
+  - relpath: Classes/deadly/Podostroma_cornu-damae/Podostroma_cornu-damae4.png
+    md5: 49fe21874d3f9045e9da85c4c15e4c52
+    size: 3257
+    cloud:
+      remote_storage:
+        etag: 08dfe2fb8fa7898b031001
+        version_id: '1737548111999327'
+  - relpath: Classes/deadly/Russula_subnigricans/Russula_subnigricans0.png
+    md5: e70ccba3695ced80f12434df767f9512
+    size: 11369
+    cloud:
+      remote_storage:
+        etag: 08f9b48790a7898b031001
+        version_id: '1737548112190073'
+  - relpath: Classes/deadly/Russula_subnigricans/Russula_subnigricans9.png
+    md5: f86a8fb78aa2925d7c925271204b94af
+    size: 8433
+    cloud:
+      remote_storage:
+        etag: 08b1dc8790a7898b031001
+        version_id: '1737548112195121'
+  - relpath: Classes/deadly/Tricholoma_equestre/Tricholoma_equestre10.png
+    md5: 307e22b2687c745c1af9638fe4fa4ed5
+    size: 3048
+    cloud:
+      remote_storage:
+        etag: 08afdf9d90a7898b031001
+        version_id: '1737548112555951'
+  - relpath: Classes/deadly/Tricholoma_equestre/Tricholoma_equestre11.png
+    md5: d081c727a24b627f69570ad77bc2467f
+    size: 15745
+    cloud:
+      remote_storage:
+        etag: 08c7f19f90a7898b031001
+        version_id: '1737548112591047'
+  - relpath: Classes/deadly/Tricholoma_equestre/Tricholoma_equestre19.png
+    md5: 77df1bece237ce3d7d38daf5e7355e2e
+    size: 13999
+    cloud:
+      remote_storage:
+        etag: 08b6da9e90a7898b031001
+        version_id: '1737548112571702'
+  - relpath: Classes/deadly/Tricholoma_equestre/Tricholoma_equestre22.png
+    md5: 7533fbc786579444d1da084f03602504
+    size: 17506
+    cloud:
+      remote_storage:
+        etag: 08b9d19d90a7898b031001
+        version_id: '1737548112554169'
+  - relpath: Classes/deadly/Tricholoma_equestre/Tricholoma_equestre7.png
+    md5: e803a5290e6835384772e4f1ca95f73a
+    size: 3958
+    cloud:
+      remote_storage:
+        etag: 08c5fa9d90a7898b031001
+        version_id: '1737548112559429'
+  - relpath: Classes/deadly/Trogia_venenata/Trogia_venenata13.png
+    md5: aca578b21c72c44a728af5d0ae07e47d
+    size: 2230
+    cloud:
+      remote_storage:
+        etag: 08f5a98c90a7898b031001
+        version_id: '1737548112270581'
+  - relpath: Classes/deadly/Trogia_venenata/Trogia_venenata14.png
+    md5: 49a84fbb3ddf9053e7bfe5d132aef700
+    size: 8323
+    cloud:
+      remote_storage:
+        etag: 08bef38b90a7898b031001
+        version_id: '1737548112263614'
+  - relpath: Classes/deadly/Trogia_venenata/Trogia_venenata17.png
+    md5: b56ca5aeb8e590bfdaef5246591013e3
+    size: 12974
+    cloud:
+      remote_storage:
+        etag: 08e7f59c90a7898b031001
+        version_id: '1737548112542439'
+  - relpath: Classes/deadly/Trogia_venenata/Trogia_venenata30.png
+    md5: da2d36a8fc78e19cc1750c55802faead
+    size: 11235
+    cloud:
+      remote_storage:
+        etag: 08bc898d90a7898b031001
+        version_id: '1737548112282812'
+  - relpath: Classes/deadly/Trogia_venenata/Trogia_venenata32.png
+    md5: f2399212cc065fe8596f8ca782279ac2
+    size: 8133
+    cloud:
+      remote_storage:
+        etag: 08d59c8c90a7898b031001
+        version_id: '1737548112268885'
+  - relpath: Classes/edible/Agaricus/316_pROmzzlEkIY.jpg
+    md5: 37cdbcd1dbd2ef61017ed6a9998e0e95
+    size: 179670
+    cloud:
+      remote_storage:
+        etag: 08cd8bd08fa7898b031001
+        version_id: '1737548111283661'
+  - relpath: Classes/edible/Agaricus_bisporus/Agaricus_bisporus29.png
+    md5: 5110c814f1d249458b5af183e292b2f0
+    size: 3250
+    cloud:
+      remote_storage:
+        etag: 08da9ad48fa7898b031001
+        version_id: '1737548111351130'
+  - relpath: Classes/edible/Agaricus_bisporus/Agaricus_bisporus36.png
+    md5: 840ce17593303f21cd90592d7392d532
+    size: 6852
+    cloud:
+      remote_storage:
+        etag: 08e7ced28fa7898b031001
+        version_id: '1737548111325031'
+  - relpath: Classes/edible/Apioperdon pyriforme/4385medium.jpeg
+    md5: b00a2c944b8f73a3a4c1b7f45a686019
+    size: 197100
+    cloud:
+      remote_storage:
+        etag: 08b3989b90a7898b031001
+        version_id: '1737548112514099'
+  - relpath: Classes/edible/Apioperdon pyriforme/4496medium.jpeg
+    md5: 5e500d61cb434b7000f6da07b886892e
+    size: 95025
+    cloud:
+      remote_storage:
+        etag: 08c18b988fa7898b031001
+        version_id: '1737548110366145'
+  - relpath: Classes/edible/Apioperdon pyriforme/4559medium.jpeg
+    md5: 41a6d3ff0d25bdf01dcb8720570cf062
+    size: 122662
+    cloud:
+      remote_storage:
+        etag: 088d94f98fa7898b031001
+        version_id: '1737548111956493'
+  - relpath: Classes/edible/Apioperdon pyriforme/4914medium.jpeg
+    md5: 0dbcad93fd55e01b724e7ab5b1aa99e4
+    size: 104491
+    cloud:
+      remote_storage:
+        etag: 089cc6bd8fa7898b031001
+        version_id: '1737548110979868'
+  - relpath: Classes/edible/Apioperdon pyriforme/4939medium.jpeg
+    md5: 54ff938eda4885667ace985fe45839e6
+    size: 177467
+    cloud:
+      remote_storage:
+        etag: 08848bc28fa7898b031001
+        version_id: '1737548111054212'
+  - relpath: Classes/edible/Cantharellus_cibarius/Cantharellus_cibarius22.png
+    md5: 3da504612e50eab95499b0b40030409e
+    size: 8620
+    cloud:
+      remote_storage:
+        etag: 0885c1fc8ea7898b031001
+        version_id: '1737548109914245'
+  - relpath: Classes/edible/Cerioporus squamosus/7686medium.jpg
+    md5: 2c7a69ebac24ab8a62e1b8347a736708
+    size: 119502
+    cloud:
+      remote_storage:
+        etag: 08daaea48fa7898b031001
+        version_id: '1737548110567258'
+  - relpath: Classes/edible/Cerioporus squamosus/7774medium.jpg
+    md5: 35ff8ff262068a2c8fa4a3899d3c1235
+    size: 69128
+    cloud:
+      remote_storage:
+        etag: 08badfa38fa7898b031001
+        version_id: '1737548110557114'
+  - relpath: Classes/edible/Cerioporus squamosus/7952medium.jpeg
+    md5: 3890db12f63614506f7ad5cb96c5dfa1
+    size: 239818
+    cloud:
+      remote_storage:
+        etag: 089781818fa7898b031001
+        version_id: '1737548109987991'
+  - relpath: Classes/edible/Cerioporus squamosus/8140medium.jpg
+    md5: 73a8040ad7a87ba7be7a31e639411500
+    size: 102095
+    cloud:
+      remote_storage:
+        etag: 08c8e0878fa7898b031001
+        version_id: '1737548110098504'
+  - relpath: Classes/edible/Cerioporus squamosus/8487medium.jpeg
+    md5: b8ca557ec9af58e4aacf34a42e8bb3a4
+    size: 187092
+    cloud:
+      remote_storage:
+        etag: 08bfb89b8fa7898b031001
+        version_id: '1737548110421055'
+  - relpath: Classes/edible/Cerioporus squamosus/8572medium.jpeg
+    md5: 00a74af58104b2becf757a9da379b360
+    size: 181783
+    cloud:
+      remote_storage:
+        etag: 0899f7938fa7898b031001
+        version_id: '1737548110298009'
+  - relpath: Classes/edible/Cerioporus squamosus/8863medium.jpeg
+    md5: 4d23fb9922d59e6feeb7bafb1d8bf481
+    size: 131558
+    cloud:
+      remote_storage:
+        etag: 08f0dba18fa7898b031001
+        version_id: '1737548110523888'
+  - relpath: Classes/edible/Cerioporus squamosus/8994medium.jpg
+    md5: 3c964bcb240eeff6aa18dc9d6f930ecf
+    size: 102660
+    cloud:
+      remote_storage:
+        etag: 08ddfe898fa7898b031001
+        version_id: '1737548110135133'
+  - relpath: Classes/edible/Cerioporus squamosus/9014medium.jpeg
+    md5: e3f0bc35547e940556c72cd481a297e6
+    size: 154886
+    cloud:
+      remote_storage:
+        etag: 08f0fe9990a7898b031001
+        version_id: '1737548112494448'
+  - relpath: Classes/edible/Clitocybe_nuda/Clitocybe_nuda1.png
+    md5: 60176853fb1c64707d00550af3774656
+    size: 14080
+    cloud:
+      remote_storage:
+        etag: 0889d8a78fa7898b031001
+        version_id: '1737548110621705'
+  - relpath: Classes/edible/Coltricia perennis/6527medium.jpeg
+    md5: d79c889800e808d3d39f5ca07d86dadf
+    size: 91244
+    cloud:
+      remote_storage:
+        etag: 08dcb8eb8fa7898b031001
+        version_id: '1737548111731804'
+  - relpath: Classes/edible/Coltricia perennis/6531medium.jpeg
+    md5: e33e1ba559655200974832d2ea629423
+    size: 157782
+    cloud:
+      remote_storage:
+        etag: 088febf08fa7898b031001
+        version_id: '1737548111820175'
+  - relpath: Classes/edible/Coltricia perennis/6644medium.jpeg
+    md5: e6062f9ecb6805d948d2525b22d13d6b
+    size: 203102
+    cloud:
+      remote_storage:
+        etag: 08a9c3b190a7898b031001
+        version_id: '1737548112880041'
+  - relpath: Classes/edible/Coprinellus micaceus/7505medium.jpeg
+    md5: c877ef4a113db8e2aea5b6eb4c4225b9
+    size: 198729
+    cloud:
+      remote_storage:
+        etag: 08a189e68fa7898b031001
+        version_id: '1737548111643809'
+  - relpath: Classes/edible/Coprinellus micaceus/7533medium.jpeg
+    md5: a16484eaf025177ed02742790fccd247
+    size: 136768
+    cloud:
+      remote_storage:
+        etag: 08c3f1e58fa7898b031001
+        version_id: '1737548111640771'
+  - relpath: Classes/edible/Coprinus comatus/10200medium.jpg
+    md5: 349963ab1d799354a00a773766bf8f6c
+    size: 47959
+    cloud:
+      remote_storage:
+        etag: 08c88bc88fa7898b031001
+        version_id: '1737548111152584'
+  - relpath: Classes/edible/Coprinus comatus/10203medium.jpeg
+    md5: 9b803b9103a6aca7a25176f9d4afa1a8
+    size: 123541
+    cloud:
+      remote_storage:
+        etag: 08e4f2dd8fa7898b031001
+        version_id: '1737548111509860'
+  - relpath: Classes/edible/Coprinus comatus/9304medium.jpeg
+    md5: 455cfa342e91a7ec00a9e708b7caed0e
+    size: 160885
+    cloud:
+      remote_storage:
+        etag: 08b5e6ee8fa7898b031001
+        version_id: '1737548111786805'
+  - relpath: Classes/edible/Coprinus comatus/9431medium.jpg
+    md5: bc1d395a92ed239a954ac96e9aff877c
+    size: 110416
+    cloud:
+      remote_storage:
+        etag: 089bbaee8fa7898b031001
+        version_id: '1737548111781147'
+  - relpath: Classes/edible/Coprinus comatus/9436medium.jpeg
+    md5: 7d177b0bdeda347a5e70e1e9944ca484
+    size: 99521
+    cloud:
+      remote_storage:
+        etag: 0894f4bf8fa7898b031001
+        version_id: '1737548111018516'
+  - relpath: Classes/edible/Coprinus comatus/9510medium.jpeg
+    md5: 5ed14088f1030fe6a3e74aaacd07fb62
+    size: 125009
+    cloud:
+      remote_storage:
+        etag: 08fffe8b90a7898b031001
+        version_id: '1737548112265087'
+  - relpath: Classes/edible/Coprinus comatus/9699medium.jpeg
+    md5: 53ba04c1c159ef8830358604b15b6731
+    size: 173826
+    cloud:
+      remote_storage:
+        etag: 08818adc8fa7898b031001
+        version_id: '1737548111480065'
+  - relpath: Classes/edible/Coprinus comatus/9880medium.jpg
+    md5: c91b8a299e798a184eafe8f7b1631ea6
+    size: 108752
+    cloud:
+      remote_storage:
+        etag: 08baabef8fa7898b031001
+        version_id: '1737548111795642'
+  - relpath: Classes/edible/Coprinus comatus/9909medium.jpeg
+    md5: bd7bb1b47dabfbe23c9a52e75eb551af
+    size: 141411
+    cloud:
+      remote_storage:
+        etag: 08d8b3dd8fa7898b031001
+        version_id: '1737548111501784'
+  - relpath: Classes/edible/Coprinus comatus/9933medium.jpg
+    md5: 66b0a2d444a5d0d6af3d00ea179f931a
+    size: 18193
+    cloud:
+      remote_storage:
+        etag: 08ad92d28fa7898b031001
+        version_id: '1737548111317293'
+  - relpath: Classes/edible/Coprinus_comatus/Coprinus_comatus22.png
+    md5: 0ffc5c0f93cd6e0c4b3d39413676c66c
+    size: 3253
+    cloud:
+      remote_storage:
+        etag: 08fcf7f78fa7898b031001
+        version_id: '1737548111936508'
+  - relpath: Classes/edible/Craterellus_cornucopioides/Craterellus_cornucopioides48.png
+    md5: 94887534083205fae8a5ea7f0646d4fe
+    size: 12833
+    cloud:
+      remote_storage:
+        etag: 08e8e8878fa7898b031001
+        version_id: '1737548110099560'
+  - relpath: Classes/edible/Craterellus_cornucopioides/Craterellus_cornucopioides5.png
+    md5: 096e7189bc96ec60102b31693d6664b4
+    size: 4476
+    cloud:
+      remote_storage:
+        etag: 08e5c8b58fa7898b031001
+        version_id: '1737548110849125'
+  - relpath: Classes/edible/Crucibulum laeve/8128medium.jpeg
+    md5: 107ca0ce89a3ea1598ae2079a0f26d70
+    size: 145529
+    cloud:
+      remote_storage:
+        etag: 08a1938e90a7898b031001
+        version_id: '1737548112300449'
+  - relpath: Classes/edible/Crucibulum laeve/8193medium.jpeg
+    md5: 71ed9d8902ddd959559a9c9c7c26ee15
+    size: 158892
+    cloud:
+      remote_storage:
+        etag: 088bc0e68fa7898b031001
+        version_id: '1737548111650827'
+  - relpath: Classes/edible/Cyttaria_espinosae/Cyttaria_espinosae17.png
+    md5: ea9ae601c1fbe39723db2115a92984ba
+    size: 6531
+    cloud:
+      remote_storage:
+        etag: 088dcaba8fa7898b031001
+        version_id: '1737548110931213'
+  - relpath: Classes/edible/Daedaleopsis confragosa/8278medium.jpg
+    md5: 463befa40a162230ac94eb016f38a6da
+    size: 114992
+    cloud:
+      remote_storage:
+        etag: 08eafcc68fa7898b031001
+        version_id: '1737548111134314'
+  - relpath: Classes/edible/Daedaleopsis confragosa/8483medium.jpg
+    md5: 31f937619d8a1873834b00e0ac4e8c1c
+    size: 134198
+    cloud:
+      remote_storage:
+        etag: 08b0fa868fa7898b031001
+        version_id: '1737548110085424'
+  - relpath: Classes/edible/Daedaleopsis tricolor/8807medium.jpg
+    md5: 5b70657494238b0f574c40e3358a48b0
+    size: 85485
+    cloud:
+      remote_storage:
+        etag: 08da9bd88fa7898b031001
+        version_id: '1737548111416794'
+  - relpath: Classes/edible/Entoloma/076_9s8TUoRDaI4.jpg
+    md5: c112fea68da9841fb31a8915585ffe13
+    size: 164554
+    cloud:
+      remote_storage:
+        etag: 08f683f98fa7898b031001
+        version_id: '1737548111954422'
+  - relpath: Classes/edible/Flammulina velutipes/10119medium.jpg
+    md5: 57b024a457649a64b60f02b6fe0e6778
+    size: 84164
+    cloud:
+      remote_storage:
+        etag: 0881b8c28fa7898b031001
+        version_id: '1737548111059969'
+  - relpath: Classes/edible/Flammulina velutipes/10198medium.jpg
+    md5: 7adcd036c62ab69e38d063583ee41add
+    size: 130364
+    cloud:
+      remote_storage:
+        etag: 08b7ebe48fa7898b031001
+        version_id: '1737548111623607'
+  - relpath: Classes/edible/Flammulina velutipes/10383medium.jpg
+    md5: e8fa1bd6bb46b66fe5c3b06560d7c71a
+    size: 133633
+    cloud:
+      remote_storage:
+        etag: 08fe94e48fa7898b031001
+        version_id: '1737548111612542'
+  - relpath: Classes/edible/Flammulina velutipes/10426medium.jpeg
+    md5: 98c01dfb0809d1697d119b2d43230835
+    size: 134010
+    cloud:
+      remote_storage:
+        etag: 0888ed8490a7898b031001
+        version_id: '1737548112148104'
+  - relpath: Classes/edible/Flammulina velutipes/9765medium.jpg
+    md5: 86c7f1463bf603f426abd2f3333f7b0e
+    size: 154723
+    cloud:
+      remote_storage:
+        etag: 08a7d5a28fa7898b031001
+        version_id: '1737548110539431'
+  - relpath: Classes/edible/Flammulina velutipes/9959medium.jpeg
+    md5: 03052d2cc327bbf0497dbf330ff4395a
+    size: 160284
+    cloud:
+      remote_storage:
+        etag: 08c58dee8fa7898b031001
+        version_id: '1737548111775429'
+  - relpath: Classes/edible/Hericium coralloides/11582medium.jpg
+    md5: 5acdbb3cd745c01be24faf513bb64949
+    size: 94736
+    cloud:
+      remote_storage:
+        etag: 08d8fed98fa7898b031001
+        version_id: '1737548111445848'
+  - relpath: Classes/edible/Hericium coralloides/11633medium.jpeg
+    md5: fbd91598688ec11619538b910d48a28c
+    size: 177643
+    cloud:
+      remote_storage:
+        etag: 08bb86ed8fa7898b031001
+        version_id: '1737548111758139'
+  - relpath: Classes/edible/Hericium coralloides/11881medium.jpeg
+    md5: c9010bf677dd5d093dbebdf60d007a77
+    size: 161323
+    cloud:
+      remote_storage:
+        etag: 08dc8de58fa7898b031001
+        version_id: '1737548111627996'
+  - relpath: Classes/edible/Hericium coralloides/11924medium.jpeg
+    md5: 5997dc6d79b8225767087a2981378ddd
+    size: 104738
+    cloud:
+      remote_storage:
+        etag: 08ede8e08fa7898b031001
+        version_id: '1737548111557741'
+  - relpath: Classes/edible/Hygrocybe/107_8A2HnEVmiKo.jpg
+    md5: 8823a53483ab1a195e14852efa284722
+    size: 122608
+    cloud:
+      remote_storage:
+        etag: 08c6e6ae8fa7898b031001
+        version_id: '1737548110738246'
+  - relpath: Classes/edible/Hygrocybe/116_sOxhJKbhcKg.jpg
+    md5: 7c60457401f7333ae34f33d5d16249bb
+    size: 125939
+    cloud:
+      remote_storage:
+        etag: 08f1c4d78fa7898b031001
+        version_id: '1737548111405681'
+  - relpath: Classes/edible/Hygrocybe/194_HlqDJxvhG8Y.jpg
+    md5: 50c95280be78a02dc19e616c21d3fa51
+    size: 161722
+    cloud:
+      remote_storage:
+        etag: 08f9a0fb8fa7898b031001
+        version_id: '1737548111990905'
+  - relpath: Classes/edible/Hygrocybe/331_WAuHB3ry1oQ.jpg
+    md5: 8a26e2839e680de5e35f36198503c841
+    size: 125847
+    cloud:
+      remote_storage:
+        etag: 08cadba38fa7898b031001
+        version_id: '1737548110556618'
+  - relpath: Classes/edible/Hypholoma fasciculare/12662medium.jpeg
+    md5: a9f67b5d9b50560790c0cf8bc42694be
+    size: 184637
+    cloud:
+      remote_storage:
+        etag: 08f5d0f38fa7898b031001
+        version_id: '1737548111865973'
+  - relpath: Classes/edible/Hypsizygus_tessellatus/Hypsizygus_tessellatus16.png
+    md5: 2f4b25abc49bd1b7ffae12cb66d01a0a
+    size: 7276
+    cloud:
+      remote_storage:
+        etag: 08a6d2bb8fa7898b031001
+        version_id: '1737548110948646'
+  - relpath: Classes/edible/Hypsizygus_tessellatus/Hypsizygus_tessellatus27.png
+    md5: 451074ef59a7b4a97373623fc55d45af
+    size: 7174
+    cloud:
+      remote_storage:
+        etag: 08c094bf8fa7898b031001
+        version_id: '1737548111006272'
+  - relpath: Classes/edible/Kuehneromyces mutabilis/13565medium.jpeg
+    md5: 655fb18dd9129b33ce09cab30b4b6faa
+    size: 197551
+    cloud:
+      remote_storage:
+        etag: 08f4a69c90a7898b031001
+        version_id: '1737548112532340'
+  - relpath: Classes/edible/Kuehneromyces mutabilis/13630medium.jpeg
+    md5: 96d8b102d52baf4a8a88fa2162c00f9d
+    size: 190629
+    cloud:
+      remote_storage:
+        etag: 088e99f88fa7898b031001
+        version_id: '1737548111940750'
+  - relpath: Classes/edible/Kuehneromyces mutabilis/13786medium.jpeg
+    md5: bbfb5e540ff9bad25dd9ec7320133a41
+    size: 165636
+    cloud:
+      remote_storage:
+        etag: 089dd3ee8fa7898b031001
+        version_id: '1737548111784349'
+  - relpath: Classes/edible/Kuehneromyces mutabilis/14014medium.jpg
+    md5: dcc9951da36609a0daed2bae0a641448
+    size: 130249
+    cloud:
+      remote_storage:
+        etag: 08afc19e90a7898b031001
+        version_id: '1737548112568495'
+  - relpath: Classes/edible/Lactarius torminosus/14422medium.jpg
+    md5: b90ceea988cd5c03eb3983b31a3dc225
+    size: 99461
+    cloud:
+      remote_storage:
+        etag: 08c8cee68fa7898b031001
+        version_id: '1737548111652680'
+  - relpath: Classes/edible/Lactarius torminosus/14491medium.jpg
+    md5: 868879908ba16c16998be238d36c9395
+    size: 145553
+    cloud:
+      remote_storage:
+        etag: 08f5b0ee8fa7898b031001
+        version_id: '1737548111779957'
+  - relpath: Classes/edible/Leccinum_aurantiacum/Leccinum_aurantiacum22.png
+    md5: 50ff79d72ac542ff44f4d5749fe98435
+    size: 5753
+    cloud:
+      remote_storage:
+        etag: 08eea6e48fa7898b031001
+        version_id: '1737548111614830'
+  - relpath: Classes/edible/Macrolepiota_procera/Macrolepiota_procera37.png
+    md5: a40a48d18bfcd54c857cc6b411b92229
+    size: 17224
+    cloud:
+      remote_storage:
+        etag: 08c19ceb8fa7898b031001
+        version_id: '1737548111728193'
+  - relpath: Classes/edible/Macrolepiota_procera/Macrolepiota_procera8.png
+    md5: 697f5859d46382d8d118d4a1e7ef80fe
+    size: 3000
+    cloud:
+      remote_storage:
+        etag: 08afe1e68fa7898b031001
+        version_id: '1737548111655087'
+  - relpath: Classes/edible/Mutinus ravenelii/18760medium.jpeg
+    md5: 0ad560bdacc15215605e6d66e67cae18
+    size: 174127
+    cloud:
+      remote_storage:
+        etag: 0899d5b48fa7898b031001
+        version_id: '1737548110834329'
+  - relpath: Classes/edible/Mutinus ravenelii/18800medium.jpg
+    md5: ea1666831632123212d1ff83cc38bd5d
+    size: 101160
+    cloud:
+      remote_storage:
+        etag: 08cac7af8fa7898b031001
+        version_id: '1737548110750666'
+  - relpath: Classes/edible/Phallus impudicus/21299medium.jpeg
+    md5: 1fc0e247ef989bee9224ecabcd615402
+    size: 114345
+    cloud:
+      remote_storage:
+        etag: 0882e1ba8fa7898b031001
+        version_id: '1737548110934146'
+  - relpath: Classes/edible/Phallus impudicus/21423medium.jpeg
+    md5: 3cd687bb40a9c571ceae3e793d6943cd
+    size: 168847
+    cloud:
+      remote_storage:
+        etag: 08a6b6ed8fa7898b031001
+        version_id: '1737548111764262'
+  - relpath: Classes/edible/Pleurotus ostreatus/24024medium.jpeg
+    md5: 965965723b5ea4b3717df6a1c45316f2
+    size: 184967
+    cloud:
+      remote_storage:
+        etag: 0881d69d8fa7898b031001
+        version_id: '1737548110457601'
+  - relpath: Classes/edible/Pleurotus ostreatus/24071medium.jpeg
+    md5: ab23e64a8455bf22e38717dfef54470e
+    size: 42333
+    cloud:
+      remote_storage:
+        etag: 08e9f8a08fa7898b031001
+        version_id: '1737548110511209'
+  - relpath: Classes/edible/Pleurotus ostreatus/24178medium.jpeg
+    md5: 53958dab4acda03522667fe8e0509dac
+    size: 211544
+    cloud:
+      remote_storage:
+        etag: 0897c5cf8fa7898b031001
+        version_id: '1737548111274647'
+  - relpath: Classes/edible/Pleurotus ostreatus/24323medium.jpeg
+    md5: fa5cda44dba1710bc78e6c15fa244c00
+    size: 177237
+    cloud:
+      remote_storage:
+        etag: 0891f08d8fa7898b031001
+        version_id: '1737548110198801'
+  - relpath: Classes/edible/Pleurotus ostreatus/24411medium.jpeg
+    md5: 4a275d0a7f33b6c6644e695c5748d0f0
+    size: 105536
+    cloud:
+      remote_storage:
+        etag: 08b1aeba8fa7898b031001
+        version_id: '1737548110927665'
+  - relpath: Classes/edible/Pleurotus ostreatus/24438medium.jpg
+    md5: 3a83fbcfcb20206b2c4c94071f85f7be
+    size: 69526
+    cloud:
+      remote_storage:
+        etag: 08bfcab58fa7898b031001
+        version_id: '1737548110849343'
+  - relpath: Classes/edible/Russula/082_uMjhnoGEYIE.jpg
+    md5: 7953d009b4c259c98ac59db104e9402a
+    size: 111156
+    cloud:
+      remote_storage:
+        etag: 08b9f8c28fa7898b031001
+        version_id: '1737548111068217'
+  - relpath: Classes/edible/Russula/435_66pCBNMickc.jpg
+    md5: d9616e2de63b4e56499e7c6a8e0c3a1b
+    size: 100542
+    cloud:
+      remote_storage:
+        etag: 089afff28ea7898b031001
+        version_id: '1737548109758362'
+  - relpath: Classes/edible/Schizophyllum commune/37333medium.jpg
+    md5: 18db6740ed9f7467b3675269df0266b6
+    size: 93715
+    cloud:
+      remote_storage:
+        etag: 08d7c6c78fa7898b031001
+        version_id: '1737548111143767'
+  - relpath: Classes/edible/Schizophyllum commune/37384medium.jpg
+    md5: 51dc5302e33b767c718bd0d2facdc94a
+    size: 27607
+    cloud:
+      remote_storage:
+        etag: 08e3ffb58fa7898b031001
+        version_id: '1737548110856163'
+  - relpath: Classes/edible/Schizophyllum commune/37489medium.jpg
+    md5: 47ddf3db23c4d9bdbfa581b5c133bbbe
+    size: 110432
+    cloud:
+      remote_storage:
+        etag: 0884c2bc8fa7898b031001
+        version_id: '1737548110962948'
+  - relpath: Classes/edible/Schizophyllum commune/37565medium.jpeg
+    md5: de993f43c4731123593156912ef14f4e
+    size: 112740
+    cloud:
+      remote_storage:
+        etag: 08c2e5c18fa7898b031001
+        version_id: '1737548111049410'
+  - relpath: Classes/edible/Schizophyllum commune/37576medium.jpeg
+    md5: 9676cdef09fe0f944d7695f9ca96a053
+    size: 102941
+    cloud:
+      remote_storage:
+        etag: 08aacfc78fa7898b031001
+        version_id: '1737548111144874'
+  - relpath: Classes/edible/Schizophyllum commune/37904medium.jpg
+    md5: 7090a07ec456a464f67c424b025c2958
+    size: 116566
+    cloud:
+      remote_storage:
+        etag: 0880a4e08fa7898b031001
+        version_id: '1737548111548928'
+  - relpath: Classes/edible/Schizophyllum commune/37935medium.jpeg
+    md5: 028def1a974d2ab4c61a10be9fd6a15d
+    size: 170855
+    cloud:
+      remote_storage:
+        etag: 08cfecc38fa7898b031001
+        version_id: '1737548111083087'
+  - relpath: Classes/edible/Schizophyllum commune/38124medium.jpeg
+    md5: f5bf09287fa2d1cba68b841712f7be53
+    size: 20001
+    cloud:
+      remote_storage:
+        etag: 08ebd6c18fa7898b031001
+        version_id: '1737548111047531'
+  - relpath: Classes/edible/Schizophyllum commune/38237medium.jpg
+    md5: e4e4b3bb6c4eaa88dd5d699800c66c5f
+    size: 142286
+    cloud:
+      remote_storage:
+        etag: 08bbc9c28fa7898b031001
+        version_id: '1737548111062203'
+  - relpath: Classes/edible/Stropharia aeruginosa/27440medium.jpeg
+    md5: 8b8f51d440d5688e516e20c18a5671d8
+    size: 223689
+    cloud:
+      remote_storage:
+        etag: 08f9f9f88fa7898b031001
+        version_id: '1737548111953145'
+  - relpath: Classes/edible/Stropharia aeruginosa/27495medium.jpeg
+    md5: 9fc563f25f79d542e157eb1de606b241
+    size: 167212
+    cloud:
+      remote_storage:
+        etag: 08998fec8fa7898b031001
+        version_id: '1737548111742873'
+  - relpath: Classes/edible/Stropharia_rugosoannulata/Stropharia_rugosoannulata23.png
+    md5: 345f753000b57ac6298661786ad64fca
+    size: 13657
+    cloud:
+      remote_storage:
+        etag: 08aeb88e8fa7898b031001
+        version_id: '1737548110208046'
+  - relpath: Classes/edible/Tuber_macrosporum/Tuber_macrosporum10.png
+    md5: 5e62473ac5b55add67ff864408345467
+    size: 2009
+    cloud:
+      remote_storage:
+        etag: 08eacbb58fa7898b031001
+        version_id: '1737548110849514'
+  - relpath: Classes/edible/almond_mushroom/4.png
+    md5: 08118e644ea1f2cee37593b4485bcd1d
+    size: 524494
+    cloud:
+      remote_storage:
+        etag: 08bab3a38fa7898b031001
+        version_id: '1737548110551482'
+  - relpath: Classes/edible/birch_polypore/10.png
+    md5: 50f96cbcff9646705aa933430b65e697
+    size: 557544
+    cloud:
+      remote_storage:
+        etag: 08c8c98c90a7898b031001
+        version_id: '1737548112274632'
+  - relpath: Classes/edible/lilac_bonnet/11.png
+    md5: 535c1c2b1e3e35b92babc3d83ba65df6
+    size: 396588
+    cloud:
+      remote_storage:
+        etag: 08a3f9df8fa7898b031001
+        version_id: '1737548111543459'
+  - relpath: Classes/edible/porcelain_fungus/8.png
+    md5: 615f29527f4dfcc583d832dfc861762d
+    size: 374721
+    cloud:
+      remote_storage:
+        etag: 0894ffa290a7898b031001
+        version_id: '1737548112641940'
+  - relpath: Classes/edible/velvet_shank/0.png
+    md5: e4722b3f56432cd59ea2821b2f345903
+    size: 550914
+    cloud:
+      remote_storage:
+        etag: 08ffb9a990a7898b031001
+        version_id: '1737548112747775'
+  - relpath: Classes/poisonous/Agaricus_phaeolepidotus/Agaricus_phaeolepidotus7.png
+    md5: 815bf0ac77a03af8fbab561d817882f7
+    size: 3993
+    cloud:
+      remote_storage:
+        etag: 089780c28ea7898b031001
+        version_id: '1737548108955671'
+  - relpath: Classes/poisonous/Agrocybe_arenicola/Agrocybe_arenicola2.png
+    md5: a2517e4ead54840522532024ef090952
+    size: 4094
+    cloud:
+      remote_storage:
+        etag: 08dee7b58ea7898b031001
+        version_id: '1737548108755934'
+  - relpath: Classes/poisonous/Amanita muscaria/1228medium.jpeg
+    md5: 6b90d449b6ca00f209a1e4f61f6b5f98
+    size: 184777
+    cloud:
+      remote_storage:
+        etag: 08a286de8ea7898b031001
+        version_id: '1737548109415202'
+  - relpath: Classes/poisonous/Amanita muscaria/1563medium.jpeg
+    md5: b594d707ed478887811c83c70fc37b19
+    size: 209106
+    cloud:
+      remote_storage:
+        etag: 08c38fc18fa7898b031001
+        version_id: '1737548111038403'
+  - relpath: Classes/poisonous/Amanita muscaria/1683medium.jpeg
+    md5: 967fd967a392cbf79e592f8260fcb897
+    size: 213890
+    cloud:
+      remote_storage:
+        etag: 08f8f3d98ea7898b031001
+        version_id: '1737548109347320'
+  - relpath: Classes/poisonous/Amanita muscaria/169medium.jpg
+    md5: 3978668a23ffdce00ae3d24e5e15f48d
+    size: 105696
+    cloud:
+      remote_storage:
+        etag: 08f597d58ea7898b031001
+        version_id: '1737548109270005'
+  - relpath: Classes/poisonous/Amanita muscaria/1896medium.jpeg
+    md5: 2d127f76fe9c9888892cb807632cdfea
+    size: 206586
+    cloud:
+      remote_storage:
+        etag: 08e484e98ea7898b031001
+        version_id: '1737548109595236'
+  - relpath: Classes/poisonous/Amanita muscaria/192medium.jpeg
+    md5: c1cf22a1f642709804b3739491fa3557
+    size: 53570
+    cloud:
+      remote_storage:
+        etag: 08fd84cf8ea7898b031001
+        version_id: '1737548109169277'
+  - relpath: Classes/poisonous/Amanita muscaria/2414medium.jpg
+    md5: bf10cd656fa20e949ec5a57279f90fb8
+    size: 106587
+    cloud:
+      remote_storage:
+        etag: 08b9a7d08ea7898b031001
+        version_id: '1737548109190073'
+  - relpath: Classes/poisonous/Amanita muscaria/2427medium.jpeg
+    md5: 763784a2bf9e30f3b7347180743f4012
+    size: 67870
+    cloud:
+      remote_storage:
+        etag: 08e2d6898fa7898b031001
+        version_id: '1737548110130018'
+  - relpath: Classes/poisonous/Amanita muscaria/2569medium.jpeg
+    md5: b47930246ef06dd79c3571971810860b
+    size: 139656
+    cloud:
+      remote_storage:
+        etag: 08bc9fd18ea7898b031001
+        version_id: '1737548109205436'
+  - relpath: Classes/poisonous/Amanita muscaria/2693medium.jpg
+    md5: 92bb6a5294b1e4a2ceda2d002eed8c0a
+    size: 88167
+    cloud:
+      remote_storage:
+        etag: 089882d68ea7898b031001
+        version_id: '1737548109283608'
+  - relpath: Classes/poisonous/Amanita muscaria/2745medium.jpeg
+    md5: 15cc770a9222f8c2695625da74dddd21
+    size: 136246
+    cloud:
+      remote_storage:
+        etag: 08c39bde8ea7898b031001
+        version_id: '1737548109417923'
+  - relpath: Classes/poisonous/Amanita muscaria/3073medium.jpg
+    md5: 9d8c4a78a1836e7ababd50133bc6b790
+    size: 87644
+    cloud:
+      remote_storage:
+        etag: 08b2e9da8ea7898b031001
+        version_id: '1737548109362354'
+  - relpath: Classes/poisonous/Amanita muscaria/3126medium.jpeg
+    md5: d9d57afaed1f3eeb0106d12aa2dcde01
+    size: 59044
+    cloud:
+      remote_storage:
+        etag: 08f1b7dc8ea7898b031001
+        version_id: '1737548109388785'
+  - relpath: Classes/poisonous/Amanita muscaria/3200medium.jpeg
+    md5: d9c117b1d8fcf8dd2eaff940f43dff8a
+    size: 141006
+    cloud:
+      remote_storage:
+        etag: 0898e1ea8ea7898b031001
+        version_id: '1737548109623448'
+  - relpath: Classes/poisonous/Amanita muscaria/3237medium.jpeg
+    md5: 8662df048b00aa23b54c95cbd1759d56
+    size: 122729
+    cloud:
+      remote_storage:
+        etag: 08dbe4de8ea7898b031001
+        version_id: '1737548109427291'
+  - relpath: Classes/poisonous/Amanita muscaria/3378medium.jpg
+    md5: f682dcd1f9212e01a992ff0205c47ca9
+    size: 53546
+    cloud:
+      remote_storage:
+        etag: 089398d28ea7898b031001
+        version_id: '1737548109220883'
+  - relpath: Classes/poisonous/Amanita muscaria/3562medium.jpeg
+    md5: 9d951adb3fab97ce27d63d7ac8263c6c
+    size: 110110
+    cloud:
+      remote_storage:
+        etag: 08a7d7e28ea7898b031001
+        version_id: '1737548109491111'
+  - relpath: Classes/poisonous/Amanita muscaria/4199medium.jpg
+    md5: 3957abd0c557bdf18402c7a0297770e9
+    size: 92896
+    cloud:
+      remote_storage:
+        etag: 08d3ddd58ea7898b031001
+        version_id: '1737548109278931'
+  - relpath: Classes/poisonous/Amanita muscaria/710medium.jpg
+    md5: e467380061e0421df411e9508a5f9111
+    size: 227018
+    cloud:
+      remote_storage:
+        etag: 08b8e0ae8fa7898b031001
+        version_id: '1737548110737464'
+  - relpath: Classes/poisonous/Amanita muscaria/864medium.jpeg
+    md5: ae0698fc8a42ad41d5422a9f02c34d40
+    size: 96785
+    cloud:
+      remote_storage:
+        etag: 08f5f6dc8ea7898b031001
+        version_id: '1737548109396853'
+  - relpath: Classes/poisonous/Amanita pantherina/317medium.jpeg
+    md5: 1873155478cfa7026f085f0f8943c5e8
+    size: 92089
+    cloud:
+      remote_storage:
+        etag: 08d8a5888fa7898b031001
+        version_id: '1737548110107352'
+  - relpath: Classes/poisonous/Amanita pantherina/514medium.jpeg
+    md5: 6f191c1b3bc20f019ad1fce25f18bfc9
+    size: 86139
+    cloud:
+      remote_storage:
+        etag: 088091e38ea7898b031001
+        version_id: '1737548109498496'
+  - relpath: Classes/poisonous/Amanita rubescens/1045medium.jpeg
+    md5: b728ec1b1417666cf5b15318fb6cebad
+    size: 101152
+    cloud:
+      remote_storage:
+        etag: 0887b7e48ea7898b031001
+        version_id: '1737548109519751'
+  - relpath: Classes/poisonous/Amanita rubescens/949medium.jpeg
+    md5: e2e512b3ec4654a9e34222f1c4ec4250
+    size: 76469
+    cloud:
+      remote_storage:
+        etag: 08ee86f08ea7898b031001
+        version_id: '1737548109710190'
+  - relpath: Classes/poisonous/Amanita/163_cEfYJWEPsEk.jpg
+    md5: 4252106273c21882a8a18e2e8492084c
+    size: 138336
+    cloud:
+      remote_storage:
+        etag: 08aba2ee8fa7898b031001
+        version_id: '1737548111778091'
+  - relpath: Classes/poisonous/Amanita/263_wRUj4RBDKkk.jpg
+    md5: 3deee91e6590faefd0aca6240384052b
+    size: 62859
+    cloud:
+      remote_storage:
+        etag: 08b1efef8ea7898b031001
+        version_id: '1737548109707185'
+  - relpath: Classes/poisonous/Amanita/330_wrBDoQMhtBU.jpg
+    md5: 721ed2b7a8a1e898eb16c91f9dd76de7
+    size: 184129
+    cloud:
+      remote_storage:
+        etag: 08c6e2a38fa7898b031001
+        version_id: '1737548110557510'
+  - relpath: Classes/poisonous/Amanita/503_g3tPkDU2N-Q.jpg
+    md5: 9f0eff8095c2a952fc1b14b88111c916
+    size: 171108
+    cloud:
+      remote_storage:
+        etag: 08a7da888fa7898b031001
+        version_id: '1737548110114087'
+  - relpath: Classes/poisonous/Amanita/507_x-EWDiSohFw.jpg
+    md5: e3fbccc2a463713126544325b502e31a
+    size: 134697
+    cloud:
+      remote_storage:
+        etag: 08a3d0fa8ea7898b031001
+        version_id: '1737548109883427'
+  - relpath: Classes/poisonous/Amanita_neoovoidea/Amanita_neoovoidea23.png
+    md5: 7b5471bcedc215e26172f5f5dca4b9cb
+    size: 13711
+    cloud:
+      remote_storage:
+        etag: 08b7c7e48ea7898b031001
+        version_id: '1737548109521847'
+  - relpath: Classes/poisonous/Amanita_pseudorubescens/Amanita_pseudorubescens27.png
+    md5: a5ee22f25e0fc241e7a1952f977c9f91
+    size: 8057
+    cloud:
+      remote_storage:
+        etag: 088698a18ea7898b031001
+        version_id: '1737548108418054'
+  - relpath: Classes/poisonous/Amanita_subfrostiana/Amanita_subfrostiana12.png
+    md5: e7f460ba51bd3956fd332c9dafa92984
+    size: 2305
+    cloud:
+      remote_storage:
+        etag: 08b9bcdc8ea7898b031001
+        version_id: '1737548109389369'
+  - relpath: Classes/poisonous/Amanita_velatipes/Amanita_velatipes20.png
+    md5: 3b2230f88646223068d7688777909a23
+    size: 10422
+    cloud:
+      remote_storage:
+        etag: 08c7b6898fa7898b031001
+        version_id: '1737548110125895'
+  - relpath: Classes/poisonous/Bjerkandera adusta/1551medium.jpeg
+    md5: 95c4fab3aa763eaeaf59d0f4db233f79
+    size: 139783
+    cloud:
+      remote_storage:
+        etag: 08c6ccaa8ea7898b031001
+        version_id: '1737548108572230'
+  - relpath: Classes/poisonous/Bjerkandera adusta/1557medium.jpeg
+    md5: 395024e04edb2a1c9824a0e857758261
+    size: 112051
+    cloud:
+      remote_storage:
+        etag: 0887a1928ea7898b031001
+        version_id: '1737548108173447'
+  - relpath: Classes/poisonous/Bjerkandera adusta/1714medium.jpg
+    md5: 85a2d1a17d387b215cc25f0845a7241c
+    size: 145485
+    cloud:
+      remote_storage:
+        etag: 08f1f3898ea7898b031001
+        version_id: '1737548108036593'
+  - relpath: Classes/poisonous/Bjerkandera adusta/1841medium.jpg
+    md5: 83635d41ff93d61a2062926e1e61361d
+    size: 108487
+    cloud:
+      remote_storage:
+        etag: 08c7b8bc8ea7898b031001
+        version_id: '1737548108864583'
+  - relpath: Classes/poisonous/Bjerkandera adusta/1882medium.jpeg
+    md5: e1611b8efe230770063c9564f5659ff7
+    size: 156509
+    cloud:
+      remote_storage:
+        etag: 08ecbe908ea7898b031001
+        version_id: '1737548108144492'
+  - relpath: Classes/poisonous/Calocera_viscosa/Calocera_viscosa12.png
+    md5: 436900534b8273e7c0e03b8f9dae0961
+    size: 4562
+    cloud:
+      remote_storage:
+        etag: 08949bf38ea7898b031001
+        version_id: '1737548109761940'
+  - relpath: Classes/poisonous/Calycina citrina/2640medium.jpeg
+    md5: 4f8bb7f1851fbfc97160fdd20e8fc6e8
+    size: 147716
+    cloud:
+      remote_storage:
+        etag: 08b9fff28ea7898b031001
+        version_id: '1737548109758393'
+  - relpath: Classes/poisonous/Calycina citrina/2752medium.jpeg
+    md5: 4e3ede0fb306a178413c9ca8e13ded6c
+    size: 110099
+    cloud:
+      remote_storage:
+        etag: 08c6a7a48fa7898b031001
+        version_id: '1737548110566342'
+  - relpath: Classes/poisonous/Calycina citrina/2992medium.jpg
+    md5: 3128b7c1264fed3b335cd1f4560f03f5
+    size: 81585
+    cloud:
+      remote_storage:
+        etag: 08a4d3f08ea7898b031001
+        version_id: '1737548109719972'
+  - relpath: Classes/poisonous/Coprinopsis atramentaria/7651medium.jpg
+    md5: d3aa15327f15bf62f8e226016c197ee8
+    size: 262315
+    cloud:
+      remote_storage:
+        etag: 0890ccef8ea7898b031001
+        version_id: '1737548109702672'
+  - relpath: Classes/poisonous/Cortinarius_cinnabarinus/Cortinarius_cinnabarinus27.png
+    md5: f439c350f15bf07a62067f6190f5b0b4
+    size: 12189
+    cloud:
+      remote_storage:
+        etag: 08dab1e38ea7898b031001
+        version_id: '1737548109502682'
+  - relpath: Classes/poisonous/Cortinarius_malicorius/Cortinarius_malicorius34.png
+    md5: 514f93e98220262334fbbba19f5a7528
+    size: 15067
+    cloud:
+      remote_storage:
+        etag: 0897a1928ea7898b031001
+        version_id: '1737548108173463'
+  - relpath: Classes/poisonous/Echinoderma_calcicola/Echinoderma_calcicola3.png
+    md5: 7dcf074b1de0a3c5e2aa6636edc947b6
+    size: 2937
+    cloud:
+      remote_storage:
+        etag: 08ce87e38ea7898b031001
+        version_id: '1737548109497294'
+  - relpath: Classes/poisonous/Entoloma_albidum/Entoloma_albidum14.png
+    md5: 09bb631dba7ede53061dfebcfdf03bc3
+    size: 5714
+    cloud:
+      remote_storage:
+        etag: 08b6bc9f8ea7898b031001
+        version_id: '1737548108389942'
+  - relpath: Classes/poisonous/Entoloma_rhodopolium/Entoloma_rhodopolium11.png
+    md5: 6c7412b973ab75826204edcbedbc7f7a
+    size: 3994
+    cloud:
+      remote_storage:
+        etag: 08aeb78d8ea7898b031001
+        version_id: '1737548108094382'
+  - relpath: Classes/poisonous/Gyromitra esculenta/10818medium.jpg
+    md5: af51476e8e62e8ac43a195082efba9ec
+    size: 124643
+    cloud:
+      remote_storage:
+        etag: 08ad9dbc8ea7898b031001
+        version_id: '1737548108861101'
+  - relpath: Classes/poisonous/Gyromitra esculenta/11035medium.jpeg
+    md5: c46e913953c53eb3fa49be1ec9fa7245
+    size: 115737
+    cloud:
+      remote_storage:
+        etag: 08dbb5a18fa7898b031001
+        version_id: '1737548110519003'
+  - relpath: Classes/poisonous/Gyromitra gigas/24924medium.jpg
+    md5: ba4d01f86f2545efe0cdc90bb07227d6
+    size: 176437
+    cloud:
+      remote_storage:
+        etag: 0889bc888ea7898b031001
+        version_id: '1737548108013065'
+  - relpath: Classes/poisonous/Gyromitra gigas/24976medium.jpeg
+    md5: e9413942c681ea3faf0b44150df8cfa9
+    size: 259064
+    cloud:
+      remote_storage:
+        etag: 0885a6948fa7898b031001
+        version_id: '1737548110304005'
+  - relpath: Classes/poisonous/Gyromitra gigas/25504medium.jpg
+    md5: fc802ee2310f8a095709bfdc8ba83014
+    size: 132290
+    cloud:
+      remote_storage:
+        etag: 08a3ffd58ea7898b031001
+        version_id: '1737548109283235'
+  - relpath: Classes/poisonous/Gyromitra gigas/25981medium.jpg
+    md5: 7727d7834ed60331b71d47be03560fe8
+    size: 111956
+    cloud:
+      remote_storage:
+        etag: 08e1a1938ea7898b031001
+        version_id: '1737548108189921'
+  - relpath: Classes/poisonous/Gyromitra gigas/26097medium.jpeg
+    md5: 98441994895352d8dda3384f438a6848
+    size: 154904
+    cloud:
+      remote_storage:
+        etag: 08efc0b58ea7898b031001
+        version_id: '1737548108750959'
+  - relpath: Classes/poisonous/Gyromitra gigas/26132medium.jpg
+    md5: 4d82f2577920f1ff1b03b337d68a2455
+    size: 68987
+    cloud:
+      remote_storage:
+        etag: 08e784da8ea7898b031001
+        version_id: '1737548109349479'
+  - relpath: Classes/poisonous/Gyromitra gigas/26186medium.jpeg
+    md5: 694ad422cc427ab6dce4e9515aac5c39
+    size: 159972
+    cloud:
+      remote_storage:
+        etag: 08998ffc8ea7898b031001
+        version_id: '1737548109907865'
+  - relpath: Classes/poisonous/Gyromitra gigas/26287medium.jpg
+    md5: ebbdfaa008f417767bf5e9ff4c391b1b
+    size: 170978
+    cloud:
+      remote_storage:
+        etag: 08aa918f8fa7898b031001
+        version_id: '1737548110219434'
+  - relpath: Classes/poisonous/Gyromitra infula/11343medium.jpg
+    md5: b22e862669a094671624d9aa4682b96f
+    size: 148610
+    cloud:
+      remote_storage:
+        etag: 08da999b8fa7898b031001
+        version_id: '1737548110417114'
+  - relpath: Classes/poisonous/Hebeloma_crustuliniforme/Hebeloma_crustuliniforme8.png
+    md5: a5d032b1a88074dabbc714e16f7b976e
+    size: 11293
+    cloud:
+      remote_storage:
+        etag: 0883ffb58ea7898b031001
+        version_id: '1737548108758915'
+  - relpath: Classes/poisonous/Helvella_lactea/Helvella_lactea17.png
+    md5: aac44f7c522860f5985ec07c59e306d3
+    size: 14525
+    cloud:
+      remote_storage:
+        etag: 08c1a2e18ea7898b031001
+        version_id: '1737548109467969'
+  - relpath: Classes/poisonous/Hypholoma_marginatum/Hypholoma_marginatum23.png
+    md5: d67dcac03b9660974df8443dffbd07a2
+    size: 15554
+    cloud:
+      remote_storage:
+        etag: 08c68adf8ea7898b031001
+        version_id: '1737548109432134'
+  - relpath: Classes/poisonous/Imperator_rhodopurpureus/Imperator_rhodopurpureus20.png
+    md5: 5990240cf652d49c10110b6ec13505a4
+    size: 14274
+    cloud:
+      remote_storage:
+        etag: 08d6bde48ea7898b031001
+        version_id: '1737548109520598'
+  - relpath: Classes/poisonous/Mycena_pura/Mycena_pura15.png
+    md5: ad4e9636dc082e17032abf9bea92adaa
+    size: 9408
+    cloud:
+      remote_storage:
+        etag: 088696ea8ea7898b031001
+        version_id: '1737548109613830'
+  - relpath: Classes/poisonous/Mycena_rosea/Mycena_rosea3.png
+    md5: 681e0f9d85da91f0b3a982da4a120e65
+    size: 3732
+    cloud:
+      remote_storage:
+        etag: 08d9aeb98ea7898b031001
+        version_id: '1737548108814169'
+  - relpath: Classes/poisonous/Panaeolus_cinctulus/Panaeolus_cinctulus48.png
+    md5: 66371ccb39f5319c66a7e43de1ab2382
+    size: 12227
+    cloud:
+      remote_storage:
+        etag: 08b389df8ea7898b031001
+        version_id: '1737548109431987'
+  - relpath: Classes/poisonous/Pholiotina_rugosa/Pholiotina_rugosa7.png
+    md5: 514bec6c3bc8b1fce398830f6b1b8670
+    size: 3090
+    cloud:
+      remote_storage:
+        etag: 089bb4f08da7898b031001
+        version_id: '1737548107618843'
+  - relpath: Classes/poisonous/Psilocybe_semilanceata/Psilocybe_semilanceata26.png
+    md5: 865d13558d8fda137a8fbae1f92d75df
+    size: 3080
+    cloud:
+      remote_storage:
+        etag: 08dfb8b58ea7898b031001
+        version_id: '1737548108749919'
+  - relpath: Classes/poisonous/Rubroboletus_pulcherrimus/Rubroboletus_pulcherrimus11.png
+    md5: 19bf16ba610404b9a0648da3b9147a09
+    size: 9267
+    cloud:
+      remote_storage:
+        etag: 089bb5dc8ea7898b031001
+        version_id: '1737548109388443'
+  - relpath: Classes/poisonous/Rubroboletus_pulcherrimus/Rubroboletus_pulcherrimus4.png
+    md5: 5b85f7d65d3d12bd5dc0fcdcc297b9c1
+    size: 3985
+    cloud:
+      remote_storage:
+        etag: 08b7bbe38ea7898b031001
+        version_id: '1737548109503927'
+  - relpath: Classes/poisonous/Russula_emetica/Russula_emetica27.png
+    md5: 604aee7ea6bfc08ee5dfdad2692125d7
+    size: 16361
+    cloud:
+      remote_storage:
+        etag: 0880e8b28ea7898b031001
+        version_id: '1737548108706816'
+  - relpath: Classes/poisonous/Tricholoma_equestre/Tricholoma_equestre25.png
+    md5: 2d4a002f144ca5bcf2cb755811b14e06
+    size: 17249
+    cloud:
+      remote_storage:
+        etag: 08d7c2e18ea7898b031001
+        version_id: '1737548109472087'
+  - relpath: Classes/poisonous/Trogia_venenata/Trogia_venenata1.png
+    md5: 7eee56ccffb721d07ea7444f36622e4e
+    size: 3561
+    cloud:
+      remote_storage:
+        etag: 089effb58ea7898b031001
+        version_id: '1737548108758942'
+  - relpath: Classes/poisonous/Xanthoria parietina/38666medium.jpg
+    md5: cc9f519fc9884460efe1e0e563ef5676
+    size: 80059
+    cloud:
+      remote_storage:
+        etag: 088ecccc8ea7898b031001
+        version_id: '1737548109129230'
+  - relpath: Classes/poisonous/Xanthoria parietina/39066medium.jpeg
+    md5: 78178122f732d6bfdbce92fef95c1b1b
+    size: 211045
+    cloud:
+      remote_storage:
+        etag: 08e4ceda8ea7898b031001
+        version_id: '1737548109358948'
+  - relpath: Classes/poisonous/Xanthoria parietina/39246medium.jpg
+    md5: f7fd34390ac5afab4f56c9d39257e37b
+    size: 130413
+    cloud:
+      remote_storage:
+        etag: 08ddaaf38fa7898b031001
+        version_id: '1737548111861085'
+  - relpath: Classes/poisonous/Xanthoria parietina/39298medium.jpeg
+    md5: 29d004ba28fa5dd5d70622cba05c21f7
+    size: 44349
+    cloud:
+      remote_storage:
+        etag: 08abbdbb8ea7898b031001
+        version_id: '1737548108848811'
+  - relpath: Classes/poisonous/Xanthoria parietina/39601medium.jpeg
+    md5: 53c202f04511dac06c3f621c6d0f82c3
+    size: 261816
+    cloud:
+      remote_storage:
+        etag: 08f9f3f28ea7898b031001
+        version_id: '1737548109756921'
+  - relpath: Classes/poisonous/Xanthoria parietina/40127medium.jpg
+    md5: d7c5770e6ee293db6c70f86e5a77d2d7
+    size: 111061
+    cloud:
+      remote_storage:
+        etag: 089da4cd8ea7898b031001
+        version_id: '1737548109140509'
+  - relpath: Classes/poisonous/Xanthoria parietina/40391medium.jpg
+    md5: 6a9666e322e37fa9c8b729e58ce7328c
+    size: 108596
+    cloud:
+      remote_storage:
+        etag: 08f9b0cf8fa7898b031001
+        version_id: '1737548111272057'
+  - relpath: Classes/poisonous/Xanthoria parietina/40475medium.jpg
+    md5: 772a30ac61a9ca2a8eb3622d00b0f8a8
+    size: 107323
+    cloud:
+      remote_storage:
+        etag: 08c483cd8ea7898b031001
+        version_id: '1737548109136324'
+  - relpath: Classes/poisonous/Xanthoria parietina/40532medium.jpg
+    md5: 3c8ce05c6f2ee0b3e82e62c74359e035
+    size: 103122
+    cloud:
+      remote_storage:
+        etag: 08e1b6b58ea7898b031001
+        version_id: '1737548108749665'
+  - relpath: Classes/poisonous/Xanthoria parietina/41131medium.jpeg
+    md5: 6ae5fe594ba3526da224aa9c8d8db6bd
+    size: 210701
+    cloud:
+      remote_storage:
+        etag: 0899c4dd8ea7898b031001
+        version_id: '1737548109406745'
+  - relpath: Classes/poisonous/Xanthoria parietina/41479medium.jpeg
+    md5: 4ae04aa3f909bbe685a9e8b294a9b431
+    size: 181788
+    cloud:
+      remote_storage:
+        etag: 08d0d8b88ea7898b031001
+        version_id: '1737548108803152'
+  - relpath: Classes/poisonous/Xanthoria parietina/41523medium.jpeg
+    md5: 7699229bf6b659317d957325f9fe656e
+    size: 174177
+    cloud:
+      remote_storage:
+        etag: 08b0edbe8ea7898b031001
+        version_id: '1737548108904112'
+  - relpath: Classes/poisonous/Xanthoria parietina/41671medium.jpeg
+    md5: 90ad83d7876d6f17bf7ae3ac22b4d432
+    size: 99387
+    cloud:
+      remote_storage:
+        etag: 0898fcca8ea7898b031001
+        version_id: '1737548109102616'
+  - relpath: Classes/poisonous/Xanthoria parietina/41749medium.jpeg
+    md5: 3f68f7a51c0e672976b3d25354aa1ce9
+    size: 168544
+    cloud:
+      remote_storage:
+        etag: 088fa8c18ea7898b031001
+        version_id: '1737548108944399'
+  - relpath: Classes/poisonous/Xanthoria parietina/41817medium.jpeg
+    md5: 8f73347b61a2337121275c6089b00593
+    size: 136787
+    cloud:
+      remote_storage:
+        etag: 0888bdce8ea7898b031001
+        version_id: '1737548109160072'
+  - relpath: Classes/poisonous/Xanthoria parietina/42303medium.jpeg
+    md5: 98efb20480ed3bbaf11778d807a831f7
+    size: 150580
+    cloud:
+      remote_storage:
+        etag: 08ac95c88ea7898b031001
+        version_id: '1737548109056684'
+  - relpath: Classes/poisonous/Xanthoria parietina/42449medium.jpg
+    md5: cdf3c352f193dc5e799cdb0838139d40
+    size: 125455
+    cloud:
+      remote_storage:
+        etag: 08c9f3b98ea7898b031001
+        version_id: '1737548108822985'
+  - relpath: Classes/poisonous/Xanthoria parietina/42937medium.jpg
+    md5: 7eb699ba38867a54f10a197a4e205a02
+    size: 97338
+    cloud:
+      remote_storage:
+        etag: 08ebeda68ea7898b031001
+        version_id: '1737548108510955'
+  - relpath: Classes/poisonous/Xanthoria parietina/42969medium.jpg
+    md5: f8419468fea5ca4d209bf4c4ac772298
+    size: 88234
+    cloud:
+      remote_storage:
+        etag: 08d683c28ea7898b031001
+        version_id: '1737548108956118'
+  - relpath: Classes/poisonous/Xanthoria parietina/43014medium.jpeg
+    md5: c80b88517e61fd95d0cd3c781694e322
+    size: 63901
+    cloud:
+      remote_storage:
+        etag: 08aea9b68ea7898b031001
+        version_id: '1737548108764334'
+  - relpath: Classes/poisonous/Xanthoria parietina/43349medium.jpg
+    md5: f9878623f9e5194d9800e2c57114705e
+    size: 137433
+    cloud:
+      remote_storage:
+        etag: 08a9b3d68ea7898b031001
+        version_id: '1737548109289897'
+  - relpath: Classes/poisonous/Xanthoria parietina/43625medium.jpeg
+    md5: c35a7eb1f7213bc3182c95645eba9167
+    size: 33120
+    cloud:
+      remote_storage:
+        etag: 08e8bcc48ea7898b031001
+        version_id: '1737548108996200'
+  - relpath: Classes/poisonous/blushing_bracket/6.png
+    md5: a95375616cc4aad340f234d4eefc3bbd
+    size: 514495
+    cloud:
+      remote_storage:
+        etag: 08a19c9b90a7898b031001
+        version_id: '1737548112514593'
+  - relpath: Classes/poisonous/suede_bolete/8.png
+    md5: b579c62ad49fde23d2b8100223f0f59b
+    size: 468518
+    cloud:
+      remote_storage:
+        etag: 08fad8f18ea7898b031001
+        version_id: '1737548109737082'
+  - relpath: Classes/poisonous/yellow_false_truffle/8.png
+    md5: a10bfaef227e63ffc4f051b153561dcb
+    size: 610492
+    cloud:
+      remote_storage:
+        etag: 08b082f08fa7898b031001
+        version_id: '1737548111806768'
