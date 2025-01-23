@@ -51,7 +51,7 @@ steps:
         "custom-jobs",
         "create",
         "--region=europe-west1",
-        "--display-name=test-run",
+        "--display-name=train-run",
         "--config=vertex-config.yaml"
       ]
 
