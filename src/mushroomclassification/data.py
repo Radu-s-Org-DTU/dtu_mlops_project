@@ -119,7 +119,9 @@ class MushroomDatamodule(L.LightningDataModule):
         # Determine the subset size based on the specified percentage
         full_size = len(data_full)
         subset_size = int(self.percent_of_data * full_size)
-        subset_indices = list(range(subset_size))  # Generate a list of indices
+
+        # Randomly select subset indices from the full dataset
+        subset_indices = torch.randperm(full_size).tolist()[:subset_size]
 
         print(f"Training dataset size: {subset_size}")
 
