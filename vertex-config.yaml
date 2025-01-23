@@ -9,3 +9,7 @@ workerPoolSpecs:
           value: "02476-data"
         - name: WANDB_API_KEY
           value: "PLACEHOLDER"
+        - name: WANDB_ENTITY
+          value: "PLACEHOLDER"
+        - name: WANDB_PROJECT
+          value: "PLACEHOLDER"

@@ -8,7 +8,7 @@ steps:
         apk add --no-cache gettext
         envsubst < vertex-config.yaml > vertex-config.yaml.tmp
         mv vertex-config.yaml.tmp vertex-config.yaml
-    secretEnv: ["WANDB_API_KEY"]
+    secretEnv: ["WANDB_API_KEY", "WANDB_ENTITY", "WANDB_PROJECT"]
 
   - name: "alpine"
     id: "Show config"
@@ -78,6 +78,10 @@ availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_ID/secrets/WANDB_API_KEY/versions/latest
       env: "WANDB_API_KEY"
+    - versionName: projects/$PROJECT_ID/secrets/WANDB_ENTITY/versions/latest
+      env: "WANDB_ENTITY"
+    - versionName: projects/$PROJECT_ID/secrets/WANDB_PROJECT/versions/latest
+      env: "WANDB_PROJECT"
 
 options:
   logging: CLOUD_LOGGING_ONLY
