@@ -6,8 +6,8 @@ steps:
       - "-c"
       - |
         apk add --no-cache gettext
-        envsubst < config.yaml > config.yaml.tmp
-        mv config.yaml.tmp config.yaml
+        envsubst < vertex-config.yaml > vertex-config.yaml.tmp
+        mv vertex-config.yaml.tmp vertex-config.yaml
     secretEnv: ["WANDB_API_KEY"]
 
   - name: "alpine"
@@ -17,7 +17,7 @@ steps:
     args:
       - "-c"
       - |
-        cat config.yaml
+        cat vertex-config.yaml
 
   - name: "gcr.io/cloud-builders/docker"
     id: "Build Train container image"
