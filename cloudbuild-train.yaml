@@ -19,5 +19,17 @@ steps:
         "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-train-build"
       ]
 
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    id: "Trigger Vertex AI Custom Job"
+    args:
+      [
+        "gcloud",
+        "ai",
+        "custom-jobs",
+        "create",
+        "--region=europe-west1",
+        "--display-name=test-run",
+        "--config=vertex-config.yaml"
+      ]
 options:
   logging: CLOUD_LOGGING_ONLY
