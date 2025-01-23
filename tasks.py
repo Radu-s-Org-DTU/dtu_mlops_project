@@ -54,14 +54,15 @@ def visualize(ctx, config_path="configs/model_config.yaml"):
     """Visualize model predictions."""
     config = load_config(config_path)
 
-    ctx.run(
+    command = (
         f"python src/{PROJECT_NAME}/visualize.py "
         f"--data-path={config['data']['data_path']} "
         f"--batch-size={config['data']['batch_size']} "
-        f"--num-workers={config['data']['num_workers']}",
-        echo=True,
-        pty=not WINDOWS,
+        f"--num-workers={config['data']['num_workers']} "
+        f"--learning_rate {config['trainer']['learning_rate']}"
     )
+
+    ctx.run(command, echo=True, pty=not WINDOWS)
 
 @task
 def create_subset(ctx, source_dir, target_dir, classes, num_samples=10):
