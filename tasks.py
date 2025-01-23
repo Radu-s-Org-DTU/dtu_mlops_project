@@ -67,7 +67,7 @@ def visualize(ctx, config_path="configs/model_config.yaml"):
             --data-path={config['data']['data_path']} \
             --batch-size={config['data']['batch_size']} \
             --num-workers={config['data']['num_workers']}, \
-            --learning_rate {config['trainer']['learning_rate']}"""
+            --learning_rate {config['trainer']['learning_rate']}""",
         echo=True, \
         pty=not WINDOWS, \
     )
