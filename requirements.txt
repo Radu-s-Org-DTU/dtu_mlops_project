@@ -20,3 +20,4 @@ httpx==0.24.1
 loguru==0.7.3
 python-dotenv==1.0.1
 wandb==0.19.4
+invoke==2.2.0
