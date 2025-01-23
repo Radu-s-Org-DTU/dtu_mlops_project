@@ -371,8 +371,8 @@ Albumentations
 > Answer:
 > We have two buckets. One for the training data (dcv) and one for the trained model (used by the api).
 
-[data](figures\data-bucket.png)
-[api-model](figures\model-bucket.png)
+![data](figures/data-bucket.png)
+![api-model](figures/model-bucket.png)
 
 --- question 19 fill here ---
 
