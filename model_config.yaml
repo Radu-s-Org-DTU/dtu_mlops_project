@@ -1,5 +1,5 @@
 data:
-  data_path: data/raw
+  data_path: data/raw_subset
   batch_size: 32
   num_workers: 16
 
