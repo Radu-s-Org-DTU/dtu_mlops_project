@@ -179,3 +179,5 @@ key.json
 # PyTorch Lightning logs
 lightning_logs/
 
+# Weights and biases
+wandb/
