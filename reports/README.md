@@ -369,6 +369,10 @@ Albumentations
 > **Insert 1-2 images of your GCP bucket, such that we can see what data you have stored in it.** > **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
+> We have two buckets. One for the training data (dcv) and one for the trained model (used by the api).
+
+[data](figures\data-bucket.png)
+[api-model](figures\model-bucket.png)
 
 --- question 19 fill here ---
 
