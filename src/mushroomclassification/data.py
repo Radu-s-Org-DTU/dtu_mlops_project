@@ -46,7 +46,7 @@ class MushroomDataset(Dataset):
         img_path, label = self.image_files[idx]
         try:
             image = Image.open(img_path).convert("RGB")
-        except (OSError, IOError) as e:
+        except (OSError, IOError):
             print(f"Warning: Skipping corrupted image file: {img_path}")
             # Return a placeholder image (black image) of the same size for consistency
             image = Image.new("RGB", (224, 224))  # You can choose the size based on your transforms

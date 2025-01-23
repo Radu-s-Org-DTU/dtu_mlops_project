@@ -1,14 +1,16 @@
-from lightning.pytorch.callbacks import ModelCheckpoint, EarlyStopping
+import os
+
+from dotenv import load_dotenv
+from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
 from lightning.pytorch.cli import LightningCLI
 from model import MushroomClassifier
 from utils.config_loader import load_config
 
+import wandb
+
 # from data import
 from data import MushroomDatamodule
 
-import wandb
-from dotenv import load_dotenv
-import os
 
 def train():
     load_dotenv()
