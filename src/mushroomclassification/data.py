@@ -28,8 +28,6 @@ class MushroomDataset(Dataset):
         if subset is not None:
             self.image_files = [self.image_files[i] for i in subset]
 
-        # print(self.image_files)
-
     def __len__(self):
         return len(self.image_files)
 

@@ -39,7 +39,7 @@ def train(ctx, config_path="configs/model_config.yaml"):
 
     ctx.run(
         f"""python src/{PROJECT_NAME}/train.py fit \
-            --seed_everything={config['seed']} " \
+            --seed_everything={config['seed']} \
             --data.data_path={config['data']['data_path']} \
             --data.batch_size={config['data']['batch_size']} \
             --data.percent_of_data={config['data']['percent_of_data']} \
@@ -50,6 +50,7 @@ def train(ctx, config_path="configs/model_config.yaml"):
             --model.learning_rate={config['trainer']['learning_rate']} \
             --trainer.max_epochs={config['trainer']['max_epochs']} \
             --trainer.deterministic=True \
+            --trainer.precision=16-mixed \
             --trainer.accelerator=gpu \
             --trainer.devices=1""",
         echo=True,
