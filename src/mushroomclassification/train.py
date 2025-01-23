@@ -13,25 +13,27 @@ import wandb
 # from data import
 from data import MushroomDatamodule
 
+env = os.getenv
 
 def save_model_to_registry(run_name: str) -> None:
+
     # Initialize the API with the necessary credentials
     api = wandb.Api(
-        api_key=os.getenv("WANDB_API_KEY"),
+        api_key=env("WANDB_API_KEY"),
         overrides={
-            "entity": os.getenv("WANDB_ENTITY"),
-            "project": os.getenv("WANDB_PROJECT"),
+            "entity": env("WANDB_ENTITY"),
+            "project": env("WANDB_PROJECT"),
         },
     )
 
     # Construct the artifact path using proper string formatting
-    artifact_path = f"{os.getenv('WANDB_ENTITY')}/{os.getenv('WANDB_PROJECT')}/{os.getenv('WANDB_MODEL_NAME')}:{run_name}"
+    artifact_path = f"{env('WANDB_ENTITY')}/{env('WANDB_PROJECT')}/{env('WANDB_MODEL_NAME')}:{run_name}"
 
     # Fetch the artifact using the API
     artifact = api.artifact(artifact_path)
 
     # Link the artifact to the desired target path in the model registry
-    target_path = f"{os.getenv('WANDB_ENTITY')}/wandb-registry-model/{os.getenv("WANDB_REGISTRY")}"
+    target_path = f"{env('WANDB_ENTITY')}/wandb-registry-model/{env("WANDB_REGISTRY")}"
     artifact.link(target_path)
 
     # Save the artifact (if necessary, though `link` usually suffices)
@@ -49,11 +51,11 @@ def stage_best_model_to_registry(model_name: str, metric_name: str = "accuracy",
 
     """
     api = wandb.Api(
-        api_key=os.getenv("WANDB_API_KEY"),
-        overrides={"entity": os.getenv("WANDB_ENTITY"), "project": os.getenv("WANDB_PROJECT")},
+        api_key=env("WANDB_API_KEY"),
+        overrides={"entity": env("WANDB_ENTITY"), "project": env("WANDB_PROJECT")},
     )
 
-    artifact_collection = api.artifact_collection(type_name="model", name=os.getenv("WANDB_REGISTRY"))
+    artifact_collection = api.artifact_collection(type_name="model", name=env("WANDB_REGISTRY"))
 
     best_metric = float("-inf") if higher_is_better else float("inf")
     compare_op = operator.gt if higher_is_better else operator.lt
@@ -69,7 +71,7 @@ def stage_best_model_to_registry(model_name: str, metric_name: str = "accuracy",
 
     logger.info(f"Best model found in registry: {best_artifact.name} with {metric_name}={best_metric}")
     best_artifact.link(
-        target_path=f"{os.getenv('WANDB_ENTITY')}/{os.getenv("WANDB_REGISTRY")}/{model_name}",
+        target_path=f"{env('WANDB_ENTITY')}/{env("WANDB_REGISTRY")}/{model_name}",
         aliases=["best", "staging"],
     )
     best_artifact.save()
@@ -81,7 +83,7 @@ def train():
 
     api = wandb.init(
         # set the wandb project where this run will be logged
-        project=os.getenv("WANDB_PROJECT"),
+        project=env("WANDB_PROJECT"),
 
         # track hyperparameters and run metadata
         config={
@@ -101,14 +103,14 @@ def train():
     )
     
     early_stopping_callback = EarlyStopping(
-        monitor="val_loss", patience=3, verbose=True, mode="min"
+        monitor="val_loss", patience=10, verbose=True, mode="min"
     )
 
     LightningCLI(
         MushroomClassifier,
         MushroomDatamodule,
         trainer_defaults={
-            "callbacks": [checkpoint_callback],
+            "callbacks": [checkpoint_callback, early_stopping_callback],
             "logger": True
         },
     )
