@@ -2,8 +2,9 @@ import lightning as L
 import torch
 from torch import nn, optim
 from torchmetrics import Accuracy
+
 import wandb
-from lightning.pytorch.loggers import WandbLogger
+
 
 class MushroomClassifier(L.LightningModule):
     """My awesome model."""
