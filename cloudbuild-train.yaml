@@ -55,29 +55,14 @@ steps:
         "--config=vertex-config.yaml"
       ]
 
-  - name: "gcr.io/cloud-builders/gcloud"
-    id: "Train on vertex AI"
-    waitFor: ["Trigger Vertex AI Custom Job"]
-    args:
-      [
-        "ai",
-        "custom-jobs",
-        "create",
-        "--region",
-        "europe-west1",
-        "--display-name",
-        "example-mlops-job",
-        "--config",
-        "${_VERTEX_TRAIN_CONFIG}"
-      ]
-
-substitutions:
-  _VERTEX_TRAIN_CONFIG: "vertex-config.yaml"
-
 availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_ID/secrets/WANDB_API_KEY/versions/latest
       env: "WANDB_API_KEY"
+    - versionName: projects/$PROJECT_ID/secrets/WANDB_ENTITY/versions/latest
+      env: "WANDB_ENTITY"
+    - versionName: projects/$PROJECT_ID/secrets/WANDB_PROJECT/versions/latest
+      env: "WANDB_PROJECT"
 
 options:
   logging: CLOUD_LOGGING_ONLY
