@@ -3,19 +3,23 @@ steps:
     id: "Replace values in the training config"
     entrypoint: "sh"
     args:
-      - '-c'
+      - "-c"
       - |
-        apk add --no-cache gettext
-        envsubst < config.yaml > config.yaml.tmp
-        mv config.yaml.tmp config.yaml
-    secretEnv: ['WANDB_API_KEY']
+        echo "Step: Replace values in the training config"
+        apk add --no-cache gettext || { echo "Failed to install gettext"; exit 1; }
+        echo "Installed gettext"
+        envsubst < config.yaml > config.yaml.tmp || { echo "envsubst failed"; exit 1; }
+        echo "Substitution done"
+        mv config.yaml.tmp config.yaml || { echo "Failed to move temp config"; exit 1; }
+        echo "Config file updated"
+    secretEnv: ["WANDB_API_KEY"]
 
-  - name: 'alpine'
+  - name: "alpine"
     id: "Show config"
-    waitFor: ['Replace values in the training config']
+    waitFor: ["Replace values in the training config"]
     entrypoint: "sh"
     args:
-      - '-c'
+      - "-c"
       - |
         cat config.yaml
 
@@ -39,7 +43,6 @@ steps:
         "europe-west1-docker.pkg.dev/$PROJECT_ID/course02476/02476-train-build"
       ]
 
-
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     id: "Trigger Vertex AI Custom Job"
     args:
@@ -53,28 +56,29 @@ steps:
         "--config=vertex-config.yaml"
       ]
 
-  - name: 'gcr.io/cloud-builders/gcloud'
-    id: 'Train on vertex AI'
-    waitFor: ['Replace values in the training config']
-    args: [
-      'ai',
-      'custom-jobs',
-      'create',
-      '--region',
-      'europe-west1',
-      '--display-name',
-      'example-mlops-job',
-      '--config',
-      '${_VERTEX_TRAIN_CONFIG}',
-    ]
+  - name: "gcr.io/cloud-builders/gcloud"
+    id: "Train on vertex AI"
+    waitFor: ["Replace values in the training config"]
+    args:
+      [
+        "ai",
+        "custom-jobs",
+        "create",
+        "--region",
+        "europe-west1",
+        "--display-name",
+        "example-mlops-job",
+        "--config",
+        "${_VERTEX_TRAIN_CONFIG}"
+      ]
 
 substitutions:
-  _VERTEX_TRAIN_CONFIG: 'vertex-config.yaml'
+  _VERTEX_TRAIN_CONFIG: "vertex-config.yaml"
 
 availableSecrets:
   secretManager:
-  - versionName: projects/$PROJECT_ID/secrets/WANDB_API_KEY/versions/latest
-    env: 'WANDB_API_KEY'
+    - versionName: projects/$PROJECT_ID/secrets/WANDB_API_KEY/versions/latest
+      env: "WANDB_API_KEY"
 
 options:
   logging: CLOUD_LOGGING_ONLY
