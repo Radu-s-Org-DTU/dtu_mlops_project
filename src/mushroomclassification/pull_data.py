@@ -17,7 +17,7 @@ if __name__ == "__main__":
     RAW_PATH = "data/raw"
     RAW_SUBSET_PATH = "data/raw_subset"
 
-    download_from_gcs(BUCKET_NAME, RAW_PATH, "/app/data/raw")
+    #download_from_gcs(BUCKET_NAME, RAW_PATH, "/app/data/raw")
     download_from_gcs(BUCKET_NAME, RAW_SUBSET_PATH, "/app/data/raw_subset")
 
     print("Data pulled successfully.")
