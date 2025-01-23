@@ -374,8 +374,6 @@ Albumentations
 ![data](figures/data-bucket.png)
 ![api-model](figures/model-bucket.png)
 
---- question 19 fill here ---
-
 ### Question 20
 
 > **Upload 1-2 images of your GCP artifact registry, such that we can see the different docker images that you have** > **stored. You can take inspiration from [this figure](figures/registry.png).**
