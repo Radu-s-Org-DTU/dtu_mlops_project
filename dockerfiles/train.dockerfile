@@ -62,8 +62,4 @@ COPY tasks.py tasks.py
 
 RUN pip install . --no-deps --no-cache-dir --verbose
 
-RUN mkdir -p /app
-COPY pull_data.sh /app/pull_data.sh
-RUN chmod +x /app/pull_data.sh
-
 ENTRYPOINT ["sh", "-c", "python src/mushroomclassification/pull_data.py && invoke train"]
