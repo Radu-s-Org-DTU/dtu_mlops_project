@@ -7,5 +7,6 @@ workerPoolSpecs:
       env:
         - name: GCS_BUCKET_NAME
           value: "02476-data"
+      secretEnv:
         - name: WANDB_API_KEY
           key: 'group_4_secret_key'
