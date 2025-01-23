@@ -7,3 +7,5 @@ workerPoolSpecs:
       env:
         - name: GCS_BUCKET_NAME
           value: "02476-data"
+        - name: WANDB_API_KEY
+          key: $WANDB_API_KEY
