@@ -179,6 +179,8 @@ s242580, s242591, s113117, s246415
 >
 > Answer:
 
+---
+
 We utilized the SkafteNicki cookiecutter template with the command cookiecutter https://github.com/SkafteNicki/mlops_template and its overall structure (as we mostly filled out the files in src and tests) differs a bit. The tests folder has three subfolders, one for each type of test.
 
 Our structure differs from the template in the following ways:
@@ -191,6 +193,8 @@ The subset is stored in data/raw_subset and is mainly used for testing.
 
 We created a folder named 'config' with files relevant for configuring the model. Additionally, in the root directory, we have two Cloud Build configuration files and vertex-config.yaml for configuring the Vertex AI jobs.
 
+---
+
 ### Question 6
 
 > **Did you implement any rules for code quality and format? What about typing and documentation? Additionally,** > **explain with your own words why these concepts matters in larger projects.**
@@ -202,7 +206,11 @@ We created a folder named 'config' with files relevant for configuring the model
 >
 > Answer:
 
+---
+
 We used Ruff for linting with a maximum line length of 120 and the error codes E, F, I, and C, meaning it checks for syntax errors, formatting issues, import order, and cyclomatic complexity. We configured it in pyproject.toml, applied Ruff testing to our GitHub Actions (testing on each commit), and added a step that fixes Ruff errors during pre-commit. So, as long as all team members have pre-commit installed, everything should be formatted according to the rules, and if not, the Ruff check will fail for the pull request. Overall, it helps to keep the codebase clean and readable, and it helps everyone follow the same coding standards, so there’s less back-and-forth about style or formatting during reviews.
+
+---
 
 ## Version control
 
@@ -220,7 +228,11 @@ We used Ruff for linting with a maximum line length of 120 and the error codes E
 >
 > Answer:
 
+---
+
 We have implemented a total of 13 tests: two integration tests for the API, where one tests the API for a successful result with a valid image, and one tests the API for an unsuccessful result with an invalid input. One performance test of the API tests if the result for a valid image is successful. Ten unit tests, which include six tests for the validity of the dataset (the data and the loading of the data) and four tests for the model (is it constructed, does it correctly forward pass, etc.). The unit and integration tests are added to our GitHub Actions testing, where the results are automatically posted on all pull requests.
+
+---
 
 ### Question 8
 
@@ -232,6 +244,8 @@ We have implemented a total of 13 tests: two integration tests for the API, wher
 > *The total code coverage of code is X%, which includes all our source code. We are far from 100% coverage of our \*\* > *code and even if we were then...\*
 >
 > Answer:
+
+---
 
 Below is the result from the latest pull request. All 12 tests passed, and the overall coverage is 68%. We are not far from the 100% coverage goal, but there is room for improvement. Overall, more coverage is usually better, but having just a few tests for each part of the codebase is very helpful, especially when it is used together with GitHub Actions. In our setup, the result is posted to each pull request, and for us, it has caught many errors before being merged, like missing dependencies and code that should not be removed. Could we trust any change with 100% coverage? No, even with 100% coverage, tests only verify what they are designed to check, and they cannot catch logical errors.
 
@@ -253,6 +267,8 @@ Total Coverage
 - **Statements**: 175
 - **Missing**: 56
 - **Coverage**: 68%
+
+---
 
 ### Question 9
 
@@ -278,7 +294,11 @@ Total Coverage
 >
 > Answer:
 
+---
+
 We used DVC throughout the project. In the beginning, we pushed the entire dataset to Google Drive, and then each team member pulled it using 'dvc pull'. We set it up using a service account for authentication and the config parameter 'gdrive_service_account_json_file_path,' and shared the JSON file over WhatsApp. We later pushed the dataset to a bucket on Google Cloud, where we again used a service account for authentication, so no real difference on the development side. For simplicity, we kept the subset of the data on Git. Alternatively, we could have pushed that to a subset as well and given GitHub Actions rights to download it for testing, but we kept it simple. As our dataset was fixed and no changes were made to it, DVC did not provide us real benefits other than easy setup for team members.
+
+---
 
 ### Question 11
 
@@ -291,13 +311,15 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 >
 > Answer:
 
+---
+
 We have configured our continuous integration setup using GitHub Actions in .github/workflows/tests.yaml. The following outlines how it works:
 
 - It is executed on two operating systems (Ubuntu and macOS) and for two versions of Python (3.11 and 3.12).
 
 - It uses caching to speed up workflow execution by caching Python dependencies and reusing them across builds. The cache is keyed to the requirements.txt file, ensuring dependencies are updated only when necessary.
 
-- It authenticates with Google Cloud using a secret key stored in GitHub, allowing us to pull the latest model from a Google Cloud bucket during testing.
+- It authenticates with Weights & Biases using environment variables stored in GitHub, allowing us to pull the best model from our W&B registry during testing.
 
 - It checks for code style and syntax errors using ruff check.
 
@@ -305,7 +327,7 @@ We have configured our continuous integration setup using GitHub Actions in .git
 
 - On pull requests, it adds a comment summarizing the number of passed and failed tests, along with the coverage percentage, ensuring visibility into the test status directly in the pull request.
 
-We set this up to keep our codebase consistent and reliable. By automating linting, testing, and coverage checks on multiple operating systems and Python versions, we have caught many issues like missing dependencies and the removal of vital code before merging a feature branch into our main branch.
+We set this up to keep our codebase consistent and reliable. By automating linting, testing, and coverage checks on multiple operating systems and Python versions, we have caught many issues like missing dependencies and the removal of vital code before merging a feature branch into our main branch. ---
 
 ## Running code and tracking experiments
 
@@ -323,9 +345,13 @@ We set this up to keep our codebase consistent and reliable. By automating linti
 >
 > Answer:
 
+---
+
 For training, we used the command `invoke train,` which trains a model based on the configuration (e.g., `data_path`, `batch_size`, `max_epochs`, `learning_rate`, etc.) in `configs\model_config.yaml`. Similarly, the performance of the locally trained model is visualized using the command `invoke visualize,` again using the variables in `configs\model_config.yaml`.
 
 For training on the cloud, we added a trigger on Google Cloud to run `cloudbuild-train.yaml` on every push to a branch starting with `feature/training`, which builds the Docker image, pushes the image to Artifact Registry, and creates a Vertex AI job for training the model.
+
+---
 
 ### Question 13
 
@@ -418,6 +444,8 @@ We didn't use the profiler because we trained on a powerful GPU so training the 
 >
 > Answer:
 
+---
+
 We used the following services on Google Cloud:
 
 - Cloud Build to automate building Docker images triggered pushes to a branch starting with feature/training
@@ -434,6 +462,8 @@ We used the following services on Google Cloud:
 
 - Secret Manager to store and manage the secret keys.
 
+---
+
 ### Question 18
 
 > **The backbone of GCP is the Compute engine. Explained how you made use of this service and what type of VMs** > **you used?**
@@ -445,18 +475,21 @@ We used the following services on Google Cloud:
 >
 > Answer:
 
-Compute engine service is used to create and manage instances and one of the instance is Virtual Machine (VM). We created a VM instance with the type of e2-small which is using Intel Broadwell CPU platfrom. However, during the training process where we use VertexAI, a new build engine is initialized with "machineType: n1-highmem-2" line. this means we are using a new VM with the 2 vCPUs and 13GB of RAM. 
+Compute engine service is used to create and manage instances and one of the instance is Virtual Machine (VM). We created a VM instance with the type of e2-small which is using Intel Broadwell CPU platfrom. However, during the training process where we use VertexAI, a new build engine is initialized with "machineType: n1-highmem-2" line. this means we are using a new VM with the 2 vCPUs and 13GB of RAM.
 
 ### Question 19
 
 > **Insert 1-2 images of your GCP bucket, such that we can see what data you have stored in it.** > **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
-> We have two buckets. One for the training data (dcv) and one for the trained model (used by the api).
+
+---
 
 We have one Google Cloud bucket for the entire raw dataset, containing approximately 12 GB of mushroom images categorized in four classes.
 
 ![data](figures/data-bucket.png)
+
+---
 
 ### Question 20
 
@@ -473,7 +506,7 @@ For the project we utilize 3 docker images which are docker api for deployment, 
 >
 > Answer:
 
-There are multiple builds because of the trial and error process during the work of the project. 
+There are multiple builds because of the trial and error process during the work of the project.
 ![data](figures/gcloud.jpg)
 
 ### Question 22
@@ -487,7 +520,7 @@ There are multiple builds because of the trial and error process during the work
 >
 > Answer:
 
-We trained our model using the Virtual Machine instance through VertexAI. The job is run through “gcloud ai custom-jobs create” command upon a docker image where the configuration script is written on a yaml file and secret key variables are included. The reason VertexAI is utilized is to generate a streamlined Machine Learning pipeline. VertexAI process is done afer build  (in cloud build) initialization is finished.
+We trained our model using the Virtual Machine instance through VertexAI. The job is run through “gcloud ai custom-jobs create” command upon a docker image where the configuration script is written on a yaml file and secret key variables are included. The reason VertexAI is utilized is to generate a streamlined Machine Learning pipeline. VertexAI process is done afer build (in cloud build) initialization is finished.
 
 ## Deployment
 
@@ -497,17 +530,23 @@ We trained our model using the Virtual Machine instance through VertexAI. The jo
 
 > Answer:
 
+---
+
 We implemented the backend using FastAPI with a single POST endpoint for predicting the class ("conditionally_edible," "deadly," "edible," and "poisonous") of a mushroom based on an image. It accepts images in JPEG and PNG formats; otherwise, it returns an error. The predictions are returned as a dictionary with class probabilities. Locally, the backend can be started using 'invoke serve-api' after which the endpoint is available at http://localhost:8000/predict/, and the documentation is available at http://localhost:8000/docs.
 
 We use the @asynccontextmanager decorator and the lifespan function to load the latest model from a Google Cloud bucket and instantiate it once during startup, keeping it in memory throughout the server's lifecycle.
 
 We also added two integration tests for the API (tests\integrationtests\test_apis.py): one test for a valid image to check if it returns a 200 response and a dictionary.
 
+---
+
 ### Question 24
 
 > **Did you manage to deploy your API, either in locally or cloud? If not, describe why. If yes, describe how and** > **preferably how you invoke your deployed service?**
 >
 > Answer:
+
+---
 
 We have deployed the backend and frontend on Google Cloud Run. As mentioned, the backend is implemented in FastAPI, while the frontend (src\mushroomclassification\frontend.py) is implemented in Streamlit. We created a Dockerfile for both services (dockerfiles\api.dockerfile and dockerfiles\frontend.dockerfile) and a Cloud Build configuration file (cloudbuild-web.yaml), which, when triggered, builds the two Docker images and pushes them to Google Cloud's Artifact Registry. Once built and pushed, we deployed them on two containers, and they are now available at:
 
@@ -517,11 +556,15 @@ https://frontend-1005067352132.europe-west1.run.app/ (frontend)
 
 We could have extended the Cloud Build configuration file to also deploy the containers automatically, so changes in the codebase would directly affect the deployment without any manual tasks, but we focused on other tasks.
 
+---
+
 ### Question 25
 
 > **Did you perform any unit testing and load testing of your API? If yes, explain how you did it and what results for** > **the load testing did you get. If not, explain how you would do it.**
 >
 > Answer:
+
+---
 
 We have two integration tests in tests\integrationtests\test_apis.py for testing the API: one for testing the response for a valid image and one for testing the result for an invalid image. The tests are added to our GitHub Actions.
 
@@ -536,6 +579,8 @@ locust -f tests/performancetests/locustfile.py --headless --users 1000 --spawn-r
 |          | Aggregated   | 42363    | 997 (2.35%)   | 3939   | 3     | 38290   | 1500   | 242.70   | 0.00         |
 
 The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests per second. When repeating the test, it could handle much more, indicating that Google Run may have the ability to temporarily boost its capabilities.
+
+---
 
 ### Question 26
 
@@ -591,8 +636,8 @@ For the project which is hosted on GCP, we only use one GCP account hence the bi
 > _The starting point of the diagram is our local setup, where we integrated ... and ... and ... into our code._ > _Whenever we commit code and push to GitHub, it auto triggers ... and ... . From there the diagram shows ..._
 >
 > Answer:
-Graph below is our graph of machine learning pipeline starting from development stage to deployment stage that is hosted at Google Cloud Platform (GCP) adapted from a pipeline by the lecture of Nicki Skafte - DTU. During the developement process
-![data](figures/diagram.png)
+> Graph below is our graph of machine learning pipeline starting from development stage to deployment stage that is hosted at Google Cloud Platform (GCP) adapted from a pipeline by the lecture of Nicki Skafte - DTU. During the developement process
+> ![data](figures/diagram.png)
 
 ### Question 30
 
@@ -604,11 +649,12 @@ Graph below is our graph of machine learning pipeline starting from development 
 > _The biggest challenges in the project was using ... tool to do ... . The reason for this was ..._
 >
 > Answer:
+
 1. The biggest challenges in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments.
-2.  Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
+2. Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
 3. Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
-4.Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
-These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
+   4.Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
+   These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
 
 ### Question 31
 
