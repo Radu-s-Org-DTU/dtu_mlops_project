@@ -8,12 +8,12 @@ workerPoolSpecs:
         - name: GCS_BUCKET_NAME
           value: "02476-data"
         - name: WANDB_API_KEY
-          value: "PLACEHOLDER"
+          value: $WANDB_API_KEY
         - name: WANDB_ENTITY
-          value: "PLACEHOLDER"
+          value: $WANDB_ENTITY
         - name: WANDB_PROJECT
-          value: "PLACEHOLDER"
+          value: $WANDB_PROJECT
         - name: WANDB_MODEL_NAME
-          value: "PLACEHOLDER"
+          value: $WANDB_MODEL_NAME
         - name: WANDB_REGISTRY
-          value: "PLACEHOLDER"
+          value: $WANDB_REGISTRY
