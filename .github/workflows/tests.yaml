@@ -58,6 +58,9 @@ jobs:
           version: "latest"
           project_id: "sage-dragon-448009-f7"
 
+      - name: Check Ruff Version
+        run: ruff --version
+
       - name: Run Ruff
         run: |
           ruff check .
