@@ -2,26 +2,17 @@ import os
 from contextlib import asynccontextmanager
 
 import torch
-from dotenv import load_dotenv  # Add this import
+from dotenv import load_dotenv
 from fastapi import FastAPI, File, HTTPException, UploadFile
-from google.cloud import storage
 from loguru import logger
 from PIL import Image
 from torchvision import transforms
 
 import wandb
-from src.mushroomclassification.data import MushroomDataset
-from src.mushroomclassification.utils.config_loader import load_config
+from data import MushroomDataset
+from utils.config_loader import load_config
 
-from .model import MushroomClassifier
-
-
-def download_model(bucket_name, source_blob_name, destination_file_name):
-    os.makedirs(os.path.dirname(destination_file_name), exist_ok=True)
-    client = storage.Client()
-    bucket = client.bucket(bucket_name)
-    blob = bucket.blob(source_blob_name)
-    blob.download_to_filename(destination_file_name)
+from model import MushroomClassifier
 
 def download_best_model():
     """Download the model with the :best alias from the artifacts collection."""
@@ -34,22 +25,16 @@ def download_best_model():
     artifact = api.artifact(f"{os.getenv('WANDB_MODEL_NAME')}:best", type="model")
     artifact_dir = artifact.download()
     logger.info(f"Model downloaded to: {artifact_dir}")
-
-if __name__ == "__main__":
-    download_best_model()
+    return os.path.join(artifact_dir, "mushroom_model.ckpt")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global model, classes
 
-    download_model(
-        "02476-api-model",
-        "models/api-model/mushroom_model.ckpt",
-        "models/api-model/mushroom_model.ckpt"
-    )
+    model_path = download_best_model()
 
     model = MushroomClassifier.load_from_checkpoint(
-        "models/api-model/mushroom_model.ckpt",
+        model_path,
         learning_rate=load_config()['trainer']['learning_rate']
     )
     model.eval()
@@ -63,7 +48,7 @@ app = FastAPI(
         "An API for predicting the class of a mushroom "
         "('conditionally_edible', 'deadly', 'edible', 'poisonous') "
         "based on an uploaded image. The model is dynamically loaded "
-        "from Google Cloud Storage."
+        "from WandB."
     ),
     version="1.0.0",
     lifespan=lifespan,
@@ -80,7 +65,6 @@ def preprocess_image(image: Image.Image):
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
     try:
-        print(file.content_type)
         if file.content_type not in ["image/jpeg", "image/jpg", "image/png"]:
             raise HTTPException(
                 status_code=400,
