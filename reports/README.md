@@ -291,7 +291,7 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 >
 > Answer:
 
---- question 11 fill here ---
+--- We have organized our continuous integration setup using GitHub Actions and implemented it in the tests.yaml file. We run unit tests using pytest to validate the functionality of critical components such as data handling, model training, and API endpoints. The results include coverage reports generated using coverage.py. We use ruff to enforce linting and formatting standards across the codebase. This ensures that the code adheres to best practices and is maintainable.The pipeline is triggered on every push or pull request to the main branch, ensuring that all changes are thoroughly validated before merging. ---
 
 ## Running code and tracking experiments
 
@@ -348,7 +348,7 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 >
 > Answer:
 
---- question 15 fill here ---
+--- for the project we use 3 different docker images, which are for training that is built train.dockerfile, front-end built by frontend.dockerfile and deployment built by api.dockerfile ---
 
 ### Question 16
 
@@ -378,7 +378,7 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 >
 > Answer:
 
---- question 17 fill here ---
+--- Cloud Build to build image following the trigger rules toward a repo, VertexAI for training data then generating model , Compute Engine to set up VM instance with certain cpu or gpu configuration, Cloud Storage that is composed of buckets to store data and model. Cloud Run being used for deployment, Monitoring that monitors the log count, Artifact Registry to host the docker images, Security Manager to store and manage keys ---
 
 ### Question 18
 
@@ -391,7 +391,7 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 >
 > Answer:
 
---- question 18 fill here ---
+--- compute engine is used to create and manage instances. The virtual machine instances in use for the project is type e2-small which is based on Intel Broadwell CPU Platform  ---
 
 ### Question 19
 
@@ -430,7 +430,7 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 >
 > Answer:
 
---- question 22 fill here ---
+--- We trained our model using the Virtual Machine instance through VertexAI. The job is run through “gcloud ai custom-jobs create” command upon a docker image where the configuration script is written on a yaml file and secret key variables are included. The reason VertexAI is utilized is to generate a streamlineML training pipeline ---
 
 ## Deployment
 
@@ -491,7 +491,7 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 >
 > Answer:
 
---- question 26 fill here ---
+--- In monitoring we use log count as exemplified in the exercise moreover, logs explorers details error occurring during each process of the entire pipeline, ---
 
 ## Overall discussion of project
 
@@ -547,8 +547,13 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 > _The biggest challenges in the project was using ... tool to do ... . The reason for this was ..._
 >
 > Answer:
+--- The biggest challenges in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments. 
+Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
+Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
+Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
+These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
 
---- question 30 fill here ---
+
 
 ### Question 31
 
@@ -561,4 +566,9 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 >
 > Answer:
 
---- question 31 fill here ---
+S113117: Supervisor, Build front end
+S246415: Build model 
+S242580: Set-up augmentation for data training
+S242591: kind of useless honestly
+Each of all: Write down the report according to task
+
