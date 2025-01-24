@@ -1,7 +1,7 @@
 data:
-  data_path: data/raw
+  data_path: data/raw_subset
   batch_size: 32
-  num_workers: 16
+  num_workers: 8
   # Percentage of the full dataset to use, which is then further
   # split into train, test, and validation sets
   percent_of_data: 0.3
@@ -11,8 +11,8 @@ data:
   val_pct: 0.1
 
 trainer:
-  max_epochs: 5
-  learning_rate: 0.001
+  max_epochs: 2
+  learning_rate: 1.0
 
 model:
   file_name: mushroom_model_v2
