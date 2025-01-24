@@ -38,4 +38,9 @@ line-length = 120
 select = ["E", "F", "C"]
 
 [tool.coverage.run]
-omit = ["tests/*", "/tmp/*", "/private/var/*", "*/config-3.py"]
+omit = [
+    "tests/*",
+    "/tmp/*",
+    "/private/var/*",
+    "**/config.py"
+]
