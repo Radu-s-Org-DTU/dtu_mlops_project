@@ -22,3 +22,4 @@ python-dotenv==1.0.1
 wandb==0.19.4
 invoke==2.2.0
 locust==2.32.6
+scikit-learn==1.6.1

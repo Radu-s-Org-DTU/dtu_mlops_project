@@ -4,10 +4,10 @@ data:
   num_workers: 8
   # Percentage of the full dataset to use, which is then further
   # split into train, test, and validation sets
-  percent_of_data: 0.1
+  percent_of_data: 1
   # The following 3 values must sum to 1
-  train_pct: 0.001
-  test_pct: 0.899
+  train_pct: 0.8
+  test_pct: 0.1
   val_pct: 0.1
 
 trainer:
