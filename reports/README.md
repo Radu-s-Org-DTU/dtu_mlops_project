@@ -233,6 +233,8 @@ We have implemented a total of 13 tests: two integration tests for the API, wher
 >
 > Answer:
 
+Below is the result from the latest pull request. All 12 tests passed, and the overall coverage is 68%. We are not far from the 100% coverage goal, but there is room for improvement. Overall, more coverage is usually better, but having just a few tests for each part of the codebase is very helpful, especially when it is used together with GitHub Actions. In our setup, the result is posted to each pull request, and for us, it has caught many errors before being merged, like missing dependencies and code that should not be removed. Could we trust any change with 100% coverage? No, even with 100% coverage, tests only verify what they are designed to check, and they cannot catch logical errors.
+
 Coverage Report
 
 | File                                                | Statements | Missing | Coverage | Missing Lines                                                |
