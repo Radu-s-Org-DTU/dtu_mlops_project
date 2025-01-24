@@ -62,7 +62,7 @@ jobs:
           echo "WANDB_MODEL_NAME=$WANDB_MODEL_NAME" >> $GITHUB_ENV
 
       - name: Clear Ruff Cache
-        run: ruff check . --fix --clear-cache
+        run: ruff check . --fix --no-cache
 
       - name: Run Ruff
         run: |
