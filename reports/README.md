@@ -355,7 +355,21 @@ Using Weights and Biases, we predefined specific metrics to upload - loss & accu
 >
 > Answer:
 
---- question 14 fill here ---
+![Image 1](image.png)
+
+In the image above, we can see the performance of several tracked metrics for various training and test runs. There's some large differences because some were run on subsets of dataset and others were on all of it.
+
+One issue is that we didn't link the validation & training runs with the test runs (since they're called separately). If possible, it would be nice to set the run name of the test phase to the alias of the model that's used. Just so it's easy to track down.
+
+Since our project is about multi-class classification, we would also add per class accuracy.
+
+![Image 2](image-1.png)
+
+In the image above, we have the model registry, which contains the best performing model. When a test is finished, it's model is uploaded as an artifact with some appended metadata - the test accuracy metric, then a check is done accross all uploaded artifacts to see if the accuracy is higher.
+
+If it is, the new model is tagged with the "best" alias and uploaded to the registry, otherwise nothing happens. This "best" model is the one consumed by the api.
+
+We wanted to perform a hyperparameter sweep as we have configured the sweep.yaml file but other tasks got in the way.
 
 ### Question 15
 
