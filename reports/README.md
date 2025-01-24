@@ -148,7 +148,7 @@ s242580, s242591, s113117, s246415
 >
 > Answer:
 
- --- Albumentations: it’s an api used for image augmentation of the training data during pre-processing process ---
+--- Albumentations: it’s an api used for image augmentation of the training data during pre-processing process ---
 
 ## Coding environment
 
@@ -166,7 +166,7 @@ s242580, s242591, s113117, s246415
 >
 > Answer:
 
---- We managed dependencies in our project using requirements.txt for runtime dependencies and requirements_dev.txt for development dependencies. These files were manually updated to include all necessary libraries, such as PyTorch, Albumentations, and FastAPI. During development installation can be done through pip install -r requirements_dev.txt on local CL  ---
+--- We managed dependencies in our project using requirements.txt for runtime dependencies and requirements_dev.txt for development dependencies. These files were manually updated to include all necessary libraries, such as PyTorch, Albumentations, and FastAPI. During development installation can be done through pip install -r requirements_dev.txt on local CL ---
 
 ### Question 5
 
@@ -265,7 +265,7 @@ Total Coverage
 >
 > Answer:
 
----  Yes, we use branches and pull requests, while the branches are created based on each job not according to each person’s name. Branches are called, for examples: feature/training branch, feature/frontend branch and feature/wandb branch. each of the branch manages different functionality and jobs   ---
+--- Yes, we use branches and pull requests, while the branches are created based on each job not according to each person’s name. Branches are called, for examples: feature/training branch, feature/frontend branch and feature/wandb branch. each of the branch manages different functionality and jobs ---
 
 ### Question 10
 
@@ -278,7 +278,7 @@ Total Coverage
 >
 > Answer:
 
---- question 10 fill here ---
+We used DVC throughout the project. In the beginning, we pushed the entire dataset to Google Drive, and then each team member pulled it using 'dvc pull'. We set it up using a service account for authentication and the config parameter 'gdrive_service_account_json_file_path,' and shared the JSON file over WhatsApp. We later pushed the dataset to a bucket on Google Cloud, where we again used a service account for authentication, so no real difference on the development side. For simplicity, we kept the subset of the data on Git. Alternatively, we could have pushed that to a subset as well and given GitHub Actions rights to download it for testing, but we kept it simple. As our dataset was fixed and no changes were made to the data, DVC did not provide us real benefits other than easy setup for team members.
 
 ### Question 11
 
