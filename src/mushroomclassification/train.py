@@ -1,7 +1,6 @@
 import operator
 import os
 
-import wandb
 from dotenv import load_dotenv
 from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
 from lightning.pytorch.cli import LightningCLI
@@ -10,6 +9,7 @@ from model import MushroomClassifier
 from utils.config_loader import load_config
 from utils.gcs import upload_to_gcs
 
+import wandb
 from data import MushroomDatamodule
 
 env = os.getenv
@@ -130,7 +130,7 @@ def train():
     api.log_artifact(artifact, aliases=[wandb.run.name])
 
     logger.info("Model saved to registry.")
-    
+
     bucket_name = os.getenv("GCS_BUCKET_NAME")
     if bucket_name:
         model_file = os.path.join(local_model_dir, f"{checkpoint_filename}.ckpt")
