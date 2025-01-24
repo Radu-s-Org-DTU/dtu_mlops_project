@@ -410,7 +410,7 @@ Albumentations
 > **Did you manage to write an API for your model? If yes, explain how you did it and if you did anything special. If** > **not, explain how you would do it.**
 
 > Answer:
-> We implemented the backend using FastAPI with a single POST endpoint for predicting the class ("conditionally_edible," "deadly," "edible," and "poisonous") of a mushroom based on an image. It accepts images in JPEG and PNG formats; otherwise, it returns an error. The predictions are returned as a dictionary with class probabilities. Locally, the backend can be started using 'invoke serve-api' after which the endpoint is available at http://localhost:8000/predict/, and the documentation is available at http://localhost:8000/docs#/default/predict_predict\_\_post.
+> We implemented the backend using FastAPI with a single POST endpoint for predicting the class ("conditionally_edible," "deadly," "edible," and "poisonous") of a mushroom based on an image. It accepts images in JPEG and PNG formats; otherwise, it returns an error. The predictions are returned as a dictionary with class probabilities. Locally, the backend can be started using 'invoke serve-api' after which the endpoint is available at http://localhost:8000/predict/, and the documentation is available at http://localhost:8000/docs.
 
 > We use the @asynccontextmanager decorator and the lifespan function to load the latest model from a Google Cloud bucket and instantiate it once during startup, keeping it in memory throughout the server's lifecycle.
 
