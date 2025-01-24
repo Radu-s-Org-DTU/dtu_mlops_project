@@ -1,18 +1,17 @@
 import os
 from contextlib import asynccontextmanager
 
+import torch
 from dotenv import load_dotenv
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from loguru import logger
+from model import MushroomClassifier
 from PIL import Image
 from torchvision import transforms
-
-import torch
-import wandb
-
-from data import MushroomDataset
-from model import MushroomClassifier
 from utils.config_loader import load_config
+
+import wandb
+from data import MushroomDataset
 
 
 def download_best_model():

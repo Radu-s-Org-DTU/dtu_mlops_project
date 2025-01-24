@@ -7,9 +7,9 @@ import typer
 app = typer.Typer()
 
 def create_raw_data_subset(
-    source_dir: str, 
-    target_dir: str, 
-    classes: list[str], 
+    source_dir: str,
+    target_dir: str,
+    classes: list[str],
     num_samples: int = 10
 ):
     """

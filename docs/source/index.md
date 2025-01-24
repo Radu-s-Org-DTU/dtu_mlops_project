@@ -7,12 +7,12 @@ Aim:
 
 Problem Statement:
 - There exists a multitude of mushrooms in the nature many of which are either toxic or harmful to humans. The main challenge in identifying the poisonous and non-poisonous mushrooms are the visual similarities between them. This project provides an automated solution to identify mushroom safety categories to mitiagte health risks and avoid any accidental posioning.
- 
+
 Key features:
 - Data preprocessing using Albumentations
   * Images are transformed using Albumentations library where the transformations applied are re-sizing the images and rotating it.
 - Model training with pyTorch Lightning
-  * 
+  *
 - Deployment-ready API
   * API for real time interface built using FastAPI
   * Dockerized environment for seamless deployment on cloud platform GCP.
@@ -29,4 +29,3 @@ Dataset Structure:
 - The dataset is sourced from Kaggle - https://www.kaggle.com/datasets/zedsden/mushroom-classification-dataset/data
 - Raw data is stored in data/raw directory containing unprocessed images.
 - The data is augmented and resized at runtime and is not stored. (So, Processed data folder is empty)
-
