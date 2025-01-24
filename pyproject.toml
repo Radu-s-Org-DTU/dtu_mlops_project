@@ -42,5 +42,6 @@ omit = [
     "tests/*",
     "/tmp/*",
     "/private/var/*",
-    "**/config.py"
+    "**/config.py",
+    "**/config-*.py"
 ]
