@@ -445,7 +445,7 @@ We used the following services on Google Cloud:
 >
 > Answer:
 
---- compute engine is used to create and manage instances. The virtual machine instances in use for the project is type e2-small which is based on Intel Broadwell CPU Platform ---
+Compute engine service is used to create and manage instances and one of the instance is Virtual Machine (VM). We created a VM instance with the type of e2-small which is using Intel Broadwell CPU platfrom. However, during the training process where we use VertexAI, a new build engine is initialized with "machineType: n1-highmem-2" line. this means we are using a new VM with the 2 vCPUs and 13GB of RAM. 
 
 ### Question 19
 
