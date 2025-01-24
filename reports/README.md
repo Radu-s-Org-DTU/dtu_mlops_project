@@ -548,6 +548,8 @@ There are multiple builds because of the trial and error process during the work
 >
 > Answer:
 
+---
+
 We managed to train our model in the cloud by using the Google Build file cloudbuild-train.yaml, which schedules Cloud Build to build the Docker image from the Docker file dockerfiles\train.dockerfile, push it to Artifact Registry, and create a job on Vertex AI to train the model.
 
 Initially, the trained model was pushed to a Google Cloud bucket. Later, we implemented W&B to select the best model, which is then pulled by the API.
@@ -555,6 +557,8 @@ Initially, the trained model was pushed to a Google Cloud bucket. Later, we impl
 The secret keys for W&B are stored in the Secret Manager, pulled in the Google Build file cloudbuild-train.yaml, and injected into the Vertex AI job configuration file vertex-config.yaml before the jobs are created.
 
 The Vertex AI job configuration also specifies the machine type and accelerators required for training, where we used the CPU version.
+
+---
 
 ## Deployment
 
@@ -674,9 +678,9 @@ We also implemented a version using Reflex (and removed it again), as it was not
 > _The starting point of the diagram is our local setup, where we integrated ... and ... and ... into our code._ > _Whenever we commit code and push to GitHub, it auto triggers ... and ... . From there the diagram shows ..._
 >
 > Answer:
-The Graph below is our graph of machine learning pipeline starting from development to deployment that is hosted at Google Cloud Platform (GCP). The graph is adapted from a pipeline graph developed by Nicki Skafte then presented at the DTU Lecture.
+> The Graph below is our graph of machine learning pipeline starting from development to deployment that is hosted at Google Cloud Platform (GCP). The graph is adapted from a pipeline graph developed by Nicki Skafte then presented at the DTU Lecture.
 
-During the developement process, Docker is used to create a consistent environment for the developers. docker images built are _blandt andet_ PyTorch Lightning, that handles model training and Hydra. Moreover, scripts are then structured and pushed to a github repository so it can be connected to GCP for deployment. 
+During the developement process, Docker is used to create a consistent environment for the developers. docker images built are _blandt andet_ PyTorch Lightning, that handles model training and Hydra. Moreover, scripts are then structured and pushed to a github repository so it can be connected to GCP for deployment.
 
 For the Deployment phase, the group utilize GCP per requested by the lecture. In the GCP, connection rultes to a repo is configured within a trigger in Cloud Build. After trigger is made, docker image is then automatically being built per the configuration in yaml scripts that is posted within the repo. as there's no error, the docker image should be listed on the artifact registery service.
 
