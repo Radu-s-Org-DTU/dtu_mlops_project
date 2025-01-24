@@ -294,12 +294,17 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 We have configured our continuous integration setup using GitHub Actions in .github/workflows/tests.yaml. The following outlines how it works:
 
 - It is executed on two operating systems (Ubuntu and macOS) and for two versions of Python (3.11 and 3.12).
+- It uses caching to speed up workflow execution by caching Python dependencies and reusing them across builds. The cache is keyed to the requirements.txt file, ensuring dependencies are updated only when necessary.
 
-- It loads the requirements or installs them from requirements.txt if it has been changed. To pull the latest model from a Google Cloud bucket during testing, it authenticates with Google Cloud using a secret key added to GitHub.
+- It authenticates with Google Cloud using a secret key stored in GitHub, allowing us to pull the latest model from a Google Cloud bucket during testing.
 
 - It checks for code style and syntax errors using ruff check.
 
-- It runs the unit and integration tests, calculates the coverage, and posts the result to the pull request.
+- It runs the unit and integration tests, calculates the coverage, and generates XML reports for both test results and coverage. These artifacts are saved for review and debugging.
+
+- On pull requests, it adds a comment summarizing the number of passed and failed tests, along with the coverage percentage, ensuring visibility into the test status directly in the pull request.
+
+We set this up to keep our codebase consistent and reliable. By automating linting, testing, and coverage checks on multiple operating systems and Python versions, we have caught many issues like missing dependencies and the removal of vital code before merging a feature branch into our main branch.
 
 ## Running code and tracking experiments
 
