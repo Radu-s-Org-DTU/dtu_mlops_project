@@ -624,7 +624,7 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 >
 > Answer:
 
-In monitoring we use log count as exemplified in the exercise. log counts records the request made by client or users toward the cloud run so, everytime a user is testing a data (image in this case) trough the cloud run link. the logging interval is set to be per hour. Moreover, alert within monitor service are also set to send notification as certain threshold is reached for certain paramteres such as, log count & bills. 
+In monitoring we use log count as exemplified in the exercise. log counts records the request made by client or users toward the cloud run so, everytime a user is testing a data (image in this case) trough the cloud run link. the logging interval is set to be per hour. Moreover, alert within monitor service are also set to send notification as certain threshold is reached for certain paramteres such as, log count & bills.
 
 Moreovers, monitoring records error for every training done on VertexAI then indicate at what and where the error occurs. not only that, monitoring logs also records error and progresses on all of other services
 
@@ -643,9 +643,9 @@ Moreovers, monitoring records error for every training done on VertexAI then ind
 >
 > Answer:
 
-For the project which is hosted on GCP, we only use one GCP account hence the bill is incurred upon 1 member of group. The total bill is initally just above DDK 22 which mostly consist from data training process on VertexAI machine. the VertexAI machine being used only uses CPU (without GPU) hence the bill is not high and still covered by the voucher. 
+For the project which is hosted on GCP, we only use one GCP account hence the bill is incurred upon 1 member of group. The total bill is initally just above DDK 22 which mostly consist from data training process on VertexAI machine. the VertexAI machine being used only uses CPU (without GPU) hence the bill is not high and still covered by the voucher.
 
-Working in the cloud is a necessity in these day of age specialty for the ML/AI deploment, but we belive that there's an optimum point between the scale of application usage and cost, specially while using cloud served by a third company like google. we can see as we need a large & continuous computing power the cost would increase exponentially. 
+Working in the cloud is a necessity in these day of age specialty for the ML/AI deploment, but we belive that there's an optimum point between the scale of application usage and cost, specially while using cloud served by a third company like google. we can see as we need a large & continuous computing power the cost would increase exponentially.
 
 ### Question 28
 
@@ -719,20 +719,31 @@ These are main challenges we faced during the building and testing of the pipeli
 > Answer:
 
 S113117:
-* Supervisor
-* Front end using streamlit
+
+- API (FastAPI) + Deployment (Google Run)
+- Frontend (streamlit)
+- Unit, integration, and performance test
+- DVC
+- Github Actions
+- Cloud Build configuration files
+- Docker files
 
 S246415:
-* Build model
-* Lightning, LightningCLI integration
-* Weights and Biases integration
-* Docker image setup
+
+- Build model
+- Lightning, LightningCLI integration
+- Weights and Biases integration
+- Docker image setup
 
 S242580:
-* Set-up augmentation for data training
+
+- Set-up augmentation for data training
 
 S242591:
-* Augmentation library
 
+- Augmentation library
+- Cloud Build configuration files
+- Docker files
+- Vertex AI
 
 Each of all: Write down the report according to task
