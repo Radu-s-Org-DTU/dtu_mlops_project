@@ -294,6 +294,7 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 We have configured our continuous integration setup using GitHub Actions in .github/workflows/tests.yaml. The following outlines how it works:
 
 - It is executed on two operating systems (Ubuntu and macOS) and for two versions of Python (3.11 and 3.12).
+
 - It uses caching to speed up workflow execution by caching Python dependencies and reusing them across builds. The cache is keyed to the requirements.txt file, ensuring dependencies are updated only when necessary.
 
 - It authenticates with Google Cloud using a secret key stored in GitHub, allowing us to pull the latest model from a Google Cloud bucket during testing.
@@ -322,7 +323,9 @@ We set this up to keep our codebase consistent and reliable. By automating linti
 >
 > Answer:
 
---- question 12 fill here ---
+For training, we used the command `invoke train,` which trains a model based on the configuration (e.g., `data_path`, `batch_size`, `max_epochs`, `learning_rate`, etc.) in `configs\model_config.yaml`. Similarly, the performance of the locally trained model is visualized using the command `invoke visualize,` again using the variables in `configs\model_config.yaml`.
+
+For training on the cloud, we added a trigger on Google Cloud to run `cloudbuild-train.yaml` on every push to a branch starting with `feature/training`, which builds the Docker image, pushes the image to Artifact Registry, and creates a Vertex AI job for training the model.
 
 ### Question 13
 
