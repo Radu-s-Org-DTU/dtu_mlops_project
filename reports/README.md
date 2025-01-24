@@ -446,7 +446,7 @@ for the project we use 3 different docker images, which are for training that is
 >
 > Answer:
 
---- We trained our model using the Virtual Machine instance through VertexAI. The job is run through “gcloud ai custom-jobs create” command upon a docker image where the configuration script is written on a yaml file and secret key variables are included. The reason VertexAI is utilized is to generate a streamlineML training pipeline ---
+--- We trained our model using the Virtual Machine instance through VertexAI. The job is run through “gcloud ai custom-jobs create” command upon a docker image where the configuration script is written on a yaml file and secret key variables are included. The reason VertexAI is utilized is to generate a streamlined Machine Learning pipeline --
 
 ## Deployment
 
@@ -507,7 +507,7 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 >
 > Answer:
 
---- In monitoring we use log count as exemplified in the exercise moreover, logs explorers details error occurring during each process of the entire pipeline, ---
+In monitoring we use log count as exemplified in the exercise. log counts records the request made by client or users toward the cloud run so, everytime a user is testing a data (image in this case) trough the cloud run link. the logging interval is set to be per hour. Moreover, alert within monitor service are also set to send notification as certain threshold is reached.
 
 ## Overall discussion of project
 
