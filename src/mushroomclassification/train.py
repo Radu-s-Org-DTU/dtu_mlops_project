@@ -32,7 +32,7 @@ def save_model_to_registry(run_name: str) -> None:
     artifact = api.artifact(artifact_path)
 
     # Link the artifact to the desired target path in the model registry
-    target_path = f"{env('WANDB_ENTITY')}/wandb-registry-model/{env("WANDB_REGISTRY")}"
+    target_path = f"{env('WANDB_ENTITY')}/wandb-registry-model/{env('WANDB_REGISTRY')}"
     artifact.link(target_path)
 
     # Save the artifact (if necessary, though `link` usually suffices)
