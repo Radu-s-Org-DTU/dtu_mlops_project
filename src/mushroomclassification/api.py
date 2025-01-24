@@ -39,7 +39,17 @@ async def lifespan(app: FastAPI):
     classes = dataset.classes
     yield
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(
+    title="Mushroom Classification API",
+    description=(
+        "An API for predicting the class of a mushroom "
+        "('conditionally_edible', 'deadly', 'edible', 'poisonous') "
+        "based on an uploaded image. The model is dynamically loaded "
+        "from Google Cloud Storage."
+    ),
+    version="1.0.0",
+    lifespan=lifespan,
+)
 
 def preprocess_image(image: Image.Image):
     transform = transforms.Compose([
@@ -52,6 +62,13 @@ def preprocess_image(image: Image.Image):
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
     try:
+        print(file.content_type)
+        if file.content_type not in ["image/jpeg", "image/jpg", "image/png"]:
+            raise HTTPException(
+                status_code=400,
+                detail="Invalid file type. Please upload a JPEG or PNG image."
+            )
+
         image = Image.open(file.file).convert("RGB")
         input_tensor = preprocess_image(image)
 
