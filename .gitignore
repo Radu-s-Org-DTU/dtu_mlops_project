@@ -181,3 +181,7 @@ lightning_logs/
 
 # Weights and biases
 wandb/
+
+artifacts/
+
+models/

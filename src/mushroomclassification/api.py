@@ -22,21 +22,22 @@ def download_best_model():
         overrides={"entity": os.getenv("WANDB_ENTITY"), "project": os.getenv("WANDB_PROJECT")},
     )
 
-    artifact = api.artifact(f"{os.getenv('WANDB_MODEL_NAME')}:best", type="model")
+    artifact = api.artifact(f"radugrecu97-dtu-org/wandb-registry-model/model_collection:best", type="model")
     artifact_dir = artifact.download()
     logger.info(f"Model downloaded to: {artifact_dir}")
     return os.path.join(artifact_dir, "mushroom_model.ckpt")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global model, classes
+    global model, classes, device
 
     model_path = download_best_model()
 
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = MushroomClassifier.load_from_checkpoint(
         model_path,
         learning_rate=load_config()['trainer']['learning_rate']
-    )
+    ).to(device)
     model.eval()
     dataset = MushroomDataset(data_path='')
     classes = dataset.classes
@@ -60,7 +61,7 @@ def preprocess_image(image: Image.Image):
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
-    return transform(image).unsqueeze(0)
+    return transform(image).unsqueeze(0).to(device)
 
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...)):
