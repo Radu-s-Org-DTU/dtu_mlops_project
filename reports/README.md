@@ -452,8 +452,8 @@ We could have extended the Cloud Build configuration file to also deploy the con
 > **Did you perform any unit testing and load testing of your API? If yes, explain how you did it and what results for** > **the load testing did you get. If not, explain how you would do it.**
 >
 > Answer:
->
-> We have two integration tests in tests\integrationtests\test_apis.py for testing the API: one for testing the response for a valid image and one for testing the result for an invalid image. The tests are added to our GitHub Actions.
+
+We have two integration tests in tests\integrationtests\test_apis.py for testing the API: one for testing the response for a valid image and one for testing the result for an invalid image. The tests are added to our GitHub Actions.
 
 We load tested the deployment for 1000 users with a spawn rate of 500 using the following command:
 
