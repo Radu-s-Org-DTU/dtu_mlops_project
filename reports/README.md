@@ -440,7 +440,7 @@ We have one Google Cloud bucket for the entire raw dataset, containing approxima
 >
 > Answer:
 
---- question 20 fill here ---
+![data](figures/artifact2.jpg)
 
 ### Question 21
 
@@ -448,7 +448,7 @@ We have one Google Cloud bucket for the entire raw dataset, containing approxima
 >
 > Answer:
 
---- question 21 fill here ---
+![data](figures/gcloud.jpg)
 
 ### Question 22
 
