@@ -338,7 +338,11 @@ For training on the cloud, we added a trigger on Google Cloud to run `cloudbuild
 >
 > Answer:
 
---- question 13 fill here ---
+We used HydraConfig to pass input parameters for data splitting, model hyperparameters and imprtantly - the seed. They are specified in a configuration file.
+
+They are recorded every single run by the Lightning framework into a separate file so it's always possible to check which parameters were used on previous runs. Lightning provides a way to set a seed for the RNGs of several supported libraries. This allowed to reproduce the same results using the same input parameters accross different runs.
+
+Using Weights and Biases, we predefined specific metrics to upload - loss & accuracy for training, validation and test for each run. This allows us to know if the model is improving or not.
 
 ### Question 14
 
