@@ -591,7 +591,7 @@ For the project which is hosted on GCP, we only use one GCP account hence the bi
 > _The starting point of the diagram is our local setup, where we integrated ... and ... and ... into our code._ > _Whenever we commit code and push to GitHub, it auto triggers ... and ... . From there the diagram shows ..._
 >
 > Answer:
-
+Graph below is our graph of machine learning pipeline starting from development stage to deployment stage that is hosted at Google Cloud Platform (GCP) adapted from a pipeline by the lecture of Nicki Skafte - DTU. During the developement process
 ![data](figures/diagram.png)
 
 ### Question 30
