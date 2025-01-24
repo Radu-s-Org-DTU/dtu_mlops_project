@@ -553,6 +553,8 @@ The secret keys for W&B are stored in the Secret Manager, pulled in the Google B
 
 The Vertex AI job configuration also specifies the machine type and accelerators required for training, where we used the CPU version.
 
+![alt text](figures/vertex.png)
+
 ---
 
 ## Deployment
