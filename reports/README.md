@@ -395,7 +395,13 @@ for the project we use 3 different docker images, which are for training that is
 >
 > Answer:
 
---- question 16 fill here ---
+Most of our issues were able to be solved by inspecting the terminal output and then reading the documentation or finding other solutions online. There were some annoying import issues with uvicorn and pytest when using binaries outside the project directory - src/mushroomclassification.
+
+We fixed them by checking their command options.
+
+The python debugger was used to verify correct data splitting. Otherwise, log statements sufficed for our use cases.
+
+We didn't use the profiler because we trained on a powerful GPU so training the models locally was a breeze. Of course we also knew how to optimize data loading using the 'num_workers' parameter.
 
 ## Working in the cloud
 
