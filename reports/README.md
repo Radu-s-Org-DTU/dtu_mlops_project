@@ -250,15 +250,9 @@ Overall, it helps to keep the codebase clean and readable, and it helps everyone
 >
 > Answer:
 
-<<<<<<< HEAD
----
-
-We have implemented a total of 13 tests: two integration tests for the API, where one tests the API for a successful result with a valid image, and one tests the API for an unsuccessful result with an invalid input. One performance test of the API tests if the result for a valid image is successful. Ten unit tests, which include six tests for the validity of the dataset (the data and the loading of the data) and four tests for the model (is it constructed, does it correctly forward pass, etc.). The unit and integration tests are added to our GitHub Actions testing, where the results are automatically posted on all pull requests.
-=======
 We implemented 13 tests: two integration tests for the API, where one tests the API for a successful result with a valid image, and one tests the API for an unsuccessful result with an invalid input.
 
 One performance test of the API tests if the result for a valid image is successful. 6 tests for the validity of the dataset (the data and the loading of the data) and 4 tests for the model (is it constructed, does it correctly forward pass, etc.). The unit and integration tests are run automatically posted on all pull requests.
->>>>>>> 4dd1211 (Fixed some word counds and formatting)
 
 ---
 
