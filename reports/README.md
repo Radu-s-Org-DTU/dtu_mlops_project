@@ -220,7 +220,7 @@ We used Ruff for linting with a maximum line length of 120 and the error codes E
 >
 > Answer:
 
---- question 7 fill here ---
+We have implemented a total of 13 tests: two integration tests for the API, where one tests the API for a successful result with a valid image, and one tests the API for an unsuccessful result with an invalid input. One performance test of the API tests if the result for a valid image is successful. Ten unit tests, which include six tests for the validity of the dataset (the data and the loading of the data) and four tests for the model (is it constructed, does it correctly forward pass, etc.). The unit and integration tests are added to our GitHub Actions testing, where the results are automatically posted on all pull requests.
 
 ### Question 8
 
