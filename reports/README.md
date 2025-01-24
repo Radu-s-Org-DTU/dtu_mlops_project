@@ -394,7 +394,21 @@ for the project we use 3 different docker images, which are for training that is
 >
 > Answer:
 
---- Cloud Build to build image following the trigger rules toward a repo, VertexAI for training data then generating model , Compute Engine to set up VM instance with certain cpu or gpu configuration, Cloud Storage that is composed of buckets to store data and model. Cloud Run being used for deployment, Monitoring that monitors the log count, Artifact Registry to host the docker images, Security Manager to store and manage keys ---
+We used the following services on Google Cloud:
+
+- Cloud Build to automate building Docker images triggered pushes to a branch starting with feature/training
+
+- Vertex AI for training our models
+
+- Cloud Storage to store our raw data in a bucket.
+
+- Cloud Run for deploying and running our API and frontend applications in a serverless environment.
+
+- Monitoring for tracking and display logs and metrics.
+
+- Artifact Registry to host the built Docker images.
+
+- Secret Manager to store and manage the secret keys.
 
 ### Question 18
 
