@@ -719,7 +719,6 @@ These are main challenges we faced during the building and testing of the pipeli
 > Answer:
 
 S113117:
-
 - API (FastAPI) + Deployment (Google Run)
 - Frontend (streamlit)
 - Unit, integration, and performance test
@@ -729,19 +728,18 @@ S113117:
 - Docker files
 
 S246415:
-
 - Build model
 - Lightning, LightningCLI integration
 - Weights and Biases integration
 - Docker image setup
+- Setup HydraConfig
 
 S242580:
-
 - Set-up augmentation for data training
+- Setup mkdocs
 
 S242591:
-
-- Augmentation library
+- Set-up VertexAI, Cloud build,  Monitoring Services
 - Cloud Build configuration files
 - Docker files
 - Vertex AI
