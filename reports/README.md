@@ -734,8 +734,20 @@ These are main challenges we faced during the building and testing of the pipeli
 >
 > Answer:
 
-S113117: Supervisor, Build front end
-S246415: Build model
-S242580: Set-up augmentation for data training
-S242591: kind of useless honestly
+S113117:
+* Supervisor
+* Front end using streamlit
+
+S246415:
+* Build model
+* Lightning, LightningCLI integration
+* Weights and Biases integration
+
+S242580:
+* Set-up augmentation for data training
+
+S242591:
+* Augmentation library
+
+
 Each of all: Write down the report according to task
