@@ -578,7 +578,12 @@ For the project which is hosted on GCP, we only use one GCP account hence the bi
 >
 > Answer:
 
---- question 28 fill here ---
+
+We implemented a frontend using Streamlit as part of the exercise.
+
+![alt text](figures/frontend1.jpg)
+
+![alt text](figures/frontend2.jpg)
 
 ### Question 29
 
