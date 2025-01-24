@@ -291,7 +291,15 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 >
 > Answer:
 
---- We have organized our continuous integration setup using GitHub Actions and implemented it in the tests.yaml file. We run unit tests using pytest to validate the functionality of critical components such as data handling, model training, and API endpoints. The results include coverage reports generated using coverage.py. We use ruff to enforce linting and formatting standards across the codebase. This ensures that the code adheres to best practices and is maintainable.The pipeline is triggered on every push or pull request to the main branch, ensuring that all changes are thoroughly validated before merging. ---
+We have configured our continuous integration setup using GitHub Actions in .github/workflows/tests.yaml. The following outlines how it works:
+
+- It is executed on two operating systems (Ubuntu and macOS) and for two versions of Python (3.11 and 3.12).
+
+- It loads the requirements or installs them from requirements.txt if it has been changed. To pull the latest model from a Google Cloud bucket during testing, it authenticates with Google Cloud using a secret key added to GitHub.
+
+- It checks for code style and syntax errors using ruff check.
+
+- It runs the unit and integration tests, calculates the coverage, and posts the result to the pull request.
 
 ## Running code and tracking experiments
 
@@ -535,7 +543,7 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 >
 > Answer:
 
---- question 29 fill here ---
+![data](figures/diagram.png)
 
 ### Question 30
 
