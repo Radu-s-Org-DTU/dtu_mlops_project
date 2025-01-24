@@ -41,4 +41,9 @@ select = ["E", "F", "I", "C"]
 omit = ["tests/*", "/tmp/*", "/private/var/*"]
 
 [coverage:run]
-omit = */config-3.py
+omit = [
+  "tests/*",
+  "/tmp/*",
+  "/private/var/*",
+  "*/config-3.py",
+]
