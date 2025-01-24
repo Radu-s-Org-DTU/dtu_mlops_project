@@ -278,7 +278,7 @@ Total Coverage
 >
 > Answer:
 
-We used DVC throughout the project. In the beginning, we pushed the entire dataset to Google Drive, and then each team member pulled it using 'dvc pull'. We set it up using a service account for authentication and the config parameter 'gdrive_service_account_json_file_path,' and shared the JSON file over WhatsApp. We later pushed the dataset to a bucket on Google Cloud, where we again used a service account for authentication, so no real difference on the development side. For simplicity, we kept the subset of the data on Git. Alternatively, we could have pushed that to a subset as well and given GitHub Actions rights to download it for testing, but we kept it simple. As our dataset was fixed and no changes were made to the data, DVC did not provide us real benefits other than easy setup for team members.
+We used DVC throughout the project. In the beginning, we pushed the entire dataset to Google Drive, and then each team member pulled it using 'dvc pull'. We set it up using a service account for authentication and the config parameter 'gdrive_service_account_json_file_path,' and shared the JSON file over WhatsApp. We later pushed the dataset to a bucket on Google Cloud, where we again used a service account for authentication, so no real difference on the development side. For simplicity, we kept the subset of the data on Git. Alternatively, we could have pushed that to a subset as well and given GitHub Actions rights to download it for testing, but we kept it simple. As our dataset was fixed and no changes were made to it, DVC did not provide us real benefits other than easy setup for team members.
 
 ### Question 11
 
@@ -391,7 +391,7 @@ We used DVC throughout the project. In the beginning, we pushed the entire datas
 >
 > Answer:
 
---- compute engine is used to create and manage instances. The virtual machine instances in use for the project is type e2-small which is based on Intel Broadwell CPU Platform  ---
+--- compute engine is used to create and manage instances. The virtual machine instances in use for the project is type e2-small which is based on Intel Broadwell CPU Platform ---
 
 ### Question 19
 
@@ -547,13 +547,11 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 > _The biggest challenges in the project was using ... tool to do ... . The reason for this was ..._
 >
 > Answer:
---- The biggest challenges in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments. 
-Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
-Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
-Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
-These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
-
-
+> --- The biggest challenges in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments.
+> Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
+> Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
+> Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
+> These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
 
 ### Question 31
 
@@ -567,8 +565,7 @@ These are main challenges we faced during the building and testing of the pipeli
 > Answer:
 
 S113117: Supervisor, Build front end
-S246415: Build model 
+S246415: Build model
 S242580: Set-up augmentation for data training
 S242591: kind of useless honestly
 Each of all: Write down the report according to task
-
