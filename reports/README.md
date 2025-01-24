@@ -623,10 +623,9 @@ For the project which is hosted on GCP, we only use one GCP account hence the bi
 >
 > Answer:
 
+We implemented a frontend (src\mushroomclassification\frontend.py) for our API using Streamlit and deployed it using Google Run on https://frontend-1005067352132.europe-west1.run.app/. It allows the user to upload an image and see how it classifies in the four classes. We think that the frontend is a good addition to our project, as it shows the final result in a meaningful and interactive way. The backend is slow to respond with a prediction for the first image uploaded. It seems like Google Run keeps the service half-asleep.
 
-We implemented a frontend using Streamlit as part of the exercise.
-
-![alt text](figures/frontend1.jpg)
+We also implemented a version using Reflex (and removed it again), as it was not possible to deploy on Google Run, as it requires WebSocket. It was a lot prettier.
 
 ![alt text](figures/frontend2.jpg)
 
