@@ -13,3 +13,7 @@ workerPoolSpecs:
           value: "PLACEHOLDER"
         - name: WANDB_PROJECT
           value: "PLACEHOLDER"
+        - name: WANDB_MODEL_NAME
+          value: "PLACEHOLDER"
+        - name: WANDB_REGISTRY
+          value: "PLACEHOLDER"
