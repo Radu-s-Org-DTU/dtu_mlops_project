@@ -445,7 +445,7 @@ We used the following services on Google Cloud:
 >
 > Answer:
 
---- compute engine is used to create and manage instances. The virtual machine instances in use for the project is type e2-small which is based on Intel Broadwell CPU Platform ---
+Compute engine service is used to create and manage instances and one of the instance is Virtual Machine (VM). We created a VM instance with the type of e2-small which is using Intel Broadwell CPU platfrom. However, during the training process where we use VertexAI, a new build engine is initialized with "machineType: n1-highmem-2" line. this means we are using a new VM with the 2 vCPUs and 13GB of RAM. 
 
 ### Question 19
 
@@ -604,11 +604,11 @@ For the project which is hosted on GCP, we only use one GCP account hence the bi
 > _The biggest challenges in the project was using ... tool to do ... . The reason for this was ..._
 >
 > Answer:
-> --- The biggest challenges in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments.
-> Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
-> Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
-> Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
-> These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
+1. The biggest challenges in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments.
+2.  Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
+3. Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
+4.Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
+These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
 
 ### Question 31
 
