@@ -281,7 +281,13 @@ Total Coverage
 >
 > Answer:
 
---- Yes, we use branches and pull requests, while the branches are created based on each job not according to each person’s name. Branches are called, for examples: feature/training branch, feature/frontend branch and feature/wandb branch. each of the branch manages different functionality and jobs ---
+---
+
+For features, we created branches and merged them using pull requests. Not so much for code reviews, but it was a good way to communicate what tasks had been solved and how to use the feature (like what commands, keys, etc., to use). It was also a good way to utilize GitHub Actions. For example, it is easy to forget to add a dependency to requirements.txt, but then the tests would fail. Overall, it was a great way to communicate, track the progress of the project, and avoid introducing errors.
+
+For training, we used branches starting with feature/training, as pushing to those would automatically trigger Google Cloud to build the image, push it to the Artifact Registry, and create a training job on Vertex AI.
+
+---
 
 ### Question 10
 
