@@ -148,7 +148,13 @@ s242580, s242591, s113117, s246415
 >
 > Answer:
 
---- Albumentations: it’s an api used for image augmentation of the training data during pre-processing process ---
+Albumentations - it’s a library used for image augmentation. It provides a variety of transformations, such as flipping, rotating, cropping, adding noise, and adjusting brightness, making datasets more diverse and models more robust. It has many other transformations that we didn't need to use.
+
+In our project, we used Albumentations to enhance our dataset by generating augmented versions of our images. Generally, this can improve our model by reducing overfitting and giving more image variation.
+
+In particular, the 'deadly' class has a very low number of images compared to the other classes and should benefit a lot from augmentation.
+
+In reality, the classifying goal proved to be quite difficult because there are mushroom species that differ very little in appearance from their edible counterpart.
 
 ## Coding environment
 
@@ -166,7 +172,21 @@ s242580, s242591, s113117, s246415
 >
 > Answer:
 
---- We managed dependencies in our project using requirements.txt for runtime dependencies and requirements_dev.txt for development dependencies. These files were manually updated to include all necessary libraries, such as PyTorch, Albumentations, and FastAPI. During development installation can be done through pip install -r requirements_dev.txt on local CL ---
+We managed pip dependencies in our project using requirements.txt for runtime dependencies and requirements_dev.txt for development dependencies. We specified the exact version to install.
+
+These files were manually updated to include all necessary libraries, such as PyTorch, Albumentations, and FastAPI. During development, installation can be done through 'pip install -r requirements_dev.txt'.
+
+If someone would want to create the exact setup, they first need to have python installed. Then, they would need to run the following commands.
+
+      python -m venv myenv
+
+      source myenv/bin/activate
+
+      pip install -r requirements.txt
+
+      pip install -r requirements-dev.txt
+
+Afterwards, they can refer to the tasks.py to use the appropriate 'invoke' commands.
 
 ### Question 5
 
@@ -206,9 +226,11 @@ We created a folder named 'config' with files relevant for configuring the model
 >
 > Answer:
 
----
+We used Ruff for linting with a maximum line length of 120 and the error codes E, F, I, and C, meaning it checks for syntax errors, formatting issues, import order, and cyclomatic complexity.
 
-We used Ruff for linting with a maximum line length of 120 and the error codes E, F, I, and C, meaning it checks for syntax errors, formatting issues, import order, and cyclomatic complexity. We configured it in pyproject.toml, applied Ruff testing to our GitHub Actions (testing on each commit), and added a step that fixes Ruff errors during pre-commit. So, as long as all team members have pre-commit installed, everything should be formatted according to the rules, and if not, the Ruff check will fail for the pull request. Overall, it helps to keep the codebase clean and readable, and it helps everyone follow the same coding standards, so there’s less back-and-forth about style or formatting during reviews.
+We configured it in pyproject.toml, applied Ruff testing to our GitHub Actions (testing on each commit), and added a step that fixes Ruff errors during pre-commit. So, as long as all team members have pre-commit installed, everything should be formatted according to the rules, and if not, the Ruff check will fail for the pull request.
+
+Overall, it helps to keep the codebase clean and readable, and it helps everyone follow the same coding standards, so there’s less back-and-forth about style or formatting during reviews.
 
 ---
 
@@ -228,9 +250,15 @@ We used Ruff for linting with a maximum line length of 120 and the error codes E
 >
 > Answer:
 
+<<<<<<< HEAD
 ---
 
 We have implemented a total of 13 tests: two integration tests for the API, where one tests the API for a successful result with a valid image, and one tests the API for an unsuccessful result with an invalid input. One performance test of the API tests if the result for a valid image is successful. Ten unit tests, which include six tests for the validity of the dataset (the data and the loading of the data) and four tests for the model (is it constructed, does it correctly forward pass, etc.). The unit and integration tests are added to our GitHub Actions testing, where the results are automatically posted on all pull requests.
+=======
+We implemented 13 tests: two integration tests for the API, where one tests the API for a successful result with a valid image, and one tests the API for an unsuccessful result with an invalid input.
+
+One performance test of the API tests if the result for a valid image is successful. 6 tests for the validity of the dataset (the data and the loading of the data) and 4 tests for the model (is it constructed, does it correctly forward pass, etc.). The unit and integration tests are run automatically posted on all pull requests.
+>>>>>>> 4dd1211 (Fixed some word counds and formatting)
 
 ---
 
@@ -381,7 +409,7 @@ Using Weights and Biases, we predefined specific metrics to upload - loss & accu
 >
 > Answer:
 
-![Image 1](image.png)
+![Image 1](figures/wandb_graphs.png)
 
 In the image above, we can see the performance of several tracked metrics for various training and test runs. There's some large differences because some were run on subsets of dataset and others were on all of it.
 
@@ -389,7 +417,7 @@ One issue is that we didn't link the validation & training runs with the test ru
 
 Since our project is about multi-class classification, we would also add per class accuracy.
 
-![Image 2](image-1.png)
+![Image 2](figures/wandb_collection.png)
 
 In the image above, we have the model registry, which contains the best performing model. When a test is finished, it's model is uploaded as an artifact with some appended metadata - the test accuracy metric, then a check is done accross all uploaded artifacts to see if the accuracy is higher.
 
