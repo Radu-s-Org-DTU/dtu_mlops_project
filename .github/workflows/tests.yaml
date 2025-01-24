@@ -47,6 +47,20 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
+      - name: Export WandB Environment Variables
+        env:
+          WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
+          WANDB_PROJECT: ${{ secrets.WANDB_PROJECT }}
+          WANDB_ENTITY: ${{ secrets.WANDB_ENTITY }}
+          WANDB_REGISTRY: ${{ secrets.WANDB_REGISTRY }}
+          WANDB_MODEL_NAME: ${{ secrets.WANDB_MODEL_NAME }}
+        run: |
+          echo "WANDB_API_KEY=$WANDB_API_KEY" >> $GITHUB_ENV
+          echo "WANDB_PROJECT=$WANDB_PROJECT" >> $GITHUB_ENV
+          echo "WANDB_ENTITY=$WANDB_ENTITY" >> $GITHUB_ENV
+          echo "WANDB_REGISTRY=$WANDB_REGISTRY" >> $GITHUB_ENV
+          echo "WANDB_MODEL_NAME=$WANDB_MODEL_NAME" >> $GITHUB_ENV
+
       - name: Authenticate with Google Cloud
         uses: google-github-actions/auth@v1
         with:
