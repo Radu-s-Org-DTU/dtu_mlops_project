@@ -692,7 +692,7 @@ Afterward, we use cloud storage service to upload our raw data for machine learn
 2. Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
 3. Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
    4.Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
-   These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
+   These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced
 
 ### Question 31
 
