@@ -674,8 +674,14 @@ We also implemented a version using Reflex (and removed it again), as it was not
 > _The starting point of the diagram is our local setup, where we integrated ... and ... and ... into our code._ > _Whenever we commit code and push to GitHub, it auto triggers ... and ... . From there the diagram shows ..._
 >
 > Answer:
-> Graph below is our graph of machine learning pipeline starting from development stage to deployment stage that is hosted at Google Cloud Platform (GCP) adapted from a pipeline by the lecture of Nicki Skafte - DTU. During the developement process
-> ![data](figures/diagram.png)
+The Graph below is our graph of machine learning pipeline starting from development to deployment that is hosted at Google Cloud Platform (GCP). The graph is adapted from a pipeline graph developed by Nicki Skafte then presented at the DTU Lecture.
+
+During the developement process, Docker is used to create a consistent environment for the developers. docker images built are _blandt andet_ PyTorch Lightning, that handles model training and Hydra. Moreover, scripts are then structured and pushed to a github repository so it can be connected to GCP for deployment. 
+
+For the Deployment phase, the group utilize GCP per requested by the lecture. In the GCP, connection rultes to a repo is configured within a trigger in Cloud Build. After trigger is made, docker image is then automatically being built per the configuration in yaml scripts that is posted within the repo. as there's no error, the docker image should be listed on the artifact registery service.
+
+Afterward, we use cloud storage service to upload our raw data for machine learning training purposes. cloud storage is consisted of buckets that deliver path to the intended data for training and DVC for version control. To execute model training in GCP, the group utilize VertexAI that pull image listed on Artifact Registery and execute the training process using the VM specificed in a command. Once the training process is done, the model generated is then saved back into bucket where Cloud Run will call as a client is making requests. The front end, where end-users interact with our system, is hosted as link address within Cloud Run. Cloud Run interacts with vertex AI.
+![data](figures/diagram.png)
 
 ### Question 30
 
@@ -688,11 +694,17 @@ We also implemented a version using Reflex (and removed it again), as it was not
 >
 > Answer:
 
-1. The biggest challenges in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments.
-2. Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
-3. Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
-   4.Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
-   These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced ---
+Challange 1: in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments.
+
+Challenge 2: Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
+
+Challenge 3: Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
+
+Challenge 4: Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
+
+The main challenge: what works in deployment stage does not necessarily mean works in the porduction stage. Making an adjustment to make the entire pipeline works within GCP as it's done being developed is a huge task. Many errors are encountered, One tools works here and not there and furthermore, something works fine for once, not on the next trial. this challenge is still occuring even when docker is being utilized
+
+These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced
 
 ### Question 31
 
