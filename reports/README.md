@@ -742,6 +742,7 @@ S246415:
 * Build model
 * Lightning, LightningCLI integration
 * Weights and Biases integration
+* Docker image setup
 
 S242580:
 * Set-up augmentation for data training
