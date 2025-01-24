@@ -688,11 +688,17 @@ Afterward, we use cloud storage service to upload our raw data for machine learn
 >
 > Answer:
 
-1. The biggest challenges in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments.
-2. Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
-3. Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
-   4.Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
-   These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced
+Challange 1: in the project revolved around managing dependencies, ensuring code quality, and setting up the MLOps pipeline. While requirements.txt and requirements_dev.txt helped standardize the environment, ensuring that every team member could replicate the exact setup required careful tracking and adjustments.
+
+Challenge 2: Incorporating tools like ruff to enforce linting standards was a struggle at first due to strict formatting rules, especially with import organization.To address this, we automated linting and formatting checks in the CI pipeline and iteratively updated the code to adhere to best practices.
+
+Challenge 3: Adopting tools like PyTorch Lightning, Hydra, and Albumentations required additional time for the team to familiarize themselves with their functionality and integration. This was mitigated by thorough documentation and assigning team members specific tools to master and implement.
+
+Challenge 4: Implementing robust tests for critical components such as data loading, model functionality, and API endpoints consumed significant time. We resolved these issues by improving logging and breaking down tasks into smaller, testable units.
+
+The main challenge: what works in deployment stage does not necessarily mean works in the porduction stage. Making an adjustment to make the entire pipeline works within GCP as it's done being developed is a huge task. Many errors are encountered, One tools works here and not there and furthermore, something works fine for once, not on the next trial. this challenge is still occuring even when docker is being utilized
+
+These are main challenges we faced during the building and testing of the pipeline in addition to other small challenges we faced
 
 ### Question 31
 
