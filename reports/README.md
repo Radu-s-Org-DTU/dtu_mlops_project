@@ -719,31 +719,21 @@ These are main challenges we faced during the building and testing of the pipeli
 > Answer:
 
 S113117:
-
-- API (FastAPI) + Deployment (Google Run)
-- Frontend (streamlit)
-- Unit, integration, and performance test
-- DVC
-- Github Actions
-- Cloud Build configuration files
-- Docker files
+* Supervisor
+* Oversees entire process at GCP
+* Front end using streamlit
 
 S246415:
-
-- Build model
-- Lightning, LightningCLI integration
-- Weights and Biases integration
-- Docker image setup
+* Build model
+* Lightning, LightningCLI integration
+* Weights and Biases integration
+* Docker image setup
 
 S242580:
-
-- Set-up augmentation for data training
+* Set-up augmentation script for data training
 
 S242591:
+* Set-up VertexAI, Cloud build,  Monitoring Services
+* Generate Docker at artifact through Triggers
 
-- Augmentation library
-- Cloud Build configuration files
-- Docker files
-- Vertex AI
-
-Each of all: Write down the report according to task
+Each member: Answering several questions in the report
