@@ -292,6 +292,8 @@ For features, we created branches and merged them using pull requests. Not so mu
 
 For training, we used branches starting with feature/training, as pushing to those would automatically trigger Google Cloud to build the image, push it to the Artifact Registry, and create a training job on Vertex AI.
 
+Smaller fixes and changes to the report were simply committed directly to main.
+
 ---
 
 ### Question 10
@@ -418,7 +420,6 @@ We wanted to perform a hyperparameter sweep as we have configured the sweep.yaml
 > _For our project we developed several images: one for training, inference and deployment. For example to run the_ > _training docker image: `docker run trainer:latest lr=1e-3 batch_size=64`. Link to docker file: <weblink>_
 >
 > Answer:
-
 
 for the project we use 3 different docker images, which are for training that is built on train.dockerfile, front-end built on frontend.dockerfile and deployment built on api.dockerfile
 
