@@ -159,10 +159,10 @@ class MushroomDatamodule(L.LightningDataModule):
         return DataLoader(
             self.data_train,
             batch_size=self.batch_size,
-            shuffle=True,
             num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
             persistent_workers=True,
+            shuffle=True,
         )
 
     def val_dataloader(self) -> DataLoader:

@@ -59,17 +59,27 @@ def train(ctx, config_path="configs/model_config.yaml"):
 
 @task
 def visualize(ctx, config_path="configs/model_config.yaml"):
-    """Visualize model predictions."""
     config = load_config(config_path)
 
     ctx.run(
-        f"""python src/{PROJECT_NAME}/visualize.py \
-            --data-path={config['data']['data_path']} \
-            --batch-size={config['data']['batch_size']} \
-            --num-workers={config['data']['num_workers']}, \
-            --learning_rate {config['trainer']['learning_rate']}""",
-        echo=True, \
-        pty=not WINDOWS, \
+        f"""python src/{PROJECT_NAME}/train.py test \
+            --seed_everything={config['seed']} \
+            --ckpt_path='models/{config['model']['file_name']}.ckpt' \
+            --data.data_path={config['data']['data_path']} \
+            --data.batch_size={config['data']['batch_size']} \
+            --data.percent_of_data={config['data']['percent_of_data']} \
+            --data.train_pct={config['data']['train_pct']} \
+            --data.test_pct={config['data']['test_pct']} \
+            --data.val_pct={config['data']['val_pct']} \
+            --data.num_workers={config['data']['num_workers']} \
+            --model.learning_rate={config['trainer']['learning_rate']} \
+            --trainer.max_epochs={config['trainer']['max_epochs']} \
+            --trainer.deterministic=True \
+            --trainer.precision=16-mixed \
+            --trainer.accelerator=gpu \
+            --trainer.devices=1""",
+        echo=True,
+        pty=not WINDOWS,
     )
 
 
