@@ -119,7 +119,9 @@ class MushroomDatamodule(L.LightningDataModule):
         # Determine the subset size based on the specified percentage
         full_size = len(data_full)
         subset_size = int(self.percent_of_data * full_size)
-        subset_indices = list(range(subset_size))  # Generate a list of indices
+
+        # Randomly select subset indices from the full dataset
+        subset_indices = torch.randperm(full_size).tolist()[:subset_size]
 
         print(f"Training dataset size: {subset_size}")
 
@@ -157,10 +159,10 @@ class MushroomDatamodule(L.LightningDataModule):
         return DataLoader(
             self.data_train,
             batch_size=self.batch_size,
-            shuffle=True,
             num_workers=self.num_workers,
             pin_memory=True,  # Use pinned memory for faster GPU transfers
             persistent_workers=True,
+            shuffle=True,
         )
 
     def val_dataloader(self) -> DataLoader:

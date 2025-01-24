@@ -2,11 +2,14 @@ import os
 from contextlib import asynccontextmanager
 
 import torch
+from dotenv import load_dotenv  # Add this import
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from google.cloud import storage
+from loguru import logger
 from PIL import Image
 from torchvision import transforms
 
+import wandb
 from src.mushroomclassification.data import MushroomDataset
 from src.mushroomclassification.utils.config_loader import load_config
 
@@ -19,6 +22,21 @@ def download_model(bucket_name, source_blob_name, destination_file_name):
     bucket = client.bucket(bucket_name)
     blob = bucket.blob(source_blob_name)
     blob.download_to_filename(destination_file_name)
+
+def download_best_model():
+    """Download the model with the :best alias from the artifacts collection."""
+    load_dotenv(override=True)
+    api = wandb.Api(
+        api_key=os.getenv("WANDB_API_KEY"),
+        overrides={"entity": os.getenv("WANDB_ENTITY"), "project": os.getenv("WANDB_PROJECT")},
+    )
+
+    artifact = api.artifact(f"{os.getenv('WANDB_MODEL_NAME')}:best", type="model")
+    artifact_dir = artifact.download()
+    logger.info(f"Model downloaded to: {artifact_dir}")
+
+if __name__ == "__main__":
+    download_best_model()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
