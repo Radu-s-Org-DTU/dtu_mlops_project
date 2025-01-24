@@ -233,23 +233,24 @@ We have implemented a total of 13 tests: two integration tests for the API, wher
 >
 > Answer:
 
-======================== 12 passed, 1 warning in 11.18s ========================
-Name Stmts Miss Cover Missing
+Coverage Report
+
+| File                                                | Statements | Missing | Coverage | Missing Lines                                                |
+| --------------------------------------------------- | ---------- | ------- | -------- | ------------------------------------------------------------ |
+| `src/__init__.py`                                   | 0          | 0       | 100%     | -                                                            |
+| `src/mushroomclassification/__init__.py`            | 0          | 0       | 100%     | -                                                            |
+| `src/mushroomclassification/api.py`                 | 42         | 0       | 100%     | -                                                            |
+| `src/mushroomclassification/data.py`                | 76         | 36      | 53%      | 29, 47-50, 54, 81-104, 112, 117-154, 157, 167, 176, 185, 195 |
+| `src/mushroomclassification/model.py`               | 53         | 20      | 62%      | 56-61, 64-68, 72-73, 80, 84-91                               |
+| `src/mushroomclassification/utils/config_loader.py` | 4          | 0       | 100%     | -                                                            |
 
 ---
 
-src/**init**.py 0 0 100%
-src/mushroomclassification/**init**.py 0 0 100%
-src/mushroomclassification/api.py 42 0 100%
-src/mushroomclassification/data.py 76 36 53% 29, 47-50, 54, 81-104, 112, 117-154, 157, 167, 176, 185, 195
-src/mushroomclassification/model.py 53 20 62% 56-61, 64-68, 72-73, 80, 84-91
-src/mushroomclassification/utils/config_loader.py 4 0 100%
+Total Coverage
 
----
-
-TOTAL 175 56 68%
-
---- question 8 fill here ---
+- **Statements**: 175
+- **Missing**: 56
+- **Coverage**: 68%
 
 ### Question 9
 
