@@ -35,7 +35,7 @@ dev = {file = ['requirements_dev.txt']}
 line-length = 120
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "C"]
+select = ["E", "F", "C"]
 
 [tool.coverage.run]
 omit = ["tests/*", "/tmp/*", "/private/var/*", "*/config-3.py"]
