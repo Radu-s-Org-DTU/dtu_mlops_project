@@ -263,7 +263,7 @@ Total Coverage
 >
 > Answer:
 
----  Yes, we use branches and pull requests, while the branches are created based on each job not according to each person’s name. Branches are called, for examples, ---
+---  Yes, we use branches and pull requests, while the branches are created based on each job not according to each person’s name. Branches are called, for examples: feature/training branch, feature/frontend branch and feature/wandb branch. each of the branch manages different functionality and jobs   ---
 
 ### Question 10
 
