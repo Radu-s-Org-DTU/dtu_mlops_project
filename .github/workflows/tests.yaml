@@ -83,7 +83,7 @@ jobs:
           name: test-results-and-coverage
           path: |
             artifacts/
-            !**/*.ckpt  # Exclude any .ckpt files
+            !**/*.ckpt
 
       - name: Comment test summary on PR
         if: ${{ github.event_name == 'pull_request' && matrix.operating-system == 'ubuntu-latest' && matrix.python-version == '3.11' }}
