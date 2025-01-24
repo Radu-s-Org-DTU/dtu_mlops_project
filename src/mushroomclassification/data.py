@@ -1,12 +1,12 @@
 from pathlib import Path
 from typing import List, Optional, Tuple
-
+import numpy as np
 import lightning as L
 import torch
 from PIL import Image
 from torch.utils.data import DataLoader, Dataset, random_split
 from torchvision import transforms
-
+from augmentations import get_augmentation_transforms
 
 class MushroomDataset(Dataset):
     def __init__(self,
@@ -51,7 +51,7 @@ class MushroomDataset(Dataset):
 
         # Apply transformation if specified
         if self.transform:
-            image = self.transform(image)
+            image = self.transform(image=np.array(image))["image"]
 
         return image, label
 
@@ -88,25 +88,11 @@ class MushroomDatamodule(L.LightningDataModule):
         self.test_pct = test_pct
 
         # Transformations for each dataset
-        self.train_transform = transforms.Compose([
-            transforms.Resize((224, 224)),  # Resize to 224x224
-            transforms.RandomRotation(30),  # Rotate images by up to 30 degrees
-            transforms.ToTensor(),          # Convert to a PyTorch tensor
-            transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))  # Normalize to [-1, 1] range
-        ])
+        self.train_transform = get_augmentation_transforms()["train"]
 
-        self.val_transform = transforms.Compose([
-            transforms.Resize((224, 224)),  # Resize to 224x224
-            transforms.ToTensor(),
-            transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
-        ])
+        self.val_transform = get_augmentation_transforms()["val"]
 
-        self.test_transform = transforms.Compose([
-            transforms.Resize((224, 224)),  # Resize to 224x224
-            transforms.ToTensor(),
-            transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
-        ])
-
+        self.test_transform = get_augmentation_transforms()["test"]
     def prepare_data(self) -> None:
         """Download data"""
         return
