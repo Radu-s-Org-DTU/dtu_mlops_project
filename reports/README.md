@@ -179,7 +179,17 @@ Albumentations
 >
 > Answer:
 
---- question 5 fill here ---
+We utilized the SkafteNicki cookiecutter template with the command cookiecutter https://github.com/SkafteNicki/mlops_template and its overall structure (as we mostly filled out the files in src and tests). The tests folder has three subfolders, one for each type of test.
+
+Our structure differs from the template in the following ways:
+
+The raw data is stored in data/raw (using DVC to pull). We created a subset of the raw data with 100 random images from each class using the following command:
+
+invoke create-subset --source-dir="data/raw/Classes" --target-dir="data/raw_subset" --classes="conditionally_edible,deadly,edible,poisonous" --num-samples=100
+
+The subset is stored in data/raw_subset and is mainly used for testing.
+
+We created a folder named 'config' with files relevant for configuring the model. Additionally, in the root directory, we have two Cloud Build configuration files and vertex-config.yaml for configuring the Vertex AI jobs.
 
 ### Question 6
 
@@ -192,7 +202,7 @@ Albumentations
 >
 > Answer:
 
---- question 6 fill here ---
+We used Ruff for linting with a maximum line length of 120 and the error codes E, F, I, and C, meaning it checks for syntax errors, formatting issues, import order, and cyclomatic complexity. We configured it in pyproject.toml, applied Ruff testing to our GitHub Actions (testing on each commit), and added a step that fixes Ruff errors during pre-commit. As long as all team members have pre-commit installed, everything should be formatted according to the rules, and if not, the tests will fail for the pull request.
 
 ## Version control
 
