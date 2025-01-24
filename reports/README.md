@@ -271,24 +271,7 @@ One performance test of the API tests if the result for a valid image is success
 
 Below is the result from the latest pull request. All 12 tests passed, and the overall coverage is 68%. We are not far from the 100% coverage goal, but there is room for improvement. Overall, more coverage is usually better, but having just a few tests for each part of the codebase is very helpful, especially when it is used together with GitHub Actions. In our setup, the result is posted to each pull request, and for us, it has caught many errors before being merged, like missing dependencies and code that should not be removed. Could we trust any change with 100% coverage? No, even with 100% coverage, tests only verify what they are designed to check, and they cannot catch logical errors.
 
-Coverage Report
-
-| File                                                | Statements | Missing | Coverage | Missing Lines                                                |
-| --------------------------------------------------- | ---------- | ------- | -------- | ------------------------------------------------------------ |
-| `src/__init__.py`                                   | 0          | 0       | 100%     | -                                                            |
-| `src/mushroomclassification/__init__.py`            | 0          | 0       | 100%     | -                                                            |
-| `src/mushroomclassification/api.py`                 | 42         | 0       | 100%     | -                                                            |
-| `src/mushroomclassification/data.py`                | 76         | 36      | 53%      | 29, 47-50, 54, 81-104, 112, 117-154, 157, 167, 176, 185, 195 |
-| `src/mushroomclassification/model.py`               | 53         | 20      | 62%      | 56-61, 64-68, 72-73, 80, 84-91                               |
-| `src/mushroomclassification/utils/config_loader.py` | 4          | 0       | 100%     | -                                                            |
-
----
-
-Total Coverage
-
-- **Statements**: 175
-- **Missing**: 56
-- **Coverage**: 68%
+![alt text](figures/coverage.png)
 
 ---
 
@@ -610,11 +593,7 @@ We load tested the deployment for 1000 users with a spawn rate of 500 using the 
 
 locust -f tests/performancetests/locustfile.py --headless --users 1000 --spawn-rate 500 --run-time 10m --host https://api-1005067352132.europe-west1.run.app
 
-| Type     | Name         | # reqs   | # fails (%)   | Avg    | Min   | Max     | Med    | req/s    | failures/s   |
-| -------- | ------------ | -------- | ------------- | ------ | ----- | ------- | ------ | -------- | ------------ |
-| POST     | /predict/    | 42363    | 997 (2.35%)   | 3939   | 3     | 38290   | 1500   | 242.70   | 0.00         |
-| -------- | ------------ | -------- | ------------- | ------ | ----- | ------- | ------ | -------- | ------------ |
-|          | Aggregated   | 42363    | 997 (2.35%)   | 3939   | 3     | 38290   | 1500   | 242.70   | 0.00         |
+![alt text](figures/test.png)
 
 The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests per second. When repeating the test, it could handle much more, indicating that Google Run may have the ability to temporarily boost its capabilities.
 
