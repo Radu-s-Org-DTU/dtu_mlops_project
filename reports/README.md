@@ -661,7 +661,9 @@ Moreovers, monitoring records error for every training done on VertexAI then ind
 >
 > Answer:
 
-For the project which is hosted on GCP, we only use one GCP account hence the bill is incurred upon 1 member of group. The total bill is initally just above DDK 22 which mostly consist from data training process on VertexAI machine. the VertexAI machine being used only uses CPU (without GPU) hence the bill is not high and still covered by the voucher.
+For the project which is hosted on GCP, we only use one GCP account hence the bill is incurred upon 1 member of group. The total bill is initally just above DDK 22 which mostly consist from data training process on VertexAI machine. the VertexAI machine being used only uses CPU (without GPU) hence the bill is not high and still covered by the voucher. 
+
+Working in the cloud is a necessity in these day of age specialty for the ML/AI deploment, but we belive that there's an optimum point between the scale of application usage and cost, specially while using cloud served by a third company like google. we can see as we need a large & continuous computing power the cost would increase exponentially. 
 
 ### Question 28
 
