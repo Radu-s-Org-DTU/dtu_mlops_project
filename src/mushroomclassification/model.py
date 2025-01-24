@@ -1,18 +1,16 @@
 import operator
 import os
 
+import lightning as L
+import torch
 from dotenv import load_dotenv
 from loguru import logger
 from torch import nn, optim
 from torchmetrics import Accuracy
-
-import lightning as L
-import torch
-import wandb
-
 from utils.config_loader import load_config
 from visualize import plot_classification_per_class, plot_training_loss
 
+import wandb
 
 load_dotenv(override=True)
 env = os.getenv
