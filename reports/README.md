@@ -52,7 +52,7 @@ will check the repositories and the code to verify your answers.
 - [x] Make sure that all team members have write access to the GitHub repository (M5)
 - [x] Create a dedicated environment for you project to keep track of your packages (M2)
 - [x] Create the initial file structure using cookiecutter with an appropriate template (M6)
-- [ ] Fill out the `data.py` file such that it downloads whatever data you need and preprocesses it (if necessary) (M6)
+- ❌ Fill out the `data.py` file such that it downloads whatever data you need and preprocesses it (if necessary) (M6)
 - [x] Add a model to `model.py` and a training procedure to `train.py` and get that running (M6)
 - [x] Remember to fill out the `requirements.txt` and `requirements_dev.txt` file with whatever dependencies that you
       are using (M2+M6)
@@ -79,7 +79,7 @@ will check the repositories and the code to verify your answers.
 - [x] Add caching and multi-os/python/pytorch testing to your continuous integration (M17)
 - [x] Add a linting step to your continuous integration (M17)
 - [x] Add pre-commit hooks to your version control setup (M18)
-- [ ] Add a continues workflow that triggers when data changes (M19)
+- ❌ Add a continues workflow that triggers when data changes (M19)
 - [ ] Add a continues workflow that triggers when changes to the model registry is made (M19)
 - [x] Create a data storage in GCP Bucket for your data and link this with your data version control setup (M21)
 - [x] Create a trigger workflow for automatically building your docker images (M21)
@@ -106,7 +106,7 @@ will check the repositories and the code to verify your answers.
 
 - [ ] Write some documentation for your application (M32)
 - [ ] Publish the documentation to GitHub Pages (M32)
-- [ ] Revisit your initial project description. Did the project turn out as you wanted?
+- [x] Revisit your initial project description. Did the project turn out as you wanted?
 - [x] Create an architectural diagram over your MLOps pipeline
 - [x] Make sure all group members have an understanding about all parts of the project
 - [x] Uploaded all your code to GitHub
@@ -719,6 +719,7 @@ These are main challenges we faced during the building and testing of the pipeli
 > Answer:
 
 S113117:
+
 - API (FastAPI) + Deployment (Google Run)
 - Frontend (streamlit)
 - Unit, integration, and performance test
@@ -728,6 +729,7 @@ S113117:
 - Docker files
 
 S246415:
+
 - Build model
 - Lightning, LightningCLI integration
 - Weights and Biases integration
@@ -735,11 +737,13 @@ S246415:
 - Setup HydraConfig
 
 S242580:
+
 - Set-up augmentation for data training
 - Setup mkdocs
 
 S242591:
-- Set-up VertexAI, Cloud build,  Monitoring Services
+
+- Set-up VertexAI, Cloud build, Monitoring Services
 - Cloud Build configuration files
 - Docker files
 - Vertex AI
