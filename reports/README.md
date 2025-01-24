@@ -443,9 +443,9 @@ We have deployed the backend and frontend on Google Cloud Run. As mentioned, the
 
 https://api-1005067352132.europe-west1.run.app (backend)
 
-> https://frontend-1005067352132.europe-west1.run.app/ (frontend)
+https://frontend-1005067352132.europe-west1.run.app/ (frontend)
 
-> We could have extended the Cloud Build configuration file to also deploy the containers automatically, so changes in the codebase would directly affect the deployment without any manual tasks, but we focused on other tasks.
+We could have extended the Cloud Build configuration file to also deploy the containers automatically, so changes in the codebase would directly affect the deployment without any manual tasks, but we focused on other tasks.
 
 ### Question 25
 
@@ -454,10 +454,10 @@ https://api-1005067352132.europe-west1.run.app (backend)
 > Answer:
 >
 > We have two integration tests in tests\integrationtests\test_apis.py for testing the API: one for testing the response for a valid image and one for testing the result for an invalid image. The tests are added to our GitHub Actions.
->
-> We load tested the deployment for 1000 users with a spawn rate of 500 using the following command:
 
-> locust -f tests/performancetests/locustfile.py --headless --users 1000 --spawn-rate 500 --run-time 10m --host https://api-1005067352132.europe-west1.run.app
+We load tested the deployment for 1000 users with a spawn rate of 500 using the following command:
+
+locust -f tests/performancetests/locustfile.py --headless --users 1000 --spawn-rate 500 --run-time 10m --host https://api-1005067352132.europe-west1.run.app
 
 | Type     | Name         | # reqs   | # fails (%)   | Avg    | Min   | Max     | Med    | req/s    | failures/s   |
 | -------- | ------------ | -------- | ------------- | ------ | ----- | ------- | ------ | -------- | ------------ |
@@ -465,9 +465,7 @@ https://api-1005067352132.europe-west1.run.app (backend)
 | -------- | ------------ | -------- | ------------- | ------ | ----- | ------- | ------ | -------- | ------------ |
 |          | Aggregated   | 42363    | 997 (2.35%)   | 3939   | 3     | 38290   | 1500   | 242.70   | 0.00         |
 
-> The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests per second. When repeating the test, it could handle much more, indicating that Google Run may have the ability to temporarily boost its capabilities.
-
---- question 25 fill here ---
+The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests per second. When repeating the test, it could handle much more, indicating that Google Run may have the ability to temporarily boost its capabilities.
 
 ### Question 26
 
