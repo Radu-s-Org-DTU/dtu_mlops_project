@@ -548,7 +548,13 @@ There are multiple builds because of the trial and error process during the work
 >
 > Answer:
 
-We trained our model using the Virtual Machine instance through VertexAI. The job is run through “gcloud ai custom-jobs create” command upon a docker image where the configuration script is written on a yaml file and secret key variables are included. The reason VertexAI is utilized is to generate a streamlined Machine Learning pipeline. VertexAI process is done afer build (in cloud build) initialization is finished.
+We managed to train our model in the cloud by using the Google Build file cloudbuild-train.yaml, which schedules Cloud Build to build the Docker image from the Docker file dockerfiles\train.dockerfile, push it to Artifact Registry, and create a job on Vertex AI to train the model.
+
+Initially, the trained model was pushed to a Google Cloud bucket. Later, we implemented W&B to select the best model, which is then pulled by the API.
+
+The secret keys for W&B are stored in the Secret Manager, pulled in the Google Build file cloudbuild-train.yaml, and injected into the Vertex AI job configuration file vertex-config.yaml before the jobs are created.
+
+The Vertex AI job configuration also specifies the machine type and accelerators required for training, where we used the CPU version.
 
 ## Deployment
 
