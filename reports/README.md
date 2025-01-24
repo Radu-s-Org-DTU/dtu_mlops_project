@@ -434,18 +434,21 @@ Albumentations
 
 > **Did you perform any unit testing and load testing of your API? If yes, explain how you did it and what results for** > **the load testing did you get. If not, explain how you would do it.**
 >
-> Recommended answer length: 100-200 words.
->
-> Example:
-> _For unit testing we used ... and for load testing we used ... . The results of the load testing showed that ..._ > _before the service crashed._
->
 > Answer:
+>
+> We have two integration tests in tests\integrationtests\test_apis.py for testing the API: one for testing the response for a valid image and one for testing the result for an invalid image. The tests are added to our GitHub Actions.
+>
+> We load tested the deployment for 1000 users with a spawn rate of 500 using the following command:
+
+> locust -f tests/performancetests/locustfile.py --headless --users 1000 --spawn-rate 500 --run-time 10m --host https://api-1005067352132.europe-west1.run.app
 
 | Type     | Name         | # reqs   | # fails (%)   | Avg    | Min   | Max     | Med    | req/s    | failures/s   |
 | -------- | ------------ | -------- | ------------- | ------ | ----- | ------- | ------ | -------- | ------------ |
 | POST     | /predict/    | 42363    | 997 (2.35%)   | 3939   | 3     | 38290   | 1500   | 242.70   | 0.00         |
 | -------- | ------------ | -------- | ------------- | ------ | ----- | ------- | ------ | -------- | ------------ |
 |          | Aggregated   | 42363    | 997 (2.35%)   | 3939   | 3     | 38290   | 1500   | 242.70   | 0.00         |
+
+> The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests per second. When repeating the test, it could handle much more, indicating that Google Run may have the ability to temporarily boost its capabilities.
 
 --- question 25 fill here ---
 
