@@ -148,7 +148,7 @@ s242580, s242591, s113117, s246415
 >
 > Answer:
 
-Albumentations
+ --- Albumentations: it’s an api used for image augmentation of the training data during pre-processing process ---
 
 ## Coding environment
 
@@ -166,7 +166,7 @@ Albumentations
 >
 > Answer:
 
---- question 4 fill here ---
+--- We managed dependencies in our project using requirements.txt for runtime dependencies and requirements_dev.txt for development dependencies. These files were manually updated to include all necessary libraries, such as PyTorch, Albumentations, and FastAPI. During development installation can be done through pip install -r requirements_dev.txt on local CL  ---
 
 ### Question 5
 
@@ -179,7 +179,7 @@ Albumentations
 >
 > Answer:
 
-We utilized the SkafteNicki cookiecutter template with the command cookiecutter https://github.com/SkafteNicki/mlops_template and its overall structure (as we mostly filled out the files in src and tests). The tests folder has three subfolders, one for each type of test.
+We utilized the SkafteNicki cookiecutter template with the command cookiecutter https://github.com/SkafteNicki/mlops_template and its overall structure (as we mostly filled out the files in src and tests) differs a bit. The tests folder has three subfolders, one for each type of test.
 
 Our structure differs from the template in the following ways:
 
@@ -263,7 +263,7 @@ Total Coverage
 >
 > Answer:
 
---- question 9 fill here ---
+---  Yes, we use branches and pull requests, while the branches are created based on each job not according to each person’s name. Branches are called, for examples, ---
 
 ### Question 10
 
