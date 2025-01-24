@@ -61,12 +61,12 @@ jobs:
           echo "WANDB_REGISTRY=$WANDB_REGISTRY" >> $GITHUB_ENV
           echo "WANDB_MODEL_NAME=$WANDB_MODEL_NAME" >> $GITHUB_ENV
 
-      - name: Clear Ruff Cache
-        run: ruff check . --fix --no-cache
-
       - name: Run Ruff
         run: |
-          ruff check .
+          ruff check . --no-cache
+
+      - name: Generate Config File (if applicable)
+        run: python generate_config.py
 
       - name: Run tests & coverage
         run: |
