@@ -1,7 +1,6 @@
 import operator
 import os
 
-import wandb
 from dotenv import load_dotenv
 from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
 from lightning.pytorch.cli import LightningCLI
@@ -10,6 +9,7 @@ from model import MushroomClassifier
 from utils.config_loader import load_config
 from utils.gcs import upload_to_gcs
 
+import wandb
 from data import MushroomDatamodule
 
 env = os.getenv
@@ -50,11 +50,11 @@ def stage_best_model_to_registry(model_name: str, metric_name: str = "accuracy",
 
     """
     api = wandb.Api(
-        api_key=env("WANDB_API_KEY"),
-        overrides={"entity": env("WANDB_ENTITY"), "project": env("WANDB_PROJECT")},
+        api_key=env('WANDB_API_KEY'),
+        overrides={"entity": env('WANDB_ENTITY'), "project": env('WANDB_PROJECT')},
     )
 
-    artifact_collection = api.artifact_collection(type_name="model", name=env("WANDB_REGISTRY"))
+    artifact_collection = api.artifact_collection(type_name="model", name=env('WANDB_REGISTRY'))
 
     best_metric = float("-inf") if higher_is_better else float("inf")
     compare_op = operator.gt if higher_is_better else operator.lt
@@ -70,7 +70,7 @@ def stage_best_model_to_registry(model_name: str, metric_name: str = "accuracy",
 
     logger.info(f"Best model found in registry: {best_artifact.name} with {metric_name}={best_metric}")
     best_artifact.link(
-        target_path=f"{env('WANDB_ENTITY')}/{env("WANDB_REGISTRY")}/{model_name}",
+        target_path=f"{env('WANDB_ENTITY')}/{env('WANDB_REGISTRY')}/{model_name}",
         aliases=["best", "staging"],
     )
     best_artifact.save()
@@ -130,7 +130,7 @@ def train():
     api.log_artifact(artifact, aliases=[wandb.run.name])
 
     logger.info("Model saved to registry.")
-    
+
     bucket_name = os.getenv("GCS_BUCKET_NAME")
     if bucket_name:
         model_file = os.path.join(local_model_dir, f"{checkpoint_filename}.ckpt")
