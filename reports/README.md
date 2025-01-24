@@ -361,7 +361,7 @@ We set this up to keep our codebase consistent and reliable. By automating linti
 >
 > Answer:
 
---- for the project we use 3 different docker images, which are for training that is built train.dockerfile, front-end built by frontend.dockerfile and deployment built by api.dockerfile ---
+for the project we use 3 different docker images, which are for training that is built on train.dockerfile, front-end built on frontend.dockerfile and deployment built on api.dockerfile
 
 ### Question 16
 
@@ -521,7 +521,7 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 >
 > Answer:
 
---- question 27 fill here ---
+For the project which is hosted on GCP, we only use one GCP account hence the bill is incurred upon 1 member of group. The total bill is initally just above DDK 22 which mostly consist from data training process on VertexAI machine. the VertexAI machine being used only uses CPU (without GPU) hence the bill is not high and still covered by the voucher.
 
 ### Question 28
 
