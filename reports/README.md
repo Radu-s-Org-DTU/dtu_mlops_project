@@ -498,7 +498,8 @@ We used the following services on Google Cloud:
 >
 > Answer:
 
-Compute engine service is used to create and manage instances and one of the instance is Virtual Machine (VM). We created a VM instance with the type of e2-small which is using Intel Broadwell CPU platfrom. However, during the training process where we use VertexAI, a new build engine is initialized with "machineType: n1-highmem-2" line. this means we are using a new VM with the 2 vCPUs and 13GB of RAM.
+Compute engine service is used to create and manage instances and one of the instance is Virtual Machine (VM). We created a VM instance with the type of e2-small which is using Intel Broadwell CPU platfrom. However, during the training process where we use VertexAI, a new build engine is initialized with "machineType: n1-highmem-2" line. this means we are using a new VM with the 2 vCPUs and 13GB of RAM. The reason for not using GPU is due to cost efficiency and permission from google. some powerful tools like Tesla GPU require special permission from google. Moreover the group analyze since the model is not changing, meaning no following training as end user feed an image, then CPU would be enough.
+
 
 ### Question 19
 
@@ -743,9 +744,9 @@ S242580:
 
 S242591:
 
-- Set-up VertexAI, Cloud build, Monitoring Services
+- Set-up VertexAI, Cloud Storag & Monitoring Services
 - Cloud Build configuration files
-- Docker files
-- Vertex AI
+- Docker services on GCP
+  
 
 Each of all: Write down the report according to task
