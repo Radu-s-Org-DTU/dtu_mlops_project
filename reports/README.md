@@ -426,21 +426,22 @@ TOTAL 175 56 68%
 > **Did you manage to write an API for your model? If yes, explain how you did it and if you did anything special. If** > **not, explain how you would do it.**
 
 > Answer:
-> We implemented the backend using FastAPI with a single POST endpoint for predicting the class ("conditionally_edible," "deadly," "edible," and "poisonous") of a mushroom based on an image. It accepts images in JPEG and PNG formats; otherwise, it returns an error. The predictions are returned as a dictionary with class probabilities. Locally, the backend can be started using 'invoke serve-api' after which the endpoint is available at http://localhost:8000/predict/, and the documentation is available at http://localhost:8000/docs.
 
-> We use the @asynccontextmanager decorator and the lifespan function to load the latest model from a Google Cloud bucket and instantiate it once during startup, keeping it in memory throughout the server's lifecycle.
+We implemented the backend using FastAPI with a single POST endpoint for predicting the class ("conditionally_edible," "deadly," "edible," and "poisonous") of a mushroom based on an image. It accepts images in JPEG and PNG formats; otherwise, it returns an error. The predictions are returned as a dictionary with class probabilities. Locally, the backend can be started using 'invoke serve-api' after which the endpoint is available at http://localhost:8000/predict/, and the documentation is available at http://localhost:8000/docs.
 
-> We also added two integration tests for the API (tests\integrationtests\test_apis.py): one test for a valid image to check if it returns a 200 response and a dictionary.
+We use the @asynccontextmanager decorator and the lifespan function to load the latest model from a Google Cloud bucket and instantiate it once during startup, keeping it in memory throughout the server's lifecycle.
+
+We also added two integration tests for the API (tests\integrationtests\test_apis.py): one test for a valid image to check if it returns a 200 response and a dictionary.
 
 ### Question 24
 
 > **Did you manage to deploy your API, either in locally or cloud? If not, describe why. If yes, describe how and** > **preferably how you invoke your deployed service?**
 >
 > Answer:
->
-> We have deployed the backend and frontend on Google Cloud Run. As mentioned, the backend is implemented in FastAPI, while the frontend (src\mushroomclassification\frontend.py) is implemented in Streamlit. We created a Dockerfile for both services (dockerfiles\api.dockerfile and dockerfiles\frontend.dockerfile) and a Cloud Build configuration file (cloudbuild-web.yaml), which, when triggered, builds the two Docker images and pushes them to Google Cloud's Artifact Registry. Once built and pushed, we deployed them on two containers, and they are now available at:
 
-> https://api-1005067352132.europe-west1.run.app (backend)
+We have deployed the backend and frontend on Google Cloud Run. As mentioned, the backend is implemented in FastAPI, while the frontend (src\mushroomclassification\frontend.py) is implemented in Streamlit. We created a Dockerfile for both services (dockerfiles\api.dockerfile and dockerfiles\frontend.dockerfile) and a Cloud Build configuration file (cloudbuild-web.yaml), which, when triggered, builds the two Docker images and pushes them to Google Cloud's Artifact Registry. Once built and pushed, we deployed them on two containers, and they are now available at:
+
+https://api-1005067352132.europe-west1.run.app (backend)
 
 > https://frontend-1005067352132.europe-west1.run.app/ (frontend)
 
