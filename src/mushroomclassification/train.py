@@ -19,7 +19,7 @@ def train():
     )
 
     early_stopping_callback = EarlyStopping(
-        monitor="validation_accuracy", patience=20, verbose=True, mode="min"
+        monitor="validation_accuracy", patience=3, verbose=True, mode="min"
     )
 
     LightningCLI(

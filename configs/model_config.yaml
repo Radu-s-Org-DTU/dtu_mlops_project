@@ -1,7 +1,7 @@
 data:
   data_path: data/raw_subset
   batch_size: 32
-  num_workers: 8
+  num_workers: 16
   # Percentage of the full dataset to use, which is then further
   # split into train, test, and validation sets
   percent_of_data: 1
@@ -15,7 +15,7 @@ trainer:
   learning_rate: 0.001
 
 model:
-  file_name: mushroom_model_v2
+  file_name: mushroom_model
 
 # This seed will be used for all RNGs in the code
 # In theory! Additional setup may be needed
