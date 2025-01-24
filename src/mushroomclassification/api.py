@@ -5,14 +5,14 @@ import torch
 from dotenv import load_dotenv
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from loguru import logger
+from model import MushroomClassifier
 from PIL import Image
 from torchvision import transforms
+from utils.config_loader import load_config
 
 import wandb
 from data import MushroomDataset
-from utils.config_loader import load_config
 
-from model import MushroomClassifier
 
 def download_best_model():
     """Download the model with the :best alias from the artifacts collection."""
@@ -22,7 +22,7 @@ def download_best_model():
         overrides={"entity": os.getenv("WANDB_ENTITY"), "project": os.getenv("WANDB_PROJECT")},
     )
 
-    artifact = api.artifact(f"radugrecu97-dtu-org/wandb-registry-model/model_collection:best", type="model")
+    artifact = api.artifact("radugrecu97-dtu-org/wandb-registry-model/model_collection:best", type="model")
     artifact_dir = artifact.download()
     logger.info(f"Model downloaded to: {artifact_dir}")
     return os.path.join(artifact_dir, "mushroom_model.ckpt")

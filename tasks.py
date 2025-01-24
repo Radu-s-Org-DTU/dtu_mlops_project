@@ -134,7 +134,11 @@ def serve_api(ctx, host="0.0.0.0", port=8000, reload=True, log_level="debug"):
     """Start the FastAPI application."""
     reload_flag = "--reload" if reload else ""
     ctx.run(
-        f"uvicorn --app-dir src/mushroomclassification api:app --host {host} --port {port} {reload_flag} --log-level {log_level}",
+        f"uvicorn --app-dir src/mushroomclassification "
+        f"api:app --host {host} "
+        f"--port {port} "
+        f"{reload_flag} "
+        f"--log-level {log_level}",
         echo=True,
         pty=not WINDOWS,
     )

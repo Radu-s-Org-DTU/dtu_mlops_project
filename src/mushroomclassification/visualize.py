@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+
 def plot_training_loss(train_losses):
     plt.figure(figsize=(10, 6))
     plt.plot(train_losses, label="Training Loss", color="blue")

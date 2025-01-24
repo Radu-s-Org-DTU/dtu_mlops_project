@@ -1,12 +1,13 @@
 from pathlib import Path
 from typing import List, Optional, Tuple
-import numpy as np
+
 import lightning as L
+import numpy as np
 import torch
+from augmentations import get_augmentation_transforms
 from PIL import Image
 from torch.utils.data import DataLoader, Dataset, random_split
-from torchvision import transforms
-from augmentations import get_augmentation_transforms
+
 
 class MushroomDataset(Dataset):
     def __init__(self,
