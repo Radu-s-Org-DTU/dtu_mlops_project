@@ -118,3 +118,13 @@ def build_docs(ctx: Context) -> None:
 def serve_docs(ctx: Context) -> None:
     """Serve documentation."""
     ctx.run("mkdocs serve --config-file docs/mkdocs.yaml", echo=True, pty=not WINDOWS)
+
+@task
+def serve_api(ctx, host="0.0.0.0", port=8000, reload=True, log_level="debug"):
+    """Start the FastAPI application."""
+    reload_flag = "--reload" if reload else ""
+    ctx.run(
+        f"uvicorn src.mushroomclassification.api:app --host {host} --port {port} {reload_flag} --log-level {log_level}",
+        echo=True,
+        pty=not WINDOWS,
+    )
