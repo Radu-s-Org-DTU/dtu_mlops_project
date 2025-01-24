@@ -642,7 +642,9 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 >
 > Answer:
 
-In monitoring we use log count as exemplified in the exercise. log counts records the request made by client or users toward the cloud run so, everytime a user is testing a data (image in this case) trough the cloud run link. the logging interval is set to be per hour. Moreover, alert within monitor service are also set to send notification as certain threshold is reached for certain paramteres such as, log count & bills.
+In monitoring we use log count as exemplified in the exercise. log counts records the request made by client or users toward the cloud run so, everytime a user is testing a data (image in this case) trough the cloud run link. the logging interval is set to be per hour. Moreover, alert within monitor service are also set to send notification as certain threshold is reached for certain paramteres such as, log count & bills. 
+
+Moreovers, monitoring records error for every training done on VertexAI then indicate at what and where the error occurs. not only that, monitoring logs also records error and progresses on all of other services
 
 ## Overall discussion of project
 
