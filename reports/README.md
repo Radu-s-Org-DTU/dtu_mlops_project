@@ -419,7 +419,18 @@ We wanted to perform a hyperparameter sweep as we have configured the sweep.yaml
 >
 > Answer:
 
+
 for the project we use 3 different docker images, which are for training that is built on train.dockerfile, front-end built on frontend.dockerfile and deployment built on api.dockerfile
+
+Docker is used for running the application in an clean, isolated environment called an image. The docker images are built by installing the dependencies from the requirements files that are passed to it. And only certain files & directories are copied over.
+
+We call the training image like so:
+
+      docker run train:latest
+
+We don't pass any parameters to it and the reasons is because of command line incompatibility between Hydra and LightningCLI. We attempted to get them working by being able to pass arguments to either framework but that wasn't possible. So, the hyper parameters would only be specified directly in the HydraConfig file.
+
+This resulted in our application being too static. To fix that, we'd have to overwrite the config file inside the container.
 
 ### Question 16
 
