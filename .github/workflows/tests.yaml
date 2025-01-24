@@ -61,17 +61,6 @@ jobs:
           echo "WANDB_REGISTRY=$WANDB_REGISTRY" >> $GITHUB_ENV
           echo "WANDB_MODEL_NAME=$WANDB_MODEL_NAME" >> $GITHUB_ENV
 
-      - name: Authenticate with Google Cloud
-        uses: google-github-actions/auth@v1
-        with:
-          credentials_json: ${{ secrets.GCP_KEY_JSON }}
-
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v1
-        with:
-          version: "latest"
-          project_id: "sage-dragon-448009-f7"
-
       - name: Run Ruff
         run: |
           ruff check .
