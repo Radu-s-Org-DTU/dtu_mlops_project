@@ -416,8 +416,9 @@ for the project we use 3 different docker images, which are for training that is
 > Answer:
 > We have two buckets. One for the training data (dcv) and one for the trained model (used by the api).
 
+We have one Google Cloud bucket for the entire raw dataset, containing approximately 12 GB of mushroom images categorized in four classes.
+
 ![data](figures/data-bucket.png)
-![api-model](figures/model-bucket.png)
 
 ### Question 20
 
