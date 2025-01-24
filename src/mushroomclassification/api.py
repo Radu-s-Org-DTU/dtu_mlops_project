@@ -2,13 +2,14 @@ import os
 from contextlib import asynccontextmanager
 
 import torch
+from dotenv import load_dotenv  # Add this import
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from google.cloud import storage
+from loguru import logger
 from PIL import Image
 from torchvision import transforms
+
 import wandb
-from loguru import logger
-from dotenv import load_dotenv  # Add this import
 from src.mushroomclassification.data import MushroomDataset
 from src.mushroomclassification.utils.config_loader import load_config
 

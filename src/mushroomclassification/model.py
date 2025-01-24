@@ -1,15 +1,16 @@
+import operator
+import os
+
 import lightning as L
 import torch
+from dotenv import load_dotenv
+from loguru import logger
 from torch import nn, optim
 from torchmetrics import Accuracy
-import wandb
-from loguru import logger
-import os
-from dotenv import load_dotenv
 from utils.config_loader import load_config
-import operator
-from visualize import plot_training_loss, plot_classification_per_class
+from visualize import plot_classification_per_class, plot_training_loss
 
+import wandb
 
 load_dotenv(override=True)
 env = os.getenv
@@ -146,7 +147,7 @@ class MushroomClassifier(L.LightningModule):
 
         self.log("validation_loss", loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         self.log("validation_accuracy", acc, on_step=True, on_epoch=True, prog_bar=True, logger=True)
-        wandb.log({"validation_loss": loss.item(), "validation_loss": acc})
+        wandb.log({"validation_loss": loss.item(), "validation_accuracy": acc})
 
         return loss
 
@@ -160,7 +161,7 @@ class MushroomClassifier(L.LightningModule):
 
         self.log("test_loss", loss, on_step=True, on_epoch=True, prog_bar=True, logger=True)
         self.log("test_accuracy", acc, on_step=True, on_epoch=True, prog_bar=True, logger=True)
-        wandb.log({"test_loss": loss.item(), "test_loss": acc})
+        wandb.log({"test_loss": loss.item(), "test_accuracy": acc})
 
         # Track correct classifications per class
         _, predicted = torch.max(logits, 1)
@@ -192,7 +193,9 @@ class MushroomClassifier(L.LightningModule):
         total_test_samples = sum(len(batch[0]) for batch in self.trainer.datamodule.test_dataloader())
         print(f"Total test samples: {total_test_samples}")
         plot_training_loss(self.train_losses)
-        plot_classification_per_class(self.correct_classifications, ["conditionally_edible", "deadly", "edible", "poisonous"], total_test_samples)
+        plot_classification_per_class(self.correct_classifications,
+                                      ["conditionally_edible", "deadly", "edible", "poisonous"],
+                                      total_test_samples)
 
     def on_train_end(self):
         """At the end of training, log final validation accuracy."""
