@@ -458,6 +458,7 @@ We have one Google Cloud bucket for the entire raw dataset, containing approxima
 >
 > Answer:
 
+For the project we utilize 3 docker images which are docker api for deployment, docker front-end, docker train-build for the training process. the rest is histroy from class exercise
 ![data](figures/artifact2.jpg)
 
 ### Question 21
@@ -466,6 +467,7 @@ We have one Google Cloud bucket for the entire raw dataset, containing approxima
 >
 > Answer:
 
+There are multiple builds because of the trial and error process during the work of the project. 
 ![data](figures/gcloud.jpg)
 
 ### Question 22
@@ -479,7 +481,7 @@ We have one Google Cloud bucket for the entire raw dataset, containing approxima
 >
 > Answer:
 
---- We trained our model using the Virtual Machine instance through VertexAI. The job is run through “gcloud ai custom-jobs create” command upon a docker image where the configuration script is written on a yaml file and secret key variables are included. The reason VertexAI is utilized is to generate a streamlined Machine Learning pipeline --
+We trained our model using the Virtual Machine instance through VertexAI. The job is run through “gcloud ai custom-jobs create” command upon a docker image where the configuration script is written on a yaml file and secret key variables are included. The reason VertexAI is utilized is to generate a streamlined Machine Learning pipeline. VertexAI process is done afer build  (in cloud build) initialization is finished.
 
 ## Deployment
 
@@ -540,7 +542,7 @@ The fail rate stabalized with a small fail rate around 2% - 3% with 242 requests
 >
 > Answer:
 
-In monitoring we use log count as exemplified in the exercise. log counts records the request made by client or users toward the cloud run so, everytime a user is testing a data (image in this case) trough the cloud run link. the logging interval is set to be per hour. Moreover, alert within monitor service are also set to send notification as certain threshold is reached.
+In monitoring we use log count as exemplified in the exercise. log counts records the request made by client or users toward the cloud run so, everytime a user is testing a data (image in this case) trough the cloud run link. the logging interval is set to be per hour. Moreover, alert within monitor service are also set to send notification as certain threshold is reached for certain paramteres such as, log count & bills.
 
 ## Overall discussion of project
 
