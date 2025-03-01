@@ -10,7 +10,7 @@ lightning[extra]==2.5.0
 torchvision==0.20.1
 seaborn==0.13.2
 python-multipart==0.0.20
-ruff==0.9.0
+ruff==0.9.9
 dill==0.3.9
 google-cloud-storage==2.19.0
 streamlit==1.41.1
